@@ -1,8 +1,9 @@
-.row
-  %h1 Showing all maps
-.row
-  %dl
-    - Map.all.each do |m|
-      %dt= link_to m.name, map_path(m)
-      - if m.description.present?
-        %dd= m.description
+.container
+  .row
+    %h1 Showing all maps
+  .row
+    %dl
+      - Map.all.each do |m|
+        %dt= link_to m.name, map_path(m)
+        - if m.description.present?
+          %dd= m.description

@@ -1,0 +1,6 @@
+%h1 Create a new map!
+= form_for Map.new do |f|
+  = f.text_field :name, placeholder: "Map name"
+  = f.text_field :description, placeholder: "Map description"
+  = f.submit "Create new map"
+  

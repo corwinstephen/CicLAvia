@@ -1,0 +1,6 @@
+%ul
+  - Map.all.each do |m|
+    %li
+      %p= m.name
+      - if m.description.present?
+        %p= m.description

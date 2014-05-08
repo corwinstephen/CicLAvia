@@ -3,13 +3,14 @@
 <head>
   <title>CicLAvia</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= render partial: "remote_styles" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= render partial: "remote_scripts" %>
+  <%= render partial: "js_globals" %>
+  <%= render partial: "js_init" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
-    <%= yield %>
-  </div>
-
+  <%= yield %>
 </body>
 </html>

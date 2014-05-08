@@ -14,4 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require underscore
+//= require underscore_string
+//= require application_namespace
+//
+//= require_tree ./application_controllers
+//= require main
+//
 //= require_tree .

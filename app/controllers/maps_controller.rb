@@ -16,6 +16,10 @@ class MapsController < ApplicationController
     redirect_to maps_path
   end
 
+  def show
+    @map = Map.find(params[:id])
+  end
+
   private
 
   def map_params

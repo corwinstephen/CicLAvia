@@ -1,6 +1,13 @@
-%h1 Create a new map!
-= form_for Map.new do |f|
-  = f.text_field :name, placeholder: "Map name"
-  = f.text_field :description, placeholder: "Map description"
-  = f.submit "Create new map"
+.container
+  .row
+    %h1 Create a new map!
+  = form_for Map.new do |f|
+    .form-group
+      = f.label :name, class: "control-label"
+      = f.text_field :name, placeholder: "Map name", class: "form-control"
+    .form-group
+      = f.label :description, class: "control-label"
+      = f.text_field :description, placeholder: "Map description", class: "form-control"
+    .form-group
+      = f.submit "Create new map", class: "btn btn-primary"
   

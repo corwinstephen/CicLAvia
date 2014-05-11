@@ -13,10 +13,5 @@
     };
 
     initByControllerAction();
-
-    // We need this for JS to work with Turbolinks
-    $(document).on("page:load", function(){
-      initByControllerAction();
-    });
   };
 })(jQuery, _);

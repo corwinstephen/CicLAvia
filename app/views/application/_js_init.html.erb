@@ -1,5 +1,8 @@
 <script>
-  $(document).ready(function(){
+  var ready = function(){
     Ciclavia.init();
-  });
+  };
+
+  $(document).ready(ready);
+  $(document).on("page:load", ready);
 </script>

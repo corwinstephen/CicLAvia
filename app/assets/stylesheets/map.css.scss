@@ -1,10 +1,10 @@
 .map-ciclavialogo {
   background-image:url(image-path('ciclavia_wordmark_rgb.png'));
-  width:150px;
-  height:150px;
-  z-index:2;
-  position:absolute;
+  background-size:125px 125px;
   bottom:0px;
+  height:125px;
+  position:absolute;
   right:0px;
-  background-size:150px 150px;
+  width:125px;
+  z-index:2;
 }

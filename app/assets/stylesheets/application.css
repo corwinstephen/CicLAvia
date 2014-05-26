@@ -10,7 +10,10 @@
  *
  *= require_self
  *= require bootstrap
- *= require base
  */
 
+ /* Libraries */
+
+ /* CicLAvia */
+ @import 'base';
  @import 'map';

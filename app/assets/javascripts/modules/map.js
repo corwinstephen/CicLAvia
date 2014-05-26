@@ -2,12 +2,13 @@
   "use strict";
 
   var init = function(){
-    // Set map width
-    var $map = $("#map");
-    $map.css({
-      width: $(window).width(),
-      height: $(window).height()
+    // Map width
+    fitMapToWindow();
+    $(window).resize(function(){
+      fitMapToWindow();
     });
+
+    // Init map
 
     var map = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
       infoControl: false,
@@ -16,6 +17,14 @@
 
     map.on('click', function(e) {
       mapClicked(e);
+    });
+  };
+
+  var fitMapToWindow = function(){
+    var $map = $("#map");
+    $map.css({
+      width: $(window).width(),
+      height: $(window).height()
     });
   };
   

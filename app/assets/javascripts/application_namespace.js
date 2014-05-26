@@ -1,3 +1,6 @@
 window.Ciclavia = {
-  Controllers: {}
+  Config: {},
+  Controllers: {},
+  Modules: {},
+  Models: {}
 };

@@ -16,8 +16,12 @@
 //= require bootstrap
 //= require underscore
 //= require underscore_string
+// 
+// -- Application Files -- //
+// 
 //= require application_namespace
-//
+//= require_tree ./config
+//= require_tree ./modules
 //= require_tree ./application_controllers
 //= require main
 //

@@ -1,5 +1,5 @@
-Ciclavia.ApiKeys = {
-  FourSquare: {
+Ciclavia.Config.ApiKeys = {
+  Foursquare: {
     id: "0KW04LKJUIFPEYFZ011Z1L5UU5UXORKJKMVFJTKBH5JOPJEV",
     secret: "TA212WH5H5B2ARYTQARH00UGXBEVWMG5NZGPY5KPUFD2JHFH"
   }

@@ -15,5 +15,5 @@
  /* Libraries */
 
  /* CicLAvia */
- @import 'base';
- @import 'map';
+ @import 'base.css.scss';
+ @import 'map.css.scss';

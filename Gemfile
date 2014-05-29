@@ -10,8 +10,10 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'devise'
 
+gem 'rails_12factor', group: :production
+
 group :doc do
   gem 'sdoc', require: false
 end
 
-ruby "2.1.1"
+ruby "2.0.0"

@@ -21,7 +21,5 @@ module CicLAvia
     # config.i18n.default_locale = :de
 
     config.assets.paths << Rails.root.join("vendor")
-
-    config.serve_static_assets = true
   end
 end

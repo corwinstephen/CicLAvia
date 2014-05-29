@@ -1,0 +1,28 @@
+.btn {
+  border-radius:20px;
+  border:none;
+  font-size:14px;
+  font-weight:bold;
+
+  &:hover {
+    -webkit-box-shadow:0 0 6px rgba(0, 0, 0, .6);
+  }
+
+  &.wide {
+    min-width:130px;
+  }
+
+  &.blue {
+    background-color:$blue;
+    color:#fff;
+  }
+
+  &.yellow {
+    background-color:$yellow;
+    color:$blue;
+
+    &.border {
+      border:1px solid darken($yellow, 6%);
+    }
+  }
+}

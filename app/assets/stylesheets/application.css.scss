@@ -8,12 +8,16 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap
+ *= require_self
  */
 
  /* Libraries */
 
  /* CicLAvia */
+ @import 'colors.css.scss';
  @import 'base.css.scss';
+ @import 'library.css.scss';
  @import 'map.css.scss';
+ @import 'mapnav.css.scss';
+ @import 'buttons.css.scss';

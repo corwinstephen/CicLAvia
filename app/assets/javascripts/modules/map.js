@@ -16,8 +16,11 @@
   var createMap = function(){
     map = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
       infoControl: false,
+      zoomControl: false
     })
     .setView([34.048776, -118.251522], 11);
+
+    new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
     map.on('click', function(e) {
       mapClicked(e);

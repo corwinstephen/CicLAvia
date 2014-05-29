@@ -1,9 +1,15 @@
-@import "colors";
-
 a {
-  color: $dark-grey;
+  color:$dark-grey;
 
   &:hover {
-    color: $green;
+    color:$green;
   }
+}
+
+body {
+  color:#565656;
+  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size:12px;
+  margin:0;
+  padding:0;
 }

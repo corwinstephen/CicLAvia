@@ -20,10 +20,6 @@
   &.yellow {
     background-color:$yellow;
     color:$blue;
-
-    &.border {
-      border:1px solid darken($yellow, 6%);
-    }
   }
 
   &.green {

@@ -1,4 +1,4 @@
-(function(Ciclavia){
+(function(Ciclavia, _){
   "use strict";
 
   Ciclavia.Models.Place = function(attrs){
@@ -8,7 +8,16 @@
   };
 
   Ciclavia.Models.Place.prototype = {
-
+    name: null,
+    lng: null,
+    lat: null,
+    lnglat: function(){
+      if(_.isNull(this.lng) || _.isNull(this.lat)){
+        return null;
+      }
+      
+      return [this.lng, this.lat];
+    }
   };
 
   Ciclavia.Models.Place.fromFoursquare = function(foursquareVenueJSON){
@@ -17,4 +26,4 @@
     });
   };
 
-})(Ciclavia);
+})(Ciclavia, _);

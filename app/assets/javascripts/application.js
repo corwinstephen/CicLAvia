@@ -19,10 +19,4 @@
 // 
 // -- Application Files -- //
 // 
-//= require application_namespace
-//= require_tree ./config
-//= require_tree ./modules
-//= require_tree ./application_controllers
-//= require main
-//
 //= require_tree .

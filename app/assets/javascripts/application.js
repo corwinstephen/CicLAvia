@@ -25,3 +25,4 @@
 //= require_tree ./application_controllers
 //= require main
 //
+//= require_tree .

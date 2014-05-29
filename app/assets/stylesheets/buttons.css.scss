@@ -25,4 +25,9 @@
       border:1px solid darken($yellow, 6%);
     }
   }
+
+  &.green {
+    background-color:$green;
+    color:#fff;
+  }
 }

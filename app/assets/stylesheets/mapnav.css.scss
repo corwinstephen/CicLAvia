@@ -1,21 +1,11 @@
 .mapnav-container {
   background-color:#fff;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  height:600px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  height:300px;
   left:0;
   padding:10px;
   position:absolute;
   top:50px;
   width:350px;
-}
-
-.mapnav-underbuttons {
-  height:80px;
-  width:100%;
-  position:absolute;
-  bottom:-100px;
-  left:-10px;
-  padding-left:40px;
-  box-sizing:border-box;
 }

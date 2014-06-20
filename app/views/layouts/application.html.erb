@@ -7,6 +7,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= render partial: "remote_scripts" %>
   <%= render partial: "js_init" %>
+  <%= yield :js_for_head %>
   <%= csrf_meta_tags %>
 </head>
 <body>

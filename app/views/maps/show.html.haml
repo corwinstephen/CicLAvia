@@ -1,7 +1,6 @@
+= content_for :js_for_head do
+  :javascript
+    Ciclavia.PageData.routes = #{Route.all.map { |route| route.coordinates_as_json } }
+
 #map
 .map-ciclavialogo
-
-.mapnav-container.shadow
-  .mapnav-underbuttons
-    .btn.btn-default.green.wide.margin-right.border Make
-    .btn.btn-default.green.wide Share

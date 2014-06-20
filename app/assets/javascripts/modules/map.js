@@ -13,6 +13,29 @@
     createMap();
   };
 
+  var _polyLineFromCoordSet = function(coordSet){
+    var pointSet = [];
+    _.each(coordSet, function(coord){
+      pointSet.push(new L.LatLng(coord[0], coord[1]));
+    });
+
+    return new L.Polyline(pointSet, {
+      color: 'red',
+      weight: 3,
+      opacity: 0.5,
+      smoothFactor: 1
+    });
+  };
+
+  var plotRoutes = function(map){
+    var routeLines = [];
+    _.each(Ciclavia.PageData.routes, function(coordSet){
+      var line = _polyLineFromCoordSet(coordSet);
+      routeLines.push(line);
+      line.addTo(map);
+    });
+  };
+
   var createMap = function(){
     map = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
       infoControl: false,
@@ -25,6 +48,8 @@
     map.on('click', function(e) {
       mapClicked(e);
     });
+
+    plotRoutes(map);
   };
 
   var fitMapToWindow = function(){
@@ -50,15 +75,16 @@
   };
   
   var mapClicked = function(mapClickEvent){
-    var popup = openPointDialog(mapClickEvent.latlng);
+    // console.log(mapClickEvent.latlng);
+    // var popup = openPointDialog(mapClickEvent.latlng);
 
-    var lat = mapClickEvent.latlng.lat;
-    var lng = mapClickEvent.latlng.lng;
-    Ciclavia.Modules.Foursquare.getPlacesForPoint(lat, lng, function(foursquareJSON, status){
-      if(status !== "success"){ /* Handle this error better */ }
+    // var lat = mapClickEvent.latlng.lat;
+    // var lng = mapClickEvent.latlng.lng;
+    // Ciclavia.Modules.Foursquare.getPlacesForPoint(lat, lng, function(foursquareJSON, status){
+    //   if(status !== "success"){ /* Handle this error better */ }
 
-      plotPlacesInPopup(foursquareJSON, popup);
-    });
+    //   plotPlacesInPopup(foursquareJSON, popup);
+    // });
   };
 
   var plotPlacesInPopup = function(foursquareJSON, popup){

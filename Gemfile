@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'devise'
+gem 'activeadmin'
 
 gem 'rails_12factor', group: :production
 

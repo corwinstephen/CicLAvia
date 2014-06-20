@@ -20,9 +20,9 @@
     });
 
     return new L.Polyline(pointSet, {
-      color: 'red',
-      weight: 3,
-      opacity: 0.5,
+      color: '#00a5e4',
+      weight: 10,
+      opacity: 1,
       smoothFactor: 1
     });
   };
@@ -41,7 +41,7 @@
       infoControl: false,
       zoomControl: false
     })
-    .setView([34.048776, -118.251522], 11);
+    .setView(Ciclavia.PageData.midpoint, 13);
 
     new L.Control.Zoom({ position: 'topright' }).addTo(map);
 

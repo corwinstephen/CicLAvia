@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'devise'
-gem 'activeadmin'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'rails_12factor', group: :production
 

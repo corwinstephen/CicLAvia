@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620050419) do
+ActiveRecord::Schema.define(version: 20140626054002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,10 +50,17 @@ ActiveRecord::Schema.define(version: 20140620050419) do
 
   add_index "points", ["map_id"], name: "index_points_on_map_id", using: :btree
 
+  create_table "route_segments", force: true do |t|
+    t.integer "route_id",                      null: false
+    t.string  "name"
+    t.string  "coordinate_array", default: [], null: false, array: true
+  end
+
+  add_index "route_segments", ["route_id"], name: "index_route_segments_on_route_id", using: :btree
+
   create_table "routes", force: true do |t|
     t.integer  "user_id"
-    t.string   "coordinate_array", default: [], null: false, array: true
-    t.string   "name",                          null: false
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

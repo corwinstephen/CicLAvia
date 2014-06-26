@@ -19,9 +19,11 @@
       pointSet.push(new L.LatLng(coord[0], coord[1]));
     });
 
+    var colors = ['#00a5e4', '#4db541', '#ffd500'];
+
     return new L.Polyline(pointSet, {
-      color: '#00a5e4',
-      weight: 10,
+      color: colors[Math.round(Math.random()*10)%3],
+      weight: 8,
       opacity: 1,
       smoothFactor: 1
     });
@@ -29,10 +31,12 @@
 
   var plotRoutes = function(map){
     var routeLines = [];
-    _.each(Ciclavia.PageData.routes, function(coordSet){
-      var line = _polyLineFromCoordSet(coordSet);
-      routeLines.push(line);
-      line.addTo(map);
+    _.each(Ciclavia.PageData.routes, function(routeSet){
+      _.each(routeSet, function(coordSet){
+        var line = _polyLineFromCoordSet(coordSet);
+        routeLines.push(line);
+        line.addTo(map);
+      });
     });
   };
 

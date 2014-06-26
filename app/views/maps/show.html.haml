@@ -1,7 +1,7 @@
 = content_for :js_for_head do
   :javascript
     Ciclavia.PageData = {
-      routes: #{Route.all.map { |route| route.coordinate_array } },
+      routes: #{Route.all.map { |route| route.coordinates } },
       midpoint: #{Route.last.midpoint}
     }
 

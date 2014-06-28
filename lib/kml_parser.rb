@@ -1,7 +1,5 @@
 class KMLParser
-  def self.parse(kml)
-    self.new(kml)
-  end
+  extend Enumerable
 
   def initialize(kml)
     @raw_kml = kml
@@ -12,9 +10,15 @@ class KMLParser
     @document_name ||= @parsed.at_css("name").content
   end
 
-  def each_placemark
+  def each
     @parsed.css("Placemark").each do |placemark|
       yield(Placemark.new(placemark))
+    end
+  end
+
+  def placemarks
+    @parsed.css("Placemark").map do |nokogiri_placemark|
+      Placemark.new(nokogiri_placemark)
     end
   end
 
@@ -31,9 +35,9 @@ class KMLParser
       sloppy_coordinates = @nokogiri_placemark.at_css("coordinates").try(:content)
       return nil unless sloppy_coordinates
 
-      coordinates = sloppy_coordinates.split("\n        ")
+      coordinates = sloppy_coordinates.split(/\n\s+/).reject(&:blank?)
       coordinates = coordinates.map do |triplet|
-        triplet.split(",").map do |item|
+        triplet.split(",").first(2).reverse.map do |item|
           item.to_f
         end
       end

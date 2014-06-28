@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Heart of LA (updated)</name>
+  <description><![CDATA[Total mileage: 10.13mi
+]]></description>
+  <Style id="style3">
+    <LineStyle>
+      <color>A60000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style18">
+    <LineStyle>
+      <color>B3993399</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style2">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style16">
+    <LineStyle>
+      <color>B3009900</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style10">
+    <LineStyle>
+      <color>A6000099</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style20">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style25">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style23">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style21">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style24">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style19">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style17">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style27">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style26">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style22">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <LineStyle>
+      <color>6600FFFF</color>
+      <width>15</width>
+    </LineStyle>
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Echo Park Leg 1.74mi</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style3</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.259712,34.069901,0.000000
+        -118.261520,34.070721,0.000000
+        -118.259369,34.061829,0.000000
+        -118.256462,34.058720,0.000000
+        -118.255028,34.057770,0.000000
+        -118.249237,34.054111,0.000000
+        -118.246582,34.052299,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Broadway (2nd to 9th) .89mi</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style18</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.246590,34.052376,0.000000
+        -118.256073,34.042274,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Broadway (2nd to Chinatown) 1.09 mi</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.246498,34.052517,0.000000
+        -118.243622,34.055717,0.000000
+        -118.241653,34.057674,0.000000
+        -118.240234,34.058598,0.000000
+        -118.237144,34.064678,0.000000
+        -118.236580,34.065723,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Little Tokyo/Boyle Hts Leg 2.19mi</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style16</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.219879,34.047249,0.000000
+        -118.219627,34.043049,0.000000
+        -118.222519,34.042931,0.000000
+        -118.224648,34.042412,0.000000
+        -118.227722,34.041531,0.000000
+        -118.231339,34.041489,0.000000
+        -118.232460,34.041950,0.000000
+        -118.237892,34.045422,0.000000
+        -118.239517,34.046150,0.000000
+        -118.239349,34.047733,0.000000
+        -118.240517,34.048489,0.000000
+        -118.246658,34.052391,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>East LA Leg 4.22mi</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style10</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.160202,34.033569,0.000000
+        -118.160202,34.034512,0.000000
+        -118.160278,34.035358,0.000000
+        -118.161812,34.035351,0.000000
+        -118.161911,34.040600,0.000000
+        -118.190659,34.040531,0.000000
+        -118.192383,34.040489,0.000000
+        -118.193092,34.040276,0.000000
+        -118.195297,34.041309,0.000000
+        -118.211487,34.048458,0.000000
+        -118.212036,34.047607,0.000000
+        -118.212593,34.046741,0.000000
+        -118.213097,34.045929,0.000000
+        -118.213760,34.044903,0.000000
+        -118.218903,34.047138,0.000000
+        -118.219803,34.047230,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Mariachi Plaza Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style20</styleUrl>
+    <Point>
+      <coordinates>-118.219818,34.047165,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alameda Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style25</styleUrl>
+    <Point>
+      <coordinates>-118.238106,34.045494,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Main Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>-118.244560,34.050953,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Spring Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>-118.245682,34.051662,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Temple Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style21</styleUrl>
+    <Point>
+      <coordinates>-118.243599,34.055698,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cesar Chavez Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-118.240273,34.058598,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Olive Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>-118.248787,34.053814,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style24</styleUrl>
+    <Point>
+      <coordinates>-118.249863,34.054436,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Figueroa Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-118.253082,34.056553,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Temple Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-118.260780,34.068127,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Echo Park Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style19</styleUrl>
+    <Point>
+      <coordinates>-118.260551,34.070400,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Theater District Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style17</styleUrl>
+    <Point>
+      <coordinates>-118.255333,34.043022,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand Park Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-118.244522,34.054741,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Chinatown Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style15</styleUrl>
+    <Point>
+      <coordinates>-118.236534,34.065636,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Belvedere Park Hub</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>-118.159622,34.034718,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Eastern Crossing</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style14</styleUrl>
+    <Point>
+      <coordinates>-118.173622,34.040535,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Gage Crossing</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style27</styleUrl>
+    <Point>
+      <coordinates>-118.184654,34.040535,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Soto Crossing</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style26</styleUrl>
+    <Point>
+      <coordinates>-118.207764,34.046810,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>3rd st Crossing</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-118.247971,34.051006,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>6th Crossing</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style22</styleUrl>
+    <Point>
+      <coordinates>-118.251923,34.046631,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 6</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style6</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.254723,34.043736,0.000000
+        -118.256111,34.042259,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Evergreen Ave Crossing Point</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>-118.200447,34.043484,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

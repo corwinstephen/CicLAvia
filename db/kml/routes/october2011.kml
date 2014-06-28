@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Final CicLAvia October 2011</name>
+  <description><![CDATA[draft route]]></description>
+  <Style id="style9">
+    <LineStyle>
+      <color>73FFFFFF</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="style11">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style5">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style7">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style4">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style1">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style3">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style10">
+    <LineStyle>
+      <color>B333FFFF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style8">
+    <LineStyle>
+      <color>B30000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style2">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_us/mapfiles/ms2/micons/green-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/intl/en_us/mapfiles/ms2/micons/green-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <LineStyle>
+      <color>E6FF3333</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Chinatown Expansion Draft</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style9</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.243362,34.052128,0.000000
+        -118.239197,34.056759,0.000000
+        -118.238876,34.057087,0.000000
+        -118.239113,34.057262,0.000000
+        -118.239326,34.057495,0.000000
+        -118.239555,34.057583,0.000000
+        -118.239754,34.057549,0.000000
+        -118.239906,34.057549,0.000000
+        -118.240044,34.057629,0.000000
+        -118.239532,34.058270,0.000000
+        -118.238609,34.060074,0.000000
+        -118.239319,34.060322,0.000000
+        -118.237473,34.063999,0.000000
+        -118.236900,34.063877,0.000000
+        -118.236580,34.063812,0.000000
+        -118.235847,34.063557,0.000000
+        -118.235390,34.064705,0.000000
+        -118.235054,34.065174,0.000000
+        -118.234367,34.065750,0.000000
+        -118.234467,34.065922,0.000000
+        -118.226860,34.071148,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>South L.A. Draft Phase 1 Extension</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style11</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.252243,34.044445,0.000000
+        -118.255119,34.041546,0.000000
+        -118.251663,34.038490,0.000000
+        -118.248573,34.035625,0.000000
+        -118.246300,34.033813,0.000000
+        -118.244156,34.032051,0.000000
+        -118.244759,34.030968,0.000000
+        -118.245193,34.030186,0.000000
+        -118.246170,34.029091,0.000000
+        -118.246628,34.028687,0.000000
+        -118.246796,34.028492,0.000000
+        -118.246948,34.028378,0.000000
+        -118.247643,34.027645,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing Alpine</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style5</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.239410,34.062740,0.000000
+        -118.237099,34.061939,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing - Cesar Chavez</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style7</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.238792,34.058277,0.000000
+        -118.239822,34.058350,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing - Arcadia</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style4</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.240402,34.056019,0.000000
+        -118.239624,34.055538,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing - Aliso</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.240700,34.055645,0.000000
+        -118.240013,34.055164,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing - Los Angeles St</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style3</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.253593,34.041050,0.000000
+        -118.254623,34.040321,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crossing - San Pedro St</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style10</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.249969,34.037689,0.000000
+        -118.250740,34.036907,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Main CicLAvia Route</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style8</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.216583,34.042702,0.000000
+        -118.223534,34.042702,0.000000
+        -118.232635,34.042065,0.000000
+        -118.238556,34.045834,0.000000
+        -118.239586,34.046188,0.000000
+        -118.239243,34.049103,0.000000
+        -118.244652,34.052944,0.000000
+        -118.252029,34.044765,0.000000
+        -118.260445,34.049744,0.000000
+        -118.280357,34.058205,0.000000
+        -118.278297,34.061050,0.000000
+        -118.284126,34.063683,0.000000
+        -118.286964,34.063683,0.000000
+        -118.287216,34.067238,0.000000
+        -118.293488,34.067307,0.000000
+        -118.293144,34.076481,0.000000
+        -118.293404,34.079182,0.000000
+        -118.295372,34.079109,0.000000
+        -118.295372,34.083874,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Rest Stop - LASHP</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style2</styleUrl>
+    <Point>
+      <coordinates>-118.232635,34.068161,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Rest Stop - African American Firefighters Museum</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-118.247566,34.028263,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 10</name>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style12</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.243469,34.052143,0.000000
+        -118.238991,34.057034,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+</Document>
+</kml>

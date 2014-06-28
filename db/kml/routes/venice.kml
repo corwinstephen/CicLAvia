@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <name>Downtown to Venice - 15.23 miles</name>
+  <description><![CDATA[]]></description>
+  <Style id="style59">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style46">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style37">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style40">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style44">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style38">
+    <LineStyle>
+      <color>03FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style22">
+    <LineStyle>
+      <color>03FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style23">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style58">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style60">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style27">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style25">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style7">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style48">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style16">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style39">
+    <LineStyle>
+      <color>BF0000CC</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style45">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style24">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style50">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style9">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style57">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style12">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style28">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style13">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style62">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style11">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style8">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style31">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/rail.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style4">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style26">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style53">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style41">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style1">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style20">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style34">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/sunny.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style47">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style55">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style19">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style33">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style30">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style35">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style18">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style61">
+    <LineStyle>
+      <color>03FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style5">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style49">
+    <LineStyle>
+      <color>FF0000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style2">
+    <LineStyle>
+      <color>FF0000FF</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style6">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style56">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/yellow-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style29">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/yellow-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style3">
+    <LineStyle>
+      <color>FF0000CC</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style10">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style15">
+    <LineStyle>
+      <color>E6009900</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style51">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/homegardenbusiness.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style43">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style36">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style17">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style42">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style52">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Style id="style14">
+    <LineStyle>
+      <color>BF009900</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style32">
+    <LineStyle>
+      <color>73FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style21">
+    <LineStyle>
+      <color>03FF0000</color>
+      <width>5</width>
+    </LineStyle>
+  </Style>
+  <Style id="style54">
+    <IconStyle>
+      <Icon>
+        <href>http://maps.gstatic.com/mapfiles/ms2/micons/blue-dot.png</href>
+      </Icon>
+    </IconStyle>
+  </Style>
+  <Placemark>
+    <name>Beach .5 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style59</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.471222,33.988304,0.000000
+        -118.471313,33.988277,0.000000
+        -118.471283,33.988121,0.000000
+        -118.471153,33.987999,0.000000
+        -118.470886,33.987968,0.000000
+        -118.470772,33.988091,0.000000
+        -118.470764,33.988083,0.000000
+        -118.464928,33.988411,0.000000
+        -118.464638,33.988220,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>405 West 3.11 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style46</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.464600,33.988243,0.000000
+        -118.462090,33.989338,0.000000
+        -118.458923,33.991062,0.000000
+        -118.454353,33.993332,0.000000
+        -118.450432,33.995316,0.000000
+        -118.441322,33.999886,0.000000
+        -118.433640,34.003731,0.000000
+        -118.431007,34.005116,0.000000
+        -118.427803,34.006939,0.000000
+        -118.418739,34.012115,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>10 fwy west 1.79 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style37</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.390312,34.028301,0.000000
+        -118.364471,34.042809,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Crenshaw West 2.91 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style40</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.375900,34.036499,0.000000
+        -118.364693,34.042728,0.000000
+        -118.363388,34.043190,0.000000
+        -118.361771,34.043598,0.000000
+        -118.360130,34.043892,0.000000
+        -118.345413,34.045929,0.000000
+        -118.339996,34.046719,0.000000
+        -118.336800,34.047089,0.000000
+        -118.334641,34.046669,0.000000
+        -118.332581,34.046009,0.000000
+        -118.326683,34.044121,0.000000
+        -118.324722,34.043549,0.000000
+        -118.303688,34.043591,0.000000
+        -118.300652,34.043659,0.000000
+        -118.296356,34.044209,0.000000
+        -118.291611,34.044250,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>110 Fwy West 1 mile</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style44</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.291382,34.044231,0.000000
+        -118.286453,34.044239,0.000000
+        -118.285233,34.044010,0.000000
+        -118.284164,34.043751,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>to Fig .34 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style38</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.283905,34.043655,0.000000
+        -118.270103,34.037460,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Figueroa .77 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style22</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.268082,34.040623,0.000000
+        -118.268066,34.040661,0.000000
+        -118.262817,34.046211,0.000000
+        -118.259903,34.049389,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Vermont Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style23</styleUrl>
+    <Point>
+      <coordinates>-118.291641,34.044052,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Normandie Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style58</styleUrl>
+    <Point>
+      <coordinates>-118.300652,34.043449,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Western Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style60</styleUrl>
+    <Point>
+      <coordinates>-118.309021,34.043556,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Arlington Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style27</styleUrl>
+    <Point>
+      <coordinates>-118.317688,34.043522,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Crenshaw Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style25</styleUrl>
+    <Point>
+      <coordinates>-118.328331,34.044693,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand Park Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style7</styleUrl>
+    <Point>
+      <coordinates>-118.239861,34.056786,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Brookfield Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style48</styleUrl>
+    <Point>
+      <coordinates>-118.394508,34.024353,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Normandie Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style16</styleUrl>
+    <Point>
+      <coordinates>-118.301147,34.043022,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 14</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style39</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.395012,34.025372,0.000000
+        -118.394196,34.024437,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>San Vicente Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style45</styleUrl>
+    <Point>
+      <coordinates>-118.344360,34.046295,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Fairfax Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style24</styleUrl>
+    <Point>
+      <coordinates>-118.369789,34.039822,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>National Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style50</styleUrl>
+    <Point>
+      <coordinates>-118.388283,34.029404,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Overland Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style9</styleUrl>
+    <Point>
+      <coordinates>-118.407043,34.018803,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sepulveda Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style57</styleUrl>
+    <Point>
+      <coordinates>-118.417297,34.013004,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Sawtelle Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style12</styleUrl>
+    <Point>
+      <coordinates>-118.419868,34.011547,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Centinela Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style28</styleUrl>
+    <Point>
+      <coordinates>-118.433624,34.003666,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Lincoln Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style13</styleUrl>
+    <Point>
+      <coordinates>-118.452744,33.994041,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Abbot Kinney Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style62</styleUrl>
+    <Point>
+      <coordinates>-118.462593,33.989105,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Culver Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style11</styleUrl>
+    <Point>
+      <coordinates>-118.392532,34.027092,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>La Cienega Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style8</styleUrl>
+    <Point>
+      <coordinates>-118.377922,34.035091,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Expo Line Terminus</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style31</styleUrl>
+    <Point>
+      <coordinates>-118.389786,34.027782,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style4</styleUrl>
+    <Point>
+      <coordinates>-118.256493,34.047344,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>6th St. Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style26</styleUrl>
+    <Point>
+      <coordinates>-118.250015,34.045261,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>3rd St. Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style53</styleUrl>
+    <Point>
+      <coordinates>-118.245934,34.049564,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Venice Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style41</styleUrl>
+    <Point>
+      <coordinates>-118.471046,33.988098,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Hauser Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style1</styleUrl>
+    <Point>
+      <coordinates>-118.358650,34.044197,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Cadillac Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style20</styleUrl>
+    <Point>
+      <coordinates>-118.455444,34.027054,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>City Hall Alt. Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style34</styleUrl>
+    <Point>
+      <coordinates>-118.243492,34.052444,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 13</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style47</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.244408,34.052952,0.000000
+        -118.242676,34.051716,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Temple Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style55</styleUrl>
+    <Point>
+      <coordinates>-118.241730,34.054115,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Broadway Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style19</styleUrl>
+    <Point>
+      <coordinates>-118.253403,34.045227,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Robertson</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style33</styleUrl>
+    <Point>
+      <coordinates>-118.390366,34.028229,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Mar Vista Farmers Market</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style30</styleUrl>
+    <Point>
+      <coordinates>-118.430168,34.003117,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>City Hall - Fig 1.34 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style35</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.243446,34.052109,0.000000
+        -118.246834,34.048500,0.000000
+        -118.250526,34.044731,0.000000
+        -118.251450,34.043896,0.000000
+        -118.256042,34.046936,0.000000
+        -118.259865,34.049389,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>.4 Miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style18</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.243279,34.052284,0.000000
+        -118.239113,34.056873,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>.25 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style61</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.268120,34.040581,0.000000
+        -118.270096,34.037476,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Fairfax Hub</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style5</styleUrl>
+    <Point>
+      <coordinates>-118.373230,34.038151,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 15</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style49</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.464043,33.987991,0.000000
+        -118.456062,33.991837,0.000000
+        -118.449799,33.994823,0.000000
+        -118.439926,33.999878,0.000000
+        -118.420959,34.009911,0.000000
+        -118.415039,34.013466,0.000000
+        -118.395470,34.024567,0.000000
+        -118.395416,34.024529,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Line 16</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style2</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.393570,34.025490,0.000000
+        -118.388123,34.028656,0.000000
+        -118.373444,34.037228,0.000000
+        -118.364174,34.042419,0.000000
+        -118.362030,34.043129,0.000000
+        -118.349457,34.045013,0.000000
+        -118.336884,34.046722,0.000000
+        -118.328766,34.044445,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>beethoven crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style6</styleUrl>
+    <Point>
+      <coordinates>-118.441414,33.999771,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Bagley-Main Soft Closure</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style56</styleUrl>
+    <Point>
+      <coordinates>-118.395172,34.025543,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Grand View Soft Closure</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style29</styleUrl>
+    <Point>
+      <coordinates>-118.431290,34.004967,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Walk to Beach 800 feet</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style3</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.471359,33.988152,0.000000
+        -118.471779,33.988010,0.000000
+        -118.472046,33.987823,0.000000
+        -118.472328,33.987640,0.000000
+        -118.472672,33.987453,0.000000
+        -118.473007,33.987274,0.000000
+        -118.473282,33.987072,0.000000
+        -118.473534,33.986908,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Placemark 41</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style10</styleUrl>
+    <Point>
+      <coordinates>-118.337128,34.046970,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Alvarado Alte 2.07 Mile</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style15</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.260048,34.049492,0.000000
+        -118.261467,34.049870,0.000000
+        -118.265297,34.051289,0.000000
+        -118.274155,34.055271,0.000000
+        -118.276917,34.056461,0.000000
+        -118.282753,34.047070,0.000000
+        -118.283890,34.045422,0.000000
+        -118.284187,34.045300,0.000000
+        -118.284119,34.043751,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Placemark 42</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style51</styleUrl>
+    <Point>
+      <coordinates>-118.277481,34.056572,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Expo Line West 1.95 miles</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style43</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.390579,34.028175,0.000000
+        -118.395195,34.025417,0.000000
+        -118.403458,34.020687,0.000000
+        -118.409874,34.017113,0.000000
+        -118.418671,34.012188,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Union Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style36</styleUrl>
+    <Point>
+      <coordinates>-118.271126,34.053867,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Figueroa Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style17</styleUrl>
+    <Point>
+      <coordinates>-118.259842,34.049316,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Olympic Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style42</styleUrl>
+    <Point>
+      <coordinates>-118.279922,34.051735,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Pico Crossing</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style52</styleUrl>
+    <Point>
+      <coordinates>-118.282669,34.047256,0.000000</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Line 18</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style14</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.284149,34.044971,0.000000
+        -118.284027,34.045147,0.000000
+        -118.283875,34.045406,0.000000
+        -118.283882,34.045406,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Line 19</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style32</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.284225,34.045063,0.000000
+        -118.284233,34.045059,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Union Alt.</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style21</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+        -118.271255,34.053780,0.000000
+        -118.276924,34.044693,0.000000
+        -118.278961,34.041405,0.000000
+        -118.284004,34.043716,0.000000
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>8th St.</name>
+    <Snippet></Snippet>
+    <description><![CDATA[]]></description>
+    <styleUrl>#style54</styleUrl>
+    <Point>
+      <coordinates>-118.277908,34.054829,0.000000</coordinates>
+    </Point>
+  </Placemark>
+</Document>
+</kml>

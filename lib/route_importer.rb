@@ -1,18 +1,25 @@
 class RouteImporter
   def self.import_route_from_kml(kml)
-    route = KMLParser.new(kml)
+    self.new.import_route_from_kml(kml)
+  end
 
-    placemark_data = route.placemarks.map do |placemark|
-      {
-        name: placemark.name,
-        coordinates: placemark.coordinates
-      }
+  def import_route_from_kml(kml)
+    @parser = KMLParser.new(kml)
+
+    ActiveRecord::Base.transaction do
+      route = Route.new
+      route.name = @parser.document_name
+
+      @parser.each_placemark do |placemark|
+        route.route_segments.build({
+          name: placemark.name,
+          coordinate_array: placemark.coordinates
+          })
+      end
+
+      return route.save
     end
 
-    route_data = {
-      name: route.document_name,
-      segments: placemark_data
-    }
-
   end
+
 end

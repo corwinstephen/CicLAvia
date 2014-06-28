@@ -1,5 +1,4 @@
 class KMLParser
-  extend Enumerable
 
   def initialize(kml)
     @raw_kml = kml
@@ -10,7 +9,7 @@ class KMLParser
     @document_name ||= @parsed.at_css("name").content
   end
 
-  def each
+  def each_placemark
     @parsed.css("Placemark").each do |placemark|
       yield(Placemark.new(placemark))
     end

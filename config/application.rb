@@ -21,5 +21,7 @@ module CicLAvia
     # config.i18n.default_locale = :de
 
     # config.assets.paths << Rails.root.join("vendor")
+
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

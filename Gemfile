@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'nokogiri'
+gem 'pry'
 
 gem 'rails_12factor', group: :production
 

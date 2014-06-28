@@ -1,11 +1,28 @@
 .mapnav-container {
-  background-color:#fff;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
+  background-color:rgba(#000, .2);
   height:300px;
-  left:0;
+  left:20px;
   padding:10px;
   position:absolute;
-  top:50px;
+  top:20px;
   width:350px;
+}
+
+.mapnav-route {
+  background-color:rgba($blue, .3);
+  padding:10px;
+  margin-top:7px;
+
+  &:first-child {
+    margin-top:0;
+  }
+
+  &:hover {
+    background-color:rgba($blue, .5);
+  }
+}
+
+.mapnav-title {
+  color:#fff;
+  font-size:14px;
 }

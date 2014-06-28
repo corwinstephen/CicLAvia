@@ -8,8 +8,12 @@ a {
 
 body {
   color:#565656;
-  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family:$font-body;
   font-size:12px;
   margin:0;
   padding:0;
+}
+
+p {
+  font-family:$font-body;
 }

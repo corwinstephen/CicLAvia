@@ -7,3 +7,7 @@
 
 #map
 .map-ciclavialogo
+.mapnav-container
+  - Route.all.each do |route|
+    .mapnav-route
+      %span.mapnav-title= route.name

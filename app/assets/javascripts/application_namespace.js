@@ -3,5 +3,6 @@ window.Ciclavia = {
   Controllers: {},
   Modules: {},
   Models: {},
+  Helpers: {},
   PageData: {}
 };

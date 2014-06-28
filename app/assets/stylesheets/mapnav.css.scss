@@ -9,7 +9,7 @@
 }
 
 .mapnav-route {
-  background-color:rgba($blue, .3);
+  background-color:$blue;
   padding:10px;
   margin-top:7px;
 
@@ -18,7 +18,7 @@
   }
 
   &:hover {
-    background-color:rgba($blue, .5);
+    background-color:lighten($blue, 5%);
   }
 }
 

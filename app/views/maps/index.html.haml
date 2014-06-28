@@ -1,7 +1,7 @@
 = content_for :js_for_head do
   :javascript
     Ciclavia.PageData = {
-      routes: #{Route.all.map { |route| route.coordinates } },
+      routes: #{Route.all.map { |route| route.to_json } },
       midpoint: #{Route.last.midpoint}
     }
 
@@ -9,5 +9,5 @@
 .map-ciclavialogo
 .mapnav-container
   - Route.all.each do |route|
-    .mapnav-route
+    .mapnav-route{:data => { :id => route.id }}
       %span.mapnav-title= route.name

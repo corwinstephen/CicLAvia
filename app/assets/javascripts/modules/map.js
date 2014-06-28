@@ -2,6 +2,7 @@
   "use strict";
 
   var map = null;
+  var routes = [];
 
   var init = function(){
     // Map width
@@ -10,50 +11,65 @@
       fitMapToWindow();
     });
 
-    createMap();
+    map = createMap();
+
+    initRoutes();
+    setEvents();
+    render();
   };
 
-  var _polyLineFromCoordSet = function(coordSet){
-    var pointSet = [];
-    _.each(coordSet, function(coord){
-      pointSet.push(new L.LatLng(coord[0], coord[1]));
-    });
+  var setEvents = function(){
+    $(".mapnav-route").click(function(){
+      var id = $(this).data("id");
+      var clickedRoute = _.find(routes, function(item){
+        return (item.id === id);
+      });
 
-    var colors = ['#00a5e4', '#4db541', '#ffd500'];
-
-    return new L.Polyline(pointSet, {
-      color: colors[Math.round(Math.random()*10)%3],
-      weight: 8,
-      opacity: 1,
-      smoothFactor: 1
+      clickedRoute.active = !clickedRoute.active;
+      render();
     });
   };
 
-  var plotRoutes = function(map){
-    var routeLines = [];
-    _.each(Ciclavia.PageData.routes, function(routeSet){
-      _.each(routeSet, function(coordSet){
-        var line = _polyLineFromCoordSet(coordSet);
-        routeLines.push(line);
-        line.addTo(map);
+  var render = function(){
+    if(routes.length === 0){
+      console.log("No routes to render");
+    }
+
+    _.each(routes, function(route){
+      _.each(route.lineElementsForMap(), function(element){
+        if(route.active){
+          element.addTo(map);
+        } else {
+          map.removeLayer(element);
+        }
       });
     });
   };
 
+  var initRoutes = function(){
+    if(!_.isArray(Ciclavia.PageData.routes)){
+      throw "Route data not defined";
+    }
+
+    _.each(Ciclavia.PageData.routes, function(routeData){
+      routes.push(new Ciclavia.Models.Route(routeData));
+    });
+  };
+
   var createMap = function(){
-    map = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
+    var newMap = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
       infoControl: false,
       zoomControl: false
     })
     .setView(Ciclavia.PageData.midpoint, 13);
 
-    new L.Control.Zoom({ position: 'topright' }).addTo(map);
+    new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
 
-    map.on('click', function(e) {
+    newMap.on('click', function(e) {
       mapClicked(e);
     });
 
-    plotRoutes(map);
+    return newMap;
   };
 
   var fitMapToWindow = function(){

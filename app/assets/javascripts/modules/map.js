@@ -3,6 +3,7 @@
 
   var map = null;
   var routes = [];
+  var colors = ['#00a5e4', '#4db541', '#ffd500'];
 
   var init = function(){
     // Map width
@@ -51,8 +52,9 @@
       throw "Route data not defined";
     }
 
-    _.each(Ciclavia.PageData.routes, function(routeData){
-      routes.push(new Ciclavia.Models.Route(routeData));
+    _.each(Ciclavia.PageData.routes, function(routeData, index){
+      var color = colors[index % 3];
+      routes.push(new Ciclavia.Models.Route(_.extend($.parseJSON(routeData), {color: color})));
     });
   };
 

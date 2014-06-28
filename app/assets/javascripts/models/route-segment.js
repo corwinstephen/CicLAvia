@@ -18,9 +18,13 @@
       }
     },
 
-    lineElementForMap: function(){
+    lineElementForMap: function(options){
+      options = options || {};
+      
       if(!this._lineElement){
-        this._lineElement = Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.coordinates);
+        this._lineElement = Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.coordinates, {
+          color: options.color
+        });
       }
       return this._lineElement;
     }

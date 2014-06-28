@@ -2,17 +2,17 @@
   "use strict";
 
   Ciclavia.Helpers.MapBoxHelper = {
-    polyLineFromCoordSet: function(coordSet){
+    polyLineFromCoordSet: function(coordSet, options){
+      options = options || {};
+
       var pointSet = [];
       _.each(coordSet, function(coord){
         pointSet.push(new L.LatLng(coord[0], coord[1]));
       });
 
-      var colors = ['#00a5e4', '#4db541', '#ffd500'];
-
       return new L.Polyline(pointSet, {
-        color: colors[Math.round(Math.random()*10)%3],
-        weight: 8,
+        color: options.color || '#333',
+        weight: 5,
         opacity: 1,
         smoothFactor: 1
       });

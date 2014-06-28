@@ -7,6 +7,7 @@
     }
     this.options = options;
     this.name = null;
+    this.color = null;
     this.routeSegments = [];
     this.active = true;
 
@@ -17,6 +18,7 @@
     _parseOptions: function(){
       this.id = this.options.id;
       this.name = this.options.name;
+      this.color = this.options.color;
 
       if(this.options.route_segments){
         _.each(this.options.route_segments, function(routeSegmentData){
@@ -27,8 +29,10 @@
 
     lineElementsForMap: function(){
       return _.map(this.routeSegments, function(segment){
-        return segment.lineElementForMap();
-      });
+        return segment.lineElementForMap({
+          color: this.color
+        });
+      }.bind(this));
     }
   };
 

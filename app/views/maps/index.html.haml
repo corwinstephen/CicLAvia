@@ -1,17 +1,13 @@
-.container
-  .row
-    .col-md-12
-      %h1 Showing all maps
-  .row
-    .col-md-12
-      = link_to "Create a new map", new_map_path, class: "btn btn-default green"
+= content_for :js_for_head do
+  :javascript
+    Ciclavia.PageData = {
+      routes: #{Route.all.map { |route| route.coordinates } },
+      midpoint: #{Route.last.midpoint}
+    }
 
-  %hr
-
-  .row
-    .col-md-12
-      %dl
-        - Map.all.each do |m|
-          %dt= link_to m.name, map_path(m)
-          - if m.description.present?
-            %dd= m.description
+#map
+.map-ciclavialogo
+.mapnav-container
+  - Route.all.each do |route|
+    .mapnav-route
+      %span.mapnav-title= route.name

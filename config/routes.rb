@@ -7,8 +7,6 @@ CicLAvia::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'maps#index'
 
-  resources :maps
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

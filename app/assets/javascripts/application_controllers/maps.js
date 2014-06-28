@@ -1,6 +1,6 @@
 (function(){
   Ciclavia.Controllers.Maps = {
-    show: function(){
+    index: function(){
       Ciclavia.Modules.Map.init();
     }
   };

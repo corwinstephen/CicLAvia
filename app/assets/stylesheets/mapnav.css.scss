@@ -1,28 +1,43 @@
 .mapnav-container {
-  background-color:rgba(#000, .2);
-  height:300px;
-  left:20px;
-  padding:10px;
+  background-color:$light-grey;
+  bottom:0;
+  left:0;
+  padding:$default-vertical-spacing;
   position:absolute;
-  top:20px;
+  top:0;
   width:350px;
 }
 
-.mapnav-route {
-  background-color:$blue;
-  padding:10px;
-  margin-top:7px;
+dl {
+  padding:$default-vertical-spacing;
+  font-size:14px;
+  margin-bottom:0;
+  border-radius:1px;
+  margin-top:$default-vertical-spacing;
+  background-color:$grey;
+  border:3px solid $grey;
 
   &:first-child {
     margin-top:0;
   }
 
   &:hover {
-    background-color:lighten($blue, 5%);
+    cursor:pointer;
+    border-color:darken($grey, 5%);
   }
-}
 
-.mapnav-title {
-  color:#fff;
-  font-size:14px;
+  &.selected {
+    background-color:#FFF;
+    border:3px solid $yellow;
+    border-radius:3px;
+  }
+
+  dt {
+    margin-bottom:$default-vertical-spacing / ($golden-ratio * $golden-ratio);
+    font-weight:bold;
+  }
+
+  dd {
+        
+  }
 }

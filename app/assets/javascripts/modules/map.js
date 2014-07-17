@@ -27,6 +27,7 @@
       });
 
       clickedRoute.active = !clickedRoute.active;
+      $(this).toggleClass("selected");
       render();
     });
   };

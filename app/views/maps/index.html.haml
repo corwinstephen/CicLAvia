@@ -9,5 +9,6 @@
 .map-ciclavialogo
 .mapnav-container
   - Route.all.each do |route|
-    .mapnav-route{:data => { :id => route.id }}
-      %span.mapnav-title= route.name
+    %dl.mapnav-route.selected{:data => { :id => route.id }}
+      %dt= route.name
+      %dd September 15, 2014

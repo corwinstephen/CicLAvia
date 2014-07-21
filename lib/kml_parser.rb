@@ -30,6 +30,21 @@ class KMLParser
       @nokogiri_placemark.at_css("name").try(:content)
     end
 
+    def type
+      return @type if @type.present?
+
+      placemark_types = ["LineString", "Point"]
+
+      placemark_types.each do |placemark_type|
+        if @nokogiri_placemark.at_css(placemark_type).present?
+          @type = placemark_type.to_sym
+          return @type
+        end
+      end
+
+      raise UnrecognizedPlacemarkTypeError, "The placemark being imported does not contain an element matching one of #{placemark_types}"
+    end
+
     def coordinates
       sloppy_coordinates = @nokogiri_placemark.at_css("coordinates").try(:content)
       return nil unless sloppy_coordinates
@@ -43,6 +58,8 @@ class KMLParser
 
       coordinates
     end
+
+    class UnrecognizedPlacemarkTypeError < StandardError; end
   end
 
 end

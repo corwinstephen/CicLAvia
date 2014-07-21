@@ -38,9 +38,13 @@ ActiveRecord::Schema.define(version: 20140711044422) do
     t.float    "lat",         null: false
     t.float    "lng",         null: false
     t.integer  "user_id"
+    t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "places", ["route_id"], name: "index_places_on_route_id", using: :btree
+  add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree
 
   create_table "route_segments", force: true do |t|
     t.integer "route_id",                      null: false

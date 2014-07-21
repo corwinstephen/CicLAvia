@@ -1,6 +1,7 @@
 class Route < ActiveRecord::Base
   belongs_to :user
-  has_many :route_segments
+  has_many :route_segments, dependent: :destroy
+  has_many :places, dependent: :destroy
 
   validates_presence_of :name
 

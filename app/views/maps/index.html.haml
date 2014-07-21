@@ -2,7 +2,7 @@
   :javascript
     Ciclavia.PageData = {
       routes: #{Route.all.map { |route| route.to_json } },
-      midpoint: #{Route.last.midpoint}
+      midpoint: #{Route.last.try(:midpoint)}
     }
 
 #map

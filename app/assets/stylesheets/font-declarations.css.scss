@@ -1,0 +1,43 @@
+
+@font-face {
+  font-family: 'AmericanTypewriter';
+  src: url(asset-path('AmericanTypewriter.eot')) format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AmericanTypewriter';
+  src: url(asset-path('AmericanTypewriter.ttf'))  format('truetype'), url(asset-path('AmericanTypewriter.svg#AmericanTypewriter')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Regular';
+  src: url(asset-path('AvenirNextLTPro-Regular.eot')) format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Regular';
+  src:  url(asset-path('AvenirNextLTPro-Regular.otf'))  format('opentype'),  url(asset-path('AvenirNextLTPro-Regular.ttf'))  format('truetype'), url(asset-path('AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Bold';
+  src: url(asset-path('AvenirNextLTPro-Bold.eot')) format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Bold';
+  src:  url(asset-path('AvenirNextLTPro-Bold.otf'))  format('opentype'),  url(asset-path('AvenirNextLTPro-Bold.ttf'))  format('truetype'), url(asset-path('AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold')) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

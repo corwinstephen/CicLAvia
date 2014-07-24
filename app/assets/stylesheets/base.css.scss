@@ -14,6 +14,16 @@ body {
   padding:0;
 }
 
+dl {
+  dt {
+    font-weight:normal;
+  }
+
+  dd {
+
+  }
+}
+
 p {
   font-family:$font-body;
 }

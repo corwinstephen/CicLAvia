@@ -34,7 +34,7 @@ dl {
 
   dt {
     margin-bottom:$default-vertical-spacing / ($golden-ratio * $golden-ratio);
-    font-weight:bold;
+    font-family:$font-title-secondary;
   }
 
   dd {

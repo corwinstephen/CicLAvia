@@ -8,7 +8,7 @@
 #map
 .map-ciclavialogo
 .mapnav-container
-  - Route.all.each do |route|
-    %dl.mapnav-route.selected{:data => { :id => route.id }}
+  - Route.all.each_with_index do |route, index|
+    %dl.mapnav-route{:data => { :id => route.id }, :class => (index == 0 ? "selected" : "")}
       %dt= route.name
       %dd September 15, 2014

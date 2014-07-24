@@ -9,7 +9,7 @@
     this.name = null;
     this.color = null;
     this.routeSegments = [];
-    this.active = true;
+    this.active = false;
 
     this._parseOptions();
   };
@@ -19,6 +19,7 @@
       this.id = this.options.id;
       this.name = this.options.name;
       this.color = this.options.color;
+      this.active = this.options.active;
 
       if(this.options.route_segments){
         _.each(this.options.route_segments, function(routeSegmentData){

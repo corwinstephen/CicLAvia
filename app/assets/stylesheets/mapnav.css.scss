@@ -1,8 +1,9 @@
 .mapnav-container {
-  background-color:$light-grey;
+  background-color:#FFF;
   bottom:0;
+  box-shadow:1px 0px 2px 1px darken($light-grey, 10%);
   left:0;
-  padding:$default-vertical-spacing;
+  padding:$default-vertical-spacing * $golden-ratio;
   position:absolute;
   top:0;
   width:350px;
@@ -12,10 +13,10 @@ dl {
   padding:$default-vertical-spacing;
   font-size:14px;
   margin-bottom:0;
-  border-radius:1px;
+  border-radius:3px;
   margin-top:$default-vertical-spacing;
-  background-color:$grey;
-  border:3px solid $grey;
+  background-color:lighten($light-grey, 4%);
+  border:3px solid $light-grey;
 
   &:first-child {
     margin-top:0;
@@ -23,13 +24,12 @@ dl {
 
   &:hover {
     cursor:pointer;
-    border-color:darken($grey, 5%);
+    border-color:darken($light-grey, 5%);
   }
 
   &.selected {
     background-color:#FFF;
     border:3px solid $yellow;
-    border-radius:3px;
   }
 
   dt {

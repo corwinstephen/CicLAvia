@@ -54,8 +54,13 @@
     }
 
     _.each(Ciclavia.PageData.routes, function(routeData, index){
-      var color = colors[index % 3];
-      routes.push(new Ciclavia.Models.Route(_.extend($.parseJSON(routeData), {color: color})));
+      var options = {
+        color: colors[index % 3],
+        active: (index === 0 ? true : false)
+      };
+      
+      var route = new Ciclavia.Models.Route(_.extend($.parseJSON(routeData), options));
+      routes.push(route);
     });
   };
 

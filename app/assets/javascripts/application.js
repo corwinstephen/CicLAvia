@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require underscore_string
+//= require stapes
 // 
 // -- Application Files -- //
 // 

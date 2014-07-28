@@ -1,20 +1,20 @@
 (function(Ciclavia, _){
   "use strict";
 
-  Ciclavia.Models.Route = function(options){
-    if(_.isString(options)){
-      options = $.parseJSON(options);
-    }
-    this.options = options;
-    this.name = null;
-    this.color = null;
-    this.routeSegments = [];
-    this.active = false;
+  Ciclavia.Models.Route = Stapes.subclass({
+    constructor: function(options){
+      if(_.isString(options)){
+        options = $.parseJSON(options);
+      }
+      this.options = options;
+      this.name = null;
+      this.color = null;
+      this.routeSegments = [];
+      this.active = false;
 
-    this._parseOptions();
-  };
+      this._parseOptions();
+    },
 
-  Ciclavia.Models.Route.prototype = {
     _parseOptions: function(){
       this.id = this.options.id;
       this.name = this.options.name;
@@ -35,6 +35,6 @@
         });
       }.bind(this));
     }
-  };
+  });
 
 })(Ciclavia, _);

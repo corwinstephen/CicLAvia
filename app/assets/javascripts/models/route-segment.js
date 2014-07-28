@@ -1,17 +1,17 @@
 (function(Ciclavia, _){
   "use strict";
 
-  Ciclavia.Models.RouteSegment = function(options){
-    if(_.isString(options)){
-      options = $.parseJSON(options);
-    }
-    this.options = options;
-    this.coordinates = null;
+  Ciclavia.Models.RouteSegment = Stapes.subclass({
+    constructor: function(options){
+      if(_.isString(options)){
+        options = $.parseJSON(options);
+      }
+      this.options = options;
+      this.coordinates = null;
 
-    this._parseOptions();
-  };
+      this._parseOptions();
+    },
 
-  Ciclavia.Models.RouteSegment.prototype = {
     _parseOptions: function(){
       if(this.options.coordinates){
         this.coordinates = this.options.coordinates;
@@ -28,6 +28,6 @@
       }
       return this._lineElement;
     }
-  };
+  });
 
 })(Ciclavia, _);

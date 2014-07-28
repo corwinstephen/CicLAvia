@@ -7,30 +7,59 @@
   position:absolute;
   top:0;
   width:350px;
+
+  dl {
+    position:relative;
+    padding:$default-vertical-spacing * $golden-ratio;
+    font-size:14px;
+    margin-bottom:0;
+    margin-top:$default-vertical-spacing;
+    background-color:#FFF;
+    border:1px solid $light-grey;
+    padding-left: $default-measurement * 2;
+
+    &:first-child {
+      margin-top:0;
+    }
+
+    &:hover {
+      cursor:pointer;
+    }
+
+    dt {
+      margin-bottom:$default-vertical-spacing / ($golden-ratio * $golden-ratio);
+      font-family:$font-title-secondary;
+    }
+
+    dd {
+          
+    }
+
+    .mapnav-pindrop {
+      background:url(image-path('icons/mapmarker.png')) no-repeat;
+      position:absolute;
+      top:50%;
+      margin-top:-$default-measurement / 2;
+      left:$default-vertical-spacing;
+      width:$default-measurement;
+      height:$default-measurement + 1;
+      background-size:$default-measurement;
+    }
+  }
 }
 
-dl {
-  padding:$default-vertical-spacing * $golden-ratio;
-  font-size:14px;
-  margin-bottom:0;
-  margin-top:$default-vertical-spacing;
-  background-color:#FFF;
-  border:1px solid $light-grey;
+.mapnav-searchbar {
 
-  &:first-child {
-    margin-top:0;
-  }
-
-  &:hover {
-    cursor:pointer;
-  }
-
-  dt {
-    margin-bottom:$default-vertical-spacing / ($golden-ratio * $golden-ratio);
-    font-family:$font-title-secondary;
-  }
-
-  dd {
-        
+  input[type=text] {
+    background-color:#FFF;
+    border:1px solid $light-grey;
+    border-radius:20px;
+    height:$default-vertical-spacing * $golden-ratio * $golden-ratio * $golden-ratio;
+    width:100%;
+    box-sizing:border-box;
+    margin-bottom:$default-vertical-spacing * $golden-ratio;
+    padding:$default-vertical-spacing $default-vertical-spacing * $golden-ratio;
+    outline:none;
+    font-size:14px;
   }
 }

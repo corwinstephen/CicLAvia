@@ -8,7 +8,11 @@
 #map
 .map-ciclavialogo
 .mapnav-container
+  .mapnav-searchbar
+    %input{ type: :text, placeholder: "Find a route" }
+
   - Route.all.each_with_index do |route, index|
     %dl.mapnav-route{:data => { :id => route.id }}
+      .mapnav-pindrop
       %dt= route.name
       %dd September 15, 2014

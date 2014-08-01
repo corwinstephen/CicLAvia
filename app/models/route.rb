@@ -1,9 +1,11 @@
 class Route < ActiveRecord::Base
-  belongs_to :user
   has_many :route_segments, dependent: :destroy
   has_many :places, dependent: :destroy
 
-  validates_presence_of :name
+  belongs_to :user
+  belongs_to :event
+
+  validates_presence_of :name, :event
 
   def coordinates
     route_segments.map do |segment|

@@ -9,6 +9,11 @@ class KMLParser
     @document_name ||= @parsed.at_css("name").content
   end
 
+  def document_date
+    # Incorrect, but documents currently don't have dates
+    Time.now
+  end
+
   def each_placemark
     @parsed.css("Placemark").each do |placemark|
       yield(Placemark.new(placemark))

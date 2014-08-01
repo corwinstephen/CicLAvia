@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711044422) do
+ActiveRecord::Schema.define(version: 20140801044416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20140711044422) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "events", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "date",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "places", force: true do |t|
     t.string   "name",        null: false
@@ -59,8 +66,10 @@ ActiveRecord::Schema.define(version: 20140711044422) do
     t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id",   null: false
   end
 
+  add_index "routes", ["event_id"], name: "index_routes_on_event_id", using: :btree
   add_index "routes", ["user_id"], name: "index_routes_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

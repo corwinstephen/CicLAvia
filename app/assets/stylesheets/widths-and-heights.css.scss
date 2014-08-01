@@ -1,3 +1,5 @@
 $golden-ratio:1.61803398875;
 $default-vertical-spacing:10px;
 $default-measurement:$default-vertical-spacing * $golden-ratio * $golden-ratio;
+$default-measurement-2:$default-measurement * $golden-ratio;
+$default-measurement-3:$default-measurement-2 * $golden-ratio;

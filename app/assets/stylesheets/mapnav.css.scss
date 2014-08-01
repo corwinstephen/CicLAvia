@@ -1,5 +1,5 @@
 .mapnav-container {
-  background-color:rgba(#FFF, .8);
+  background-color:rgba(#FFF, .7);
   bottom:0;
   box-shadow:1px 0px 2px 1px darken($light-grey, 10%);
   left:0;
@@ -7,15 +7,18 @@
   position:absolute;
   top:0;
   width:350px;
+}
+
+.mapnav-event {
+  position:relative;
 
   dl {
-    position:relative;
-    padding:$default-vertical-spacing * $golden-ratio;
+    background-color:#FFF;
+    border:1px solid $light-grey;
     font-size:14px;
     margin-bottom:0;
     margin-top:$default-vertical-spacing;
-    background-color:#FFF;
-    border:1px solid $light-grey;
+    padding:$default-vertical-spacing * $golden-ratio;
     padding-left: $default-measurement * 2;
 
     &:first-child {
@@ -26,6 +29,9 @@
       cursor:pointer;
     }
 
+    &.selected {
+    }
+
     dt {
       margin-bottom:$default-vertical-spacing / ($golden-ratio * $golden-ratio);
       font-family:$font-title-secondary;
@@ -34,18 +40,47 @@
     dd {
           
     }
+  }
+}
 
-    .mapnav-pindrop {
-      background:url(image-path('icons/mapmarker.png')) no-repeat;
-      position:absolute;
-      top:50%;
-      margin-top:-$default-measurement / 2;
-      left:$default-vertical-spacing;
-      width:$default-measurement;
-      height:$default-measurement + 1;
-      background-size:$default-measurement;
+.mapnav-pindropicon {
+  background:url(image-path('icons/mapmarker.png')) no-repeat;
+  background-size:$default-measurement;
+  height:$default-measurement;
+  left:$default-vertical-spacing;
+  margin-top:-$default-measurement / 2;
+  position:absolute;
+  top:37px;
+  width:$default-measurement;
+}
+
+.mapnav-routes {
+  padding-left:0;
+  display:none;
+
+  li {
+    list-style:none;
+    position:relative;
+    padding:$default-vertical-spacing * $golden-ratio;
+    padding-left:40px;
+    background-color:rgba(#FFF, .8);
+    border-bottom:1px solid lighten($light-grey, 4%);
+
+    &:hover {
+      border-right:3px solid $blue;
     }
   }
+}
+
+.mapnav-routeicon {
+  background:url(image-path('icons/route.png')) no-repeat;
+  background-size:25px;
+  height:25px;
+  left:$default-vertical-spacing;
+  margin-top:-$default-measurement / 2;
+  position:absolute;
+  top:24px;
+  width:25px;
 }
 
 .mapnav-searchbar {

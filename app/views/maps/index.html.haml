@@ -12,7 +12,20 @@
     %input{ type: :text, placeholder: "Find a route" }
 
   - Route.all.each_with_index do |route, index|
-    %dl.mapnav-route{:data => { :id => route.id }}
-      .mapnav-pindrop
-      %dt= route.name
-      %dd September 15, 2014
+    .mapnav-event
+      .mapnav-pindropicon
+      %dl{:data => { :id => route.id }}
+        %dt= route.name
+        %dd September 15, 2014
+
+      %ul.mapnav-routes
+        %li
+          .mapnav-routeicon
+          The good route
+        %li
+          .mapnav-routeicon
+          The good route
+
+        %li
+          .mapnav-routeicon
+          The good route

@@ -20,7 +20,8 @@
   };
 
   var setEvents = function(){
-    $(".mapnav-route").click(function(){
+    $(".mapnav-event dl").click(function(){
+      $(this).next(".mapnav-routes").slideToggle(150);
       var id = $(this).data("id");
       var clickedRoute = _.find(routes, function(item){
         return (item.id === id);

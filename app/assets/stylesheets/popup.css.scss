@@ -1,0 +1,47 @@
+#infopopup {
+  width:47%;
+  min-height:300px;
+  left:50%;
+  top:50%;
+  margin-left:-23.5%;
+  margin-top:-150px;
+  background-color:#fff;
+  z-index:3;
+  position:fixed;
+  padding:2%;
+  border-radius:3px;
+}
+
+.infopopup-title, .infopopup-subtitle, .infopopup-description {
+  margin-bottom:$default-vertical-spacing;
+}
+
+.infopopup-title {
+  color:$blue;
+  font-family:$font-title;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.infopopup-subtitle {
+  color:$grey;
+}
+
+.infopopup-description {
+
+}
+
+table.infopopup-details {
+  margin-bottom:$default-vertical-spacing;
+
+  td:first-child {
+    color:$yellow;
+    padding-right:10px;
+    text-align:right;
+  }
+
+  dd {
+
+  }
+}
+

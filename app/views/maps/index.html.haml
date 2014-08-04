@@ -1,31 +1,38 @@
 = content_for :js_for_head do
   :javascript
     Ciclavia.PageData = {
-      routes: #{Route.all.map { |route| route.to_json } },
+      events: #{Event.all.map { |event| event.to_json } },
       midpoint: #{Route.last.try(:midpoint)}
     }
 
+#blackout
+#infopopup
+  .infopopup-title A good CicLAvia route
+  .infopopup-subtitle Submitted by Stephen Corwin
+  %table.infopopup-details
+    %tr
+      %td Departure time
+      %td 10:45am
+    %tr.infopopup-departurelocation
+      %td Meets at
+      %td Lincoln Blvd & Broadway
+  %p.infopopup-description
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus felis, convallis sed odio vel, posuere tincidunt lacus. In sodales libero ac turpis mollis, ultrices sollicitudin dui mollis. Vestibulum dapibus turpis quam, sit amet mollis augue sagittis in. Integer eleifend nisi fringilla elementum dignissim. Proin dapibus, lectus sit amet commodo ultricies, turpis ligula aliquam nulla, ut elementum massa velit et lectus. Pellentesque iaculis arcu nec ligula dictum, vitae faucibus neque convallis.
 #map
 .map-ciclavialogo
 .mapnav-container
   .mapnav-searchbar
     %input{ type: :text, placeholder: "Find a route" }
 
-  - Route.all.each_with_index do |route, index|
+  - Event.all.each_with_index do |event, index|
     .mapnav-event
       .mapnav-pindropicon
-      %dl{:data => { :id => route.id }}
-        %dt= route.name
-        %dd September 15, 2014
+      %dl{:data => { :id => event.id }}
+        %dt= event.name
+        %dd= event.date.strftime("%B %d, %Y")
 
       %ul.mapnav-routes
-        %li
-          .mapnav-routeicon
-          The good route
-        %li
-          .mapnav-routeicon
-          The good route
-
-        %li
-          .mapnav-routeicon
-          The good route
+        - event.routes.each do |route|
+          %li
+            .mapnav-routeicon
+            = route.name

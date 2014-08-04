@@ -9,12 +9,13 @@ a {
 body {
   color:#565656;
   font-family:$font-body;
-  font-size:12px;
+  font-size:14px;
   margin:0;
   padding:0;
 }
 
 dl {
+  margin-bottom:$default-vertical-spacing;
   dt {
     font-weight:normal;
   }
@@ -26,4 +27,5 @@ dl {
 
 p {
   font-family:$font-body;
+  line-height:20px;
 }

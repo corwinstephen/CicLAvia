@@ -2,7 +2,7 @@
   "use strict";
 
   var map = null;
-  var routes = [];
+  var events = [];
   var colors = ['#00a5e4', '#4db541', '#ffd500'];
 
   var init = function(){
@@ -14,55 +14,64 @@
 
     map = createMap();
 
-    initRoutes();
-    setEvents();
+    initEvents();
+    setEventHandlers();
     render();
   };
 
-  var setEvents = function(){
+  var setEventHandlers = function(){
     $(".mapnav-event dl").click(function(){
       $(this).next(".mapnav-routes").slideToggle(150);
       var id = $(this).data("id");
-      var clickedRoute = _.find(routes, function(item){
+      var clickedEvent = _.find(events, function(item){
         return (item.id === id);
       });
 
-      clickedRoute.active = !clickedRoute.active;
+      clickedEvent.set("active", !clickedEvent.get("active"));
       $(this).toggleClass("selected");
-      render();
     });
+
+
   };
 
   var render = function(){
-    if(routes.length === 0){
-      console.log("No routes to render");
+    if(events.length === 0){
+      console.log("No events to render");
     }
 
-    _.each(routes, function(route){
-      _.each(route.lineElementsForMap(), function(element){
-        if(route.active){
-          element.addTo(map);
-        } else {
-          map.removeLayer(element);
-        }
+    _.each(events, function(event){
+      _.each(event.routes, function(route){
+        _.each(route.lineElementsForMap(), function(element){
+          if(event.get("active") && route.active){
+            element.addTo(map);
+          } else {
+            map.removeLayer(element);
+          }
+        });
       });
     });
   };
 
-  var initRoutes = function(){
-    if(!_.isArray(Ciclavia.PageData.routes)){
-      throw "Route data not defined";
+  var initEvents = function(){
+    if(!_.isArray(Ciclavia.PageData.events)){
+      throw "Event data not defined";
     }
 
-    _.each(Ciclavia.PageData.routes, function(routeData, index){
+    _.each(Ciclavia.PageData.events, function(eventData, index){
       var options = {
         color: colors[index % 3],
         active: (index === 0 ? true : false)
       };
       
-      var route = new Ciclavia.Models.Route(_.extend($.parseJSON(routeData), options));
-      routes.push(route);
+      var event = newEventWithBindings(_.extend($.parseJSON(eventData), options));
+      events.push(event);
     });
+  };
+
+  var newEventWithBindings = function(eventOptions){
+    var event = new Ciclavia.Models.Event(eventOptions);
+    event.on("change:active", render);
+    return event;
   };
 
   var createMap = function(){

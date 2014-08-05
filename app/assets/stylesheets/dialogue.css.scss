@@ -12,6 +12,20 @@
   border-radius:3px;
 }
 
+.dialogue-close {
+  background:url(image-path("icons/close.png")) center center no-repeat;
+  background-size:$default-measurement - 1;
+  height:$default-measurement;
+  width:$default-measurement;
+  display:inline-block;
+  float:right;
+  margin-top:-1%;
+
+  &:hover {
+    cursor:pointer;
+  }
+}
+
 .dialogue-title, .dialogue-subtitle, .dialogue-description {
   margin-bottom:$default-vertical-spacing;
 }
@@ -25,10 +39,6 @@
 
 .dialogue-subtitle {
   color:$grey;
-}
-
-.dialogue-description {
-
 }
 
 table.dialogue-details {

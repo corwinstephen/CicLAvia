@@ -17,6 +17,7 @@
 //= require underscore
 //= require underscore_string
 //= require stapes
+//= require handlebars.runtime
 // 
 // -- Application Files -- //
 // 
@@ -24,6 +25,7 @@
 //= require_tree ./config
 //= require_tree ./modules
 //= require_tree ./application_controllers
+//= require_tree ./templates
 //= require main
 //
 //= require_tree .

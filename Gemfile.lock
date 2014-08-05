@@ -70,6 +70,11 @@ GEM
       actionpack (>= 3.0)
     haml (4.0.5)
       tilt
+    handlebars_assets (0.17.1)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -182,6 +187,7 @@ DEPENDENCIES
   activeadmin!
   devise
   haml
+  handlebars_assets
   jbuilder (~> 1.2)
   jquery-rails
   nokogiri

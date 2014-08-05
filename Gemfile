@@ -12,6 +12,7 @@ gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'nokogiri'
 gem 'pry'
+gem 'handlebars_assets'
 
 gem 'rails_12factor', group: :production
 

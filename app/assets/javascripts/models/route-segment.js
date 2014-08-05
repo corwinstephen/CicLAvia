@@ -18,6 +18,7 @@
       }
     },
 
+    // Returns a (cached) Leaflet polyline element for this RouteSegment
     lineElementForMap: function(options){
       options = options || {};
       
@@ -25,8 +26,18 @@
         this._lineElement = Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.coordinates, {
           color: options.color
         });
+
+        this._bindEventsToLineElement(this._lineElement);
       }
       return this._lineElement;
+    },
+
+    _bindEventsToLineElement: function(lineElement){
+      lineElement.on("click", this._emitClickEvent.bind(this));
+    },
+
+    _emitClickEvent: function(e){
+      this.emit("click", this);
     }
   });
 

@@ -1,9 +1,17 @@
 (function(Stapes){
-  Ciclavia.Modules.RouteDialog = Stapes.subclass({
+  Ciclavia.Modules.RouteDialogue = Stapes.subclass({
     template: 'route-dialogue',
 
-    constructor: function(){
+    $dialogue: null,
 
+    constructor: function(route){
+      this.$dialogue = HandlebarsTemplates[this.template]({
+        name: route.name
+      });
+    },
+
+    show: function(){
+      $("body").append(this.$dialogue);
     }
   });
 })(Stapes);

@@ -77,7 +77,19 @@
   var newEventWithBindings = function(eventOptions){
     var event = new Ciclavia.Models.Event(eventOptions);
     event.on("change:active", render);
+
+    // Bind to route clicks
+    _.each(event.routes, _listenForRouteClicks.bind(this));
     return event;
+  };
+
+  var _listenForRouteClicks = function(route){
+    route.on("click", _showRouteDialogForRoute);
+  };
+
+  var _showRouteDialogForRoute = function(route){
+    var dialog = new Ciclavia.Modules.RouteDialogue(route);
+    dialog.show();
   };
 
   var createMap = function(){

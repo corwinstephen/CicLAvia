@@ -23,7 +23,9 @@
 
       if(this.options.route_segments){
         _.each(this.options.route_segments, function(routeSegmentData){
-          this.routeSegments.push(new Ciclavia.Models.RouteSegment(routeSegmentData));
+          var newSegment = new Ciclavia.Models.RouteSegment(routeSegmentData);
+          newSegment.on("click", this._emitClickEvent.bind(this));
+          this.routeSegments.push(newSegment);
         }.bind(this));
       }
     },
@@ -34,6 +36,10 @@
           color: this.color
         });
       }.bind(this));
+    },
+
+    _emitClickEvent: function(){
+      this.emit("click", this);
     }
   });
 

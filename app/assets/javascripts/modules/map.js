@@ -5,6 +5,10 @@
   var events = [];
   var colors = ['#00a5e4', '#4db541', '#ffd500'];
 
+  var CSS = {
+    MAP: "#map"
+  };
+
   var init = function(){
     // Map width
     fitMapToWindow();
@@ -20,6 +24,10 @@
   };
 
   var setEventHandlers = function(){
+    _bindToEventClick();
+  };
+
+  var _bindToEventClick = function(){
     $(".mapnav-event dl").click(function(){
       $(this).next(".mapnav-routes").slideToggle(150);
       var id = $(this).data("id");
@@ -30,8 +38,6 @@
       clickedEvent.set("active", !clickedEvent.get("active"));
       $(this).toggleClass("selected");
     });
-
-
   };
 
   var render = function(){

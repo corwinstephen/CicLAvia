@@ -1,4 +1,4 @@
-#infopopup {
+#dialogue {
   width:47%;
   min-height:300px;
   left:50%;
@@ -12,26 +12,26 @@
   border-radius:3px;
 }
 
-.infopopup-title, .infopopup-subtitle, .infopopup-description {
+.dialogue-title, .dialogue-subtitle, .dialogue-description {
   margin-bottom:$default-vertical-spacing;
 }
 
-.infopopup-title {
+.dialogue-title {
   color:$blue;
   font-family:$font-title;
   font-weight:bold;
   font-size:16px;
 }
 
-.infopopup-subtitle {
+.dialogue-subtitle {
   color:$grey;
 }
 
-.infopopup-description {
+.dialogue-description {
 
 }
 
-table.infopopup-details {
+table.dialogue-details {
   margin-bottom:$default-vertical-spacing;
 
   td:first-child {

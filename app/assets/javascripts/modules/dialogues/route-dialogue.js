@@ -1,6 +1,8 @@
 (function(Stapes){
   Ciclavia.Modules.RouteDialog = Stapes.subclass({
-    initialize: function(){
+    template: 'route-dialogue',
+
+    constructor: function(){
 
     }
   });

@@ -11,6 +11,7 @@
     },
 
     show: function(){
+      Ciclavia.Modules.Blackout.on();
       $("body").append(this.$dialogue);
     }
   });

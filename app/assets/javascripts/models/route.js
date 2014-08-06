@@ -7,36 +7,34 @@
         options = $.parseJSON(options);
       }
       this.options = options;
-      this.name = null;
-      this.color = null;
-      this.routeSegments = [];
-      this.active = true;
-
       this._parseOptions();
     },
 
     _parseOptions: function(){
-      this.id = this.options.id;
-      this.name = this.options.name;
-      this.description = this.options.description;
-      this.meetingPoint = this.options.meetingPoint;
-      this.departsAt = this.options.departsAt;
-      this.color = this.options.color;
-      this.active = this.options.active || this.active;
+      this.set({
+        id: this.options.id,
+        name: this.options.name,
+        description: this.options.description,
+        meetingPoint: this.options.meetingPoint,
+        departsAt: this.options.departsAt,
+        color: this.options.color,
+        active: this.options.active || true,
+        routeSegments: []
+      });
 
       if(this.options.routeSegments){
         _.each(this.options.routeSegments, function(routeSegmentData){
           var newSegment = new Ciclavia.Models.RouteSegment(routeSegmentData);
           newSegment.on("click", this._emitClickEvent.bind(this));
-          this.routeSegments.push(newSegment);
+          this.get("routeSegments").push(newSegment);
         }.bind(this));
       }
     },
 
     lineElementsForMap: function(){
-      return _.map(this.routeSegments, function(segment){
+      return _.map(this.get("routeSegments"), function(segment){
         return segment.lineElementForMap({
-          color: this.color
+          color: this.get("color")
         });
       }.bind(this));
     },

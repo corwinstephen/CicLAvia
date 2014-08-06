@@ -48,7 +48,7 @@
     _.each(events, function(event){
       _.each(event.routes, function(route){
         _.each(route.lineElementsForMap(), function(element){
-          if(event.get("active") && route.active){
+          if(event.get("active") && route.get("active")){
             element.addTo(map);
           } else {
             map.removeLayer(element);

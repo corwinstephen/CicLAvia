@@ -23,14 +23,14 @@
     },
 
     _routeAttributesForTemplate: function(route){
-      var departureDate = new Date(route.departsAt);
+      var departureDate = new Date(route.get("departsAt"));
       var ampm = (departureDate.getHours() < 12) ? "am" : "pm";
       var departureTime = (departureDate.getHours() % 12).toString() + ":" + departureDate.getMinutes().toString() + ampm;
 
       return {
-        name: route.name,
-        description: route.description,
-        meetingPoint: route.meetingPoint,
+        name: route.get("name"),
+        description: route.get("description"),
+        meetingPoint: route.get("meetingPoint"),
         departsAt: $.datepicker.formatDate('M d, yy', departureDate) + " at " + departureTime
       };
     },

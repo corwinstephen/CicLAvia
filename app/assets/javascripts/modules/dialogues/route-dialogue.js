@@ -1,5 +1,12 @@
 (function(Stapes, $){
   Ciclavia.Modules.RouteDialogue = Stapes.subclass({
+    CSS: {
+      closeButton: ".dialogue-close",
+      description: ".dialogue-description",
+      descriptionTextarea: ".dialogue-descriptioninput",
+      hiddenClass: "hidden"
+    },
+
     template: 'route-dialogue',
 
     dialogue: null,
@@ -36,7 +43,36 @@
     },
 
     _setEvents: function(){
-      this.$dialogue.find(".dialogue-close").click(this._closeButtonClicked.bind(this));
+      // Close dialogue button
+      this.$dialogue.find(this.CSS.closeButton).click(this._closeButtonClicked.bind(this));
+
+      // Edit description
+      this.$dialogue.find(this.CSS.description)
+        .click(this._descriptionClicked.bind(this));
+      this.$dialogue.find(this.CSS.descriptionTextarea)
+        .blur(this._descriptionBlurred.bind(this));
+        
+
+    },
+
+    _descriptionClicked: function(){
+      this._enterEditDescriptionMode();
+    },
+
+    _descriptionBlurred: function(){
+      this._leaveEditDescriptionMode();
+    },
+
+    _enterEditDescriptionMode: function(){
+      $(this.CSS.description).addClass(this.CSS.hiddenClass);
+      $(this.CSS.descriptionTextarea)
+        .removeClass(this.CSS.hiddenClass)
+        .select();
+    },
+
+    _leaveEditDescriptionMode: function(){
+      $(this.CSS.description).removeClass(this.CSS.hiddenClass);
+      $(this.CSS.descriptionTextarea).addClass(this.CSS.hiddenClass);
     },
 
     _closeButtonClicked: function(){

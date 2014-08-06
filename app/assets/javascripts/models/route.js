@@ -18,11 +18,14 @@
     _parseOptions: function(){
       this.id = this.options.id;
       this.name = this.options.name;
+      this.description = this.options.description;
+      this.meetingPoint = this.options.meetingPoint;
+      this.departsAt = this.options.departsAt;
       this.color = this.options.color;
       this.active = this.options.active || this.active;
 
-      if(this.options.route_segments){
-        _.each(this.options.route_segments, function(routeSegmentData){
+      if(this.options.routeSegments){
+        _.each(this.options.routeSegments, function(routeSegmentData){
           var newSegment = new Ciclavia.Models.RouteSegment(routeSegmentData);
           newSegment.on("click", this._emitClickEvent.bind(this));
           this.routeSegments.push(newSegment);

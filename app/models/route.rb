@@ -25,7 +25,10 @@ class Route < ActiveRecord::Base
     {
       id: id,
       name: name,
-      route_segments: route_segments.as_json
+      description: description,
+      meetingPoint: meeting_point,
+      departsAt: departs_at,
+      routeSegments: route_segments.as_json
     }
   end
 end

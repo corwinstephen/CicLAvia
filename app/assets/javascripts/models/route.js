@@ -10,6 +10,19 @@
       this._parseOptions();
     },
 
+    save: function(){
+      var url = "/routes/" + this.get("id");
+      $.ajax(url, {
+        type: "PUT",
+        data: {
+          route:{
+            name: this.get("name"),
+            description: this.get("description")
+          }
+        }
+      });
+    },
+
     _parseOptions: function(){
       this.set({
         id: this.options.id,

@@ -13,6 +13,8 @@
     $dialogue: null,
 
     constructor: function(route){
+      this.route = route;
+      
       this.dialogue = HandlebarsTemplates[this.template](this._routeAttributesForTemplate(route));
       this.$dialogue = $(this.dialogue);
 
@@ -51,8 +53,12 @@
         .click(this._descriptionClicked.bind(this));
       this.$dialogue.find(this.CSS.descriptionTextarea)
         .blur(this._descriptionBlurred.bind(this));
-        
+      this.route.on("change:description", this._updateDescription.bind(this));
+    },
 
+    _updateDescription: function(){
+      this.route.save();
+      this.$dialogue.find(this.CSS.description).html(this.route.get("description"));
     },
 
     _descriptionClicked: function(){
@@ -60,6 +66,8 @@
     },
 
     _descriptionBlurred: function(){
+      var newDescription = this.$dialogue.find(this.CSS.descriptionTextarea).val();
+      this.route.set("description", newDescription);
       this._leaveEditDescriptionMode();
     },
 

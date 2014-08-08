@@ -33,15 +33,15 @@
 .dialogue-description, .dialogue-descriptioninput {
   box-sizing:border-box;
   min-height:125px;
-  width:99%; // Right side of border gets hidden without this for some reason.
   border:1px solid #fff;
+  width:100%;
   border-radius:2px;
   padding:$default-vertical-spacing;
 }
 
 .dialogue-description {
   &:hover {
-    border:1px solid $light-grey;
+    border-color:$light-grey;
     cursor:pointer;
   }
 }

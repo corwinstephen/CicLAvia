@@ -166,12 +166,8 @@
 
     modeChanged: function(){
       if(this.get("mode") === "submit"){
-        this.switchToSubmitMode();
+        Ciclavia.Modules.RouteSubmitsController.start();
       }
-    },
-
-    switchToSubmitMode: function(){
-      Ciclavia.Modules.Blackout.on();
     }
   });
 })(Ciclavia, _);

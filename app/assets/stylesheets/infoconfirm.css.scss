@@ -1,0 +1,23 @@
+.infoconfirm {
+    width:47%;
+    min-height:300px;
+    left:50%;
+    top:50%;
+    margin-left:-23.5%;
+    margin-top:-150px;
+    z-index:4;
+    color:#fff;
+    position:fixed;
+    padding:2%;
+    border-radius:3px;
+    text-align:center;
+    font-size:30px;
+}
+
+.infoconfirm-info {
+  margin-bottom:$default-vertical-spacing;
+}
+
+.infoconfirm-buttons {
+
+}

@@ -4,5 +4,6 @@ window.Ciclavia = {
   Modules: {},
   Models: {},
   Helpers: {},
-  PageData: {}
+  PageData: {},
+  Core: {}
 };

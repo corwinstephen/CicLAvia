@@ -2,7 +2,6 @@
   "use strict";
 
   var map = null;
-  var events = [];
   var colors = ["#00a5e4", "#4db541", "#ffd500"];
 
   var CSS = {
@@ -51,8 +50,17 @@
 
   Ciclavia.Modules.Map = Stapes.subclass({
     constructor: function(){
+      // Make this instance available to the core
+      Ciclavia.Core.map = this;
+
       // Attributes
-      this.set("mode", "view");
+      this.set({
+        mode: "view",
+        events: []
+      });
+
+      // Nav
+      new Ciclavia.Modules.Mapnav();
 
       // Map width
       this.fitMapToWindow();
@@ -101,13 +109,13 @@
         };
         
         var event = this.newEventWithBindings(_.extend($.parseJSON(eventData), options));
-        events.push(event);
+        this.get("events").push(event);
       }.bind(this));
     },
 
     newEventWithBindings: function(eventOptions){
       var event = new Ciclavia.Models.Event(eventOptions);
-      event.on("change:active", this.render);
+      event.on("change:active", this.render.bind(this));
 
       // Bind to route clicks
       _.each(event.routes, this._listenForRouteClicks.bind(this));
@@ -116,24 +124,10 @@
 
     setEventHandlers: function(){
       // Clicks
-      this._bindToEventClick();
       this._bindtoSubmitModeButton();
 
       // Listeners
       this.on("change:mode", this.modeChanged.bind(this));
-    },
-
-    _bindToEventClick: function(){
-      $(".mapnav-event dl").click(function(){
-        $(this).next(".mapnav-routes").slideToggle(150);
-        var id = $(this).data("id");
-        var clickedEvent = _.find(events, function(item){
-          return (item.id === id);
-        });
-
-        clickedEvent.set("active", !clickedEvent.get("active"));
-        $(this).toggleClass("selected");
-      });
     },
 
     _bindtoSubmitModeButton: function(){
@@ -143,11 +137,12 @@
     },
 
     render: function(){
-      if(events.length === 0){
+      if(this.get("events").length === 0){
         console.log("No events to render");
+        return;
       }
 
-      _.each(events, function(event){
+      _.each(this.get("events"), function(event){
         _.each(event.routes, function(route){
           _.each(route.lineElementsForMap(), function(element){
             if(event.get("active") && route.get("active")){

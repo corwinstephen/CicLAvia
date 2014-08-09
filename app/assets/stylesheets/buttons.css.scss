@@ -2,10 +2,11 @@
   border-radius:20px;
   border:none;
   font-size:14px;
-  font-weight:bold;
+  font-family:$font-title-secondary;
+  padding:7px 19px;
 
   &:hover {
-    -webkit-box-shadow:0 0 6px rgba(0, 0, 0, .6);
+    -webkit-box-shadow:0 0 4px rgba(0, 0, 0, .4);
   }
 
   &.wide {

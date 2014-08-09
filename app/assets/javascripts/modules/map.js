@@ -25,6 +25,7 @@
 
   var setEventHandlers = function(){
     _bindToEventClick();
+    _bindtoSubmitModeButton();
   };
 
   var _bindToEventClick = function(){
@@ -38,6 +39,10 @@
       clickedEvent.set("active", !clickedEvent.get("active"));
       $(this).toggleClass("selected");
     });
+  };
+
+  var _bindtoSubmitModeButton = function(){
+    $("#submit-mode-button").click(switchToSubmitMode);
   };
 
   var render = function(){
@@ -128,6 +133,10 @@
     popup.uniqueId = uniqueId;
 
     return popup;
+  };
+
+  var switchToSubmitMode = function(){
+    Ciclavia.Modules.Blackout.on();
   };
   
   var mapClicked = function(mapClickEvent){

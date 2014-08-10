@@ -11,6 +11,9 @@
 
     points: new LatLngCollection(),
 
+    _lastLineElementForMap: null,
+    _currentLineElementForMap: null,
+
     constructor: function(){
     },
 
@@ -19,12 +22,23 @@
         throw "Received invalid latlng as point";
       }
 
+      this._lastLineElementForMap = this.currentLineElementForMap();
       this.points.push([latlng]);
+      this._currentLineElementForMap = null;
       this.emit(this.EVENTS.pointAdded);
     },
 
-    lineElementForMap: function(){
-      return Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.points.getAllAsArray());
+    currentLineElementForMap: function(){
+      if(this._currentLineElementForMap){
+        return this._currentLineElementForMap;
+      } else {
+        this._currentLineElementForMap = Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.points.getAllAsArray());
+        return this._currentLineElementForMap;
+      }
+    },
+
+    lastLineElementForMap: function(){
+      return this._lastLineElementForMap;
     }
   });
 

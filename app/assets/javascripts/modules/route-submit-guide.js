@@ -23,13 +23,11 @@
     },
 
     resetAll: function(){
-      this._clearAllStepsFromDOM();
       this.map.mapnav.show();
+      this.map.removeElement(this.routeCreator.currentLineElementForMap());
     },
 
     render: function(){
-      this._clearAllStepsFromDOM();
-
       var currentStepName = this.currentStepName();
       if(currentStepName === "instructions"){
 
@@ -41,6 +39,7 @@
       } else if(currentStepName === "clickPoints"){
 
         // Step 1
+        $(this.CSS.INSTRUCTIONS.container).remove();
         Ciclavia.Modules.Blackout.off();
         this.map.mapnav.hide();
       }
@@ -62,7 +61,9 @@
       if(this.currentStepName() === "clickPoints"){
         var latlng = clickEvent.latlng;
         this.routeCreator.addPoint([latlng.lat, latlng.lng]);
-        this.map.addElement(this.routeCreator.lineElementForMap());
+        this.map
+          .removeElement(this.routeCreator.lastLineElementForMap())
+          .addElement(this.routeCreator.currentLineElementForMap());
       }
     },
 
@@ -74,10 +75,6 @@
       } else {
         throw "Map changed to unknown mode";
       }
-    },
-
-    _clearAllStepsFromDOM: function(){
-      $(this.CSS.INSTRUCTIONS.container).remove();
     }
   });
 

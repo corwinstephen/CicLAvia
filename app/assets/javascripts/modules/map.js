@@ -185,6 +185,12 @@
 
     addElement: function(element){
       element.addTo(map);
+      return this;
+    },
+
+    removeElement: function(element){
+      map.removeLayer(element);
+      return this;
     },
 
     _listenForRouteClicks: function(route){

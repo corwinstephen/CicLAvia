@@ -1,6 +1,6 @@
 (function(){
   Ciclavia.Modules.RouteSubmitGuide = Stapes.subclass({
-    STEPS: ["instructions", "clickPoints"],
+    STEPS: ["instructions", "clickPoints", "enterInfo"],
     TEMPLATES: {
       instructions: "route-submits/instructions"
     },
@@ -9,6 +9,12 @@
       INSTRUCTIONS: {
         container: ".infoconfirm",
         okayButton: ".infoconfirm .okay"
+      },
+
+      BUTTONS: {
+        submitModeButton: "#submit-mode-button",
+        submitModeCancelButton: "#submit-mode-cancel-button",
+        submitModeDoneButton: "#submit-mode-done-button"
       }
     },
 
@@ -25,6 +31,7 @@
     resetAll: function(){
       this.map.mapnav.show();
       this.map.removeElement(this.routeCreator.currentLineElementForMap());
+      this._showButtonsFor(["submit mode"]);
       this.routeCreator.reset();
     },
 
@@ -36,6 +43,7 @@
         Ciclavia.Modules.Blackout.on();
         var renderedTemplate = HandlebarsTemplates[this.TEMPLATES.instructions]();
         $("body").append(renderedTemplate);
+        this._showButtonsFor([]);
 
       } else if(currentStepName === "clickPoints"){
 
@@ -43,6 +51,12 @@
         $(this.CSS.INSTRUCTIONS.container).remove();
         Ciclavia.Modules.Blackout.off();
         this.map.mapnav.hide();
+        this._showButtonsFor(["cancel submit", "done submitting"]);
+
+      } else if (currentStepName === "enterInfo"){
+        
+        // Step 2
+        
       }
     },
 
@@ -52,6 +66,9 @@
 
     _setListeners: function(){
       $(document).on("click", this.CSS.INSTRUCTIONS.okayButton, this.advanceToNextStep.bind(this));
+
+      this._bindtoSubmitModeButton();
+      this._bindtoCancelSubmitModeButton();
 
       this.on("change:step", this.render.bind(this));
       this.map.on("change:mode", this._modeChanged.bind(this));
@@ -76,6 +93,35 @@
       } else {
         throw "Map changed to unknown mode";
       }
+    },
+
+    _bindtoSubmitModeButton: function(){
+      var $button = $(this.CSS.BUTTONS.submitModeButton);
+      $button.click(function(){
+        this.emit("submitModeButtonClicked");
+      }.bind(this));
+    },
+
+    _bindtoCancelSubmitModeButton: function(){
+      $(this.CSS.BUTTONS.submitModeCancelButton).click(function(){
+        this.emit("submitModeCancelButtonClicked");
+      }.bind(this));
+    },
+
+    _showButtonsFor: function(arrayOfButtonNames){
+      var mapping = {
+        "submit mode": $(this.CSS.BUTTONS.submitModeButton),
+        "cancel submit": $(this.CSS.BUTTONS.submitModeCancelButton),
+        "done submitting": $(this.CSS.BUTTONS.submitModeDoneButton)
+      };
+
+      _.each(mapping, function($button, key){
+        if(_.contains(arrayOfButtonNames, key)){
+          $button.removeClass("hidden");
+        } else {
+          $button.addClass("hidden");
+        }
+      });
     }
   });
 

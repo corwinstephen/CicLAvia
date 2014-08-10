@@ -51,12 +51,7 @@
 
   Ciclavia.Modules.Map = Stapes.subclass({
     CSS: {
-      map: "#map",
-
-      BUTTONS: {
-        submitModeButton: "#submit-mode-button",
-        cancelSubmitModeButton: "#cancel-submit-mode-button"
-      }
+      map: "#map"
     },
 
     constructor: function(){
@@ -132,35 +127,16 @@
     },
 
     setEventHandlers: function(){
-      // Clicks
-      this._bindtoSubmitModeButton();
-      this._bindtoCancelSubmitModeButton();
-      this._bindToSubmitStepChange();
+      this._bindToSubmitButtonClicks();
     },
 
-    _bindtoSubmitModeButton: function(){
-      var $button = $(this.CSS.BUTTONS.submitModeButton);
-      $button.click(function(){
+    _bindToSubmitButtonClicks: function(){
+      this.routeSubmitGuide.on("submitModeButtonClicked", function(){
         this.set("mode", "submit");
       }.bind(this));
-    },
 
-    _bindtoCancelSubmitModeButton: function(){
-      $(this.CSS.BUTTONS.cancelSubmitModeButton).click(function(){
+      this.routeSubmitGuide.on("submitModeCancelButtonClicked", function(){
         this.set("mode", "view");
-        $(this.CSS.BUTTONS.cancelSubmitModeButton).addClass("hidden");
-        $(this.CSS.BUTTONS.submitModeButton).removeClass("hidden");
-      }.bind(this));
-    },
-
-    _bindToSubmitStepChange: function(){
-      this.routeSubmitGuide.on("change:step", function(step){
-        if(step === 0){
-          // Nothing yet
-        } else if(step === 1){
-          $(this.CSS.BUTTONS.submitModeButton).addClass("hidden");
-          $(this.CSS.BUTTONS.cancelSubmitModeButton).removeClass("hidden");
-        }
       }.bind(this));
     },
 

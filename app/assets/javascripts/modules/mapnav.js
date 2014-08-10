@@ -29,21 +29,21 @@
     },
 
     _bindToEventClick: function(){
-      $(".mapnav-event dl").click(function(){
-        var id = $(this).data("id");
+      $(".mapnav-event dl").click(function(e){
+        var id = $(e.currentTarget).data("id");
         var clickedEvent = _.find(Ciclavia.Core.map.get("events"), function(item){
           return (item.id === id);
         });
         
         clickedEvent.set("active", !clickedEvent.get("active"));
         if(clickedEvent.get("active")){
-          $(this).addClass("selected");
-          $(this).next(this.CSS.routesContainer).slideDown(150);
+          $(e.currentTarget).addClass("selected");
+          $(e.currentTarget).next(this.CSS.routesContainer).slideDown(150);
         } else {
-          $(this).removeClass("selected");
-          $(this).next(this.CSS.routesContainer).slideUp(150);
+          $(e.currentTarget).removeClass("selected");
+          $(e.currentTarget).next(this.CSS.routesContainer).slideUp(150);
         }
-      });
+      }.bind(this));
     }
   });
 })();

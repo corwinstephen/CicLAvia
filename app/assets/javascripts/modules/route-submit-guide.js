@@ -29,7 +29,6 @@
     },
 
     resetAll: function(){
-      this.set("step", 0, true);
       this.map.mapnav.show();
       this.map.removeElement(this.routeCreator.currentLineElementForMap());
       this._showButtonsFor(["submit mode"]);
@@ -77,7 +76,7 @@
     },
 
     _mapClicked: function(clickEvent){
-      if(this.currentStepName() === "clickPoints"){
+      if(this.map.get("mode") == "submit" && this.currentStepName() === "clickPoints"){
         var latlng = clickEvent.latlng;
         this.routeCreator.addPoint([latlng.lat, latlng.lng]);
         this.map

@@ -29,6 +29,7 @@
     },
 
     resetAll: function(){
+      this.set("step", 0, true);
       this.map.mapnav.show();
       this.map.removeElement(this.routeCreator.currentLineElementForMap());
       this._showButtonsFor(["submit mode"]);

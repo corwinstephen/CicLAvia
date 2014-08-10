@@ -9,12 +9,13 @@
       pointAdded: "pointAdded"
     },
 
-    points: new LatLngCollection(),
 
+    points: null,
     _lastLineElementForMap: null,
     _currentLineElementForMap: null,
 
     constructor: function(){
+      this.reset();
     },
 
     addPoint: function(latlng){
@@ -39,6 +40,12 @@
 
     lastLineElementForMap: function(){
       return this._lastLineElementForMap;
+    },
+
+    reset: function(){
+      this._lastLineElementForMap = null;
+      this._currentLineElementForMap = null;
+      this.points = new LatLngCollection();
     }
   });
 

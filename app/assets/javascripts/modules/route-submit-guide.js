@@ -25,6 +25,7 @@
     resetAll: function(){
       this.map.mapnav.show();
       this.map.removeElement(this.routeCreator.currentLineElementForMap());
+      this.routeCreator.reset();
     },
 
     render: function(){

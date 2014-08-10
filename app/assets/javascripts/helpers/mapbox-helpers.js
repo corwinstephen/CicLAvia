@@ -12,9 +12,9 @@
 
       return new L.Polyline(pointSet, {
         color: options.color || '#333',
-        weight: 5,
-        opacity: 1,
-        smoothFactor: 1
+        weight: options.weight || 5,
+        opacity: options.opacity || 1,
+        smoothFactor: options.smoothFactor || 1
       });
     }
   };

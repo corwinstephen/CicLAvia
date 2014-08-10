@@ -1,12 +1,12 @@
+// 
+// TODO: Make a separate module for the buttons at the top of the screen
+// 
+
 (function(Ciclavia, _){
   "use strict";
 
   var map = null;
   var colors = ["#00a5e4", "#4db541", "#ffd500"];
-
-  var CSS = {
-    MAP: "#map"
-  };
 
   // var openPointDialog = function(latlng){
   //   var uniqueId = _.uniqueId();
@@ -23,6 +23,7 @@
   // };
 
   var mapClicked = function(mapClickEvent){
+
     // console.log(mapClickEvent.latlng);
     // var popup = openPointDialog(mapClickEvent.latlng);
 
@@ -49,6 +50,15 @@
   };
 
   Ciclavia.Modules.Map = Stapes.subclass({
+    CSS: {
+      map: "#map",
+
+      BUTTONS: {
+        submitModeButton: "#submit-mode-button",
+        cancelSubmitModeButton: "#cancel-submit-mode-button"
+      }
+    },
+
     constructor: function(){
       // Make this instance available to the core
       Ciclavia.Core.map = this;
@@ -60,11 +70,12 @@
       });
 
       // Nav
-      new Ciclavia.Modules.Mapnav();
+      this.routeSubmitGuide = new Ciclavia.Modules.RouteSubmitGuide(this);
+      this.mapnav = new Ciclavia.Modules.Mapnav();
 
       // Map width
       this.fitMapToWindow();
-      $(window).resize(this.fitMapToWindow);
+      $(window).resize(this.fitMapToWindow.bind(this));
 
       map = this.createMap();
 
@@ -74,7 +85,7 @@
     },
 
     fitMapToWindow: function(){
-      var $map = $("#map");
+      var $map = $(this.CSS.map);
       $map.css({
         width: $(window).width(),
         height: $(window).height()
@@ -90,9 +101,7 @@
 
       new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
 
-      newMap.on('click', function(e) {
-        mapClicked(e);
-      });
+      newMap.on('click', this._mapClicked.bind(this));
 
       return newMap;
     },
@@ -125,14 +134,33 @@
     setEventHandlers: function(){
       // Clicks
       this._bindtoSubmitModeButton();
-
-      // Listeners
-      this.on("change:mode", this.modeChanged.bind(this));
+      this._bindtoCancelSubmitModeButton();
+      this._bindToSubmitStepChange();
     },
 
     _bindtoSubmitModeButton: function(){
-      $("#submit-mode-button").click(function(){
+      var $button = $(this.CSS.BUTTONS.submitModeButton);
+      $button.click(function(){
         this.set("mode", "submit");
+      }.bind(this));
+    },
+
+    _bindtoCancelSubmitModeButton: function(){
+      $(this.CSS.BUTTONS.cancelSubmitModeButton).click(function(){
+        this.set("mode", "view");
+        $(this.CSS.BUTTONS.cancelSubmitModeButton).addClass("hidden");
+        $(this.CSS.BUTTONS.submitModeButton).removeClass("hidden");
+      }.bind(this));
+    },
+
+    _bindToSubmitStepChange: function(){
+      this.routeSubmitGuide.on("change:step", function(step){
+        if(step === 0){
+          // Nothing yet
+        } else if(step === 1){
+          $(this.CSS.BUTTONS.submitModeButton).addClass("hidden");
+          $(this.CSS.BUTTONS.cancelSubmitModeButton).removeClass("hidden");
+        }
       }.bind(this));
     },
 
@@ -155,6 +183,10 @@
       });
     },
 
+    addElement: function(element){
+      element.addTo(map);
+    },
+
     _listenForRouteClicks: function(route){
       route.on("click", this._showRouteDialogForRoute);
     },
@@ -164,10 +196,9 @@
       dialog.show();
     },
 
-    modeChanged: function(){
-      if(this.get("mode") === "submit"){
-        Ciclavia.Modules.RouteSubmitsController.start();
-      }
+    _mapClicked: function(clickEvent){
+      this.emit("mapClick", clickEvent);
     }
+
   });
 })(Ciclavia, _);

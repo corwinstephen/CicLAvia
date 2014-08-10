@@ -1,7 +1,31 @@
 (function(){
   Ciclavia.Modules.Mapnav = Stapes.subclass({
+    CSS: {
+      mapnavContainer: ".mapnav-container",
+      routesContainer: ".mapnav-routes"
+    },
+
+    $container: null,
+
     constructor: function(){
+      this.$container = $(this.CSS.mapnavContainer);
+
       this._bindToEventClick();
+
+      return this;
+    },
+
+    show: function(){
+      this.$container.animate({
+        left: 0
+      });
+    },
+
+    hide: function(){
+      var containerWidth = this.$container.outerWidth();
+      this.$container.animate({
+        left: containerWidth * -1
+      });
     },
 
     _bindToEventClick: function(){
@@ -14,10 +38,10 @@
         clickedEvent.set("active", !clickedEvent.get("active"));
         if(clickedEvent.get("active")){
           $(this).addClass("selected");
-          $(this).next(".mapnav-routes").slideDown(150);
+          $(this).next(this.CSS.routesContainer).slideDown(150);
         } else {
           $(this).removeClass("selected");
-          $(this).next(".mapnav-routes").slideUp(150);
+          $(this).next(this.CSS.routesContainer).slideUp(150);
         }
       });
     }

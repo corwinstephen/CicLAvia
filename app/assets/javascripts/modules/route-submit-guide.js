@@ -39,7 +39,7 @@
       var currentStepName = this.currentStepName();
       if(currentStepName === "instructions"){
 
-        // Step 0
+        // Step 0 -- Instructions
         Ciclavia.Modules.Blackout.on();
         var renderedTemplate = HandlebarsTemplates[this.TEMPLATES.instructions]();
         $("body").append(renderedTemplate);
@@ -47,7 +47,7 @@
 
       } else if(currentStepName === "clickPoints"){
 
-        // Step 1
+        // Step 1 -- Click points
         $(this.CSS.INSTRUCTIONS.container).remove();
         Ciclavia.Modules.Blackout.off();
         this.map.mapnav.hide();
@@ -55,8 +55,10 @@
 
       } else if (currentStepName === "enterInfo"){
         
-        // Step 2
-        
+        // Step 2 -- Enter info
+        this._showButtonsFor([]);
+        var dialogue = new Ciclavia.Modules.RouteDialogue(this.routeCreator.currentRoute());
+        dialogue.show();
       }
     },
 
@@ -65,10 +67,15 @@
     },
 
     _setListeners: function(){
+      // 
+      // Bind to the okay button when it appears on the page. Bad way of doing this.
+      // Should use a template instead.
+      // 
       $(document).on("click", this.CSS.INSTRUCTIONS.okayButton, this.advanceToNextStep.bind(this));
 
       this._bindtoSubmitModeButton();
       this._bindtoCancelSubmitModeButton();
+      this._bindToSubmitModeDoneButton();
 
       this.on("change:step", this.render.bind(this));
       this.map.on("change:mode", this._modeChanged.bind(this));
@@ -106,6 +113,10 @@
       $(this.CSS.BUTTONS.submitModeCancelButton).click(function(){
         this.emit("submitModeCancelButtonClicked");
       }.bind(this));
+    },
+
+    _bindToSubmitModeDoneButton: function(){
+      $(this.CSS.BUTTONS.submitModeDoneButton).click(this.advanceToNextStep.bind(this));
     },
 
     _showButtonsFor: function(arrayOfButtonNames){

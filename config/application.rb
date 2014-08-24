@@ -23,5 +23,9 @@ module CicLAvia
     # config.assets.paths << Rails.root.join("vendor")
 
     config.autoload_paths << Rails.root.join('lib')
+
+    config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+    }
   end
 end

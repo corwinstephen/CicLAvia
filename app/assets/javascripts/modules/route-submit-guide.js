@@ -19,6 +19,7 @@
     },
 
     constructor: function(map){
+      this.transientElements = [];
       this.map = map;
       this.routeCreator = new Ciclavia.Modules.RouteCreator();
       this._setListeners();
@@ -33,6 +34,8 @@
       this.map.removeElement(this.routeCreator.currentLineElementForMap());
       this._showButtonsFor(["submit mode"]);
       this.routeCreator.reset();
+      this._destroyTransients();
+      Ciclavia.Modules.Blackout.off();
     },
 
     render: function(){
@@ -57,13 +60,30 @@
         
         // Step 2 -- Enter info
         this._showButtonsFor([]);
-        var dialogue = new Ciclavia.Modules.RouteDialogue(this.routeCreator.currentRoute());
+        var dialogue = new Ciclavia.Modules.NewRouteDialogue(this.routeCreator.currentRoute());
+        this.transientElements.push(dialogue);
+        dialogue.on("submitButtonClicked", this._routeSubmitButtonClicked.bind(this));
         dialogue.show();
       }
     },
 
     currentStepName: function(){
       return this.STEPS[this.get("step")];
+    },
+
+    _destroyTransients: function(){
+      _.each(this.transientElements, function(item){
+        item.destroy();
+      });
+
+      this.transientElements = [];
+    },
+
+    _routeSubmitButtonClicked: function(routeAttrs){
+      var route = this.routeCreator.currentRoute();
+      route.set(routeAttrs);
+      route.save()
+        .success(this.resetAll.bind(this));
     },
 
     _setListeners: function(){

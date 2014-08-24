@@ -56,7 +56,7 @@
     // 
     _createRoute: function(){
       var route = new Ciclavia.Models.Route({
-        routeSegments: this.points.getAllAsArray()
+        routeSegments: [new Ciclavia.Models.RouteSegment({coordinates: this.points.getAllAsArray()})]
       });
 
       return route;

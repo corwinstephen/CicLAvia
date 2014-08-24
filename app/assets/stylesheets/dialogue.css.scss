@@ -15,11 +15,12 @@
 .dialogue-close {
   background:url(image-path("icons/close.png")) center center no-repeat;
   background-size:$default-measurement - 1;
-  height:$default-measurement;
-  width:$default-measurement;
   display:inline-block;
-  float:right;
-  margin-top:-1%;
+  height:$default-measurement;
+  position:absolute;
+  right:$default-vertical-spacing;
+  top:$default-vertical-spacing;
+  width:$default-measurement;
 
   &:hover {
     cursor:pointer;

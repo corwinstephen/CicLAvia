@@ -1,5 +1,13 @@
+.align-right {
+  text-align:right;
+}
+
+.margin-top {
+  margin-top:$default-vertical-spacing;
+}
+
 .margin-right {
-  margin-right:15px;
+  margin-right:$default-vertical-spacing;
 }
 
 .shadow {

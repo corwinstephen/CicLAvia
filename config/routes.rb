@@ -7,5 +7,5 @@ CicLAvia::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'maps#index'
 
-  resources :routes, only: [:update]
+  resources :routes, only: [:create, :update]
 end

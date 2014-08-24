@@ -11,16 +11,49 @@
     },
 
     save: function(){
+      if(this.get("id")){
+        return this._save();
+      } else {
+        return this._create();
+      }
+    },
+
+    _save: function(){
       var url = "/routes/" + this.get("id");
-      $.ajax(url, {
+
+      return $.ajax(url, {
         type: "PUT",
         data: {
-          route:{
-            name: this.get("name"),
-            description: this.get("description")
-          }
+          route: this.attrs()
         }
       });
+    },
+
+    _create: function(){
+      var url = "/routes";
+
+      return $.ajax(url, {
+        type: "POST",
+        data: {
+          route: this.attrs()
+        }
+      });
+    },
+
+    // Returns an array with the changed attrs
+    // 
+    _dirtyAttrs: function(){
+      // Needs implementation
+    },
+
+    // Returns an object with all the attrs
+    // 
+    attrs: function(){
+      return {
+        name: this.get("name"),
+        description: this.get("description"),
+        route_segments: this.get("routeSegments").asParams()
+      };
     },
 
     _parseOptions: function(){
@@ -32,7 +65,7 @@
         departsAt: this.options.departsAt,
         color: this.options.color,
         active: this.options.active || true,
-        routeSegments: []
+        routeSegments: new Ciclavia.Collections.RouteSegments()
       });
 
       if(this.options.routeSegments){
@@ -45,11 +78,11 @@
     },
 
     lineElementsForMap: function(){
-      return _.map(this.get("routeSegments"), function(segment){
+      return this.get("routeSegments").map(function(segment){
         return segment.lineElementForMap({
           color: this.get("color")
         });
-      }.bind(this));
+      }, this);
     },
 
     _emitClickEvent: function(){

@@ -38,6 +38,12 @@
 
     _emitClickEvent: function(e){
       this.emit("click", this);
+    },
+
+    asParams: function(){
+      return {
+        coordinate_array: this.coordinates
+      };
     }
   });
 

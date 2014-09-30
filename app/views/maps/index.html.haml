@@ -1,7 +1,7 @@
 = content_for :js_for_head do
   :javascript
     Ciclavia.PageData = {
-      events: #{Event.all.map { |event| event.to_json } },
+      events: #{SuperEvent.all.map { |event| event.to_json } },
       midpoint: #{Route.last.try(:midpoint)}
     }
 
@@ -16,7 +16,7 @@
   .mapnav-searchbar
     %input{ type: :text, placeholder: "Find a route" }
 
-  - Event.all.each_with_index do |event, index|
+  - SuperEvent.all.each_with_index do |event, index|
     .mapnav-event
       .mapnav-pindropicon
       %dl{:data => { :id => event.id }}

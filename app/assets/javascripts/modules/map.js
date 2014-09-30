@@ -79,6 +79,10 @@
       this.render();
     },
 
+    getDefaultEvent: function(){
+      
+    },
+
     fitMapToWindow: function(){
       var $map = $(this.CSS.map);
       $map.css({

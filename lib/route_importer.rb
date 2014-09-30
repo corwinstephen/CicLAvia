@@ -7,7 +7,7 @@ class RouteImporter
     @parser = KMLParser.new(kml)
 
     ActiveRecord::Base.transaction do
-      event = Event.create(name: @parser.document_name, date: @parser.document_date)
+      event = SuperEvent.create(name: @parser.document_name, date: @parser.document_date)
       route = event.routes.build(name: @parser.document_name)
 
       @parser.each_placemark do |placemark|

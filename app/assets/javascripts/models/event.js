@@ -8,6 +8,7 @@
       }
       this.options = options;
       this.name = null;
+      this.default = false;
       this.routes = [];
       this.active = false;
 
@@ -17,6 +18,7 @@
     _parseOptions: function(){
       this.id = this.options.id;
       this.name = this.options.name;
+      this.default = options.default;
       this.active = this.options.active;
 
       this.set({

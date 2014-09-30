@@ -80,7 +80,9 @@
     },
 
     getDefaultEvent: function(){
-      
+      _.filter(this.get("events"), function(event){
+        return event.default == true;
+      });
     },
 
     fitMapToWindow: function(){

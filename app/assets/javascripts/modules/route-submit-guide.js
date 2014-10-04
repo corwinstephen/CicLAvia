@@ -18,6 +18,12 @@
       }
     },
 
+    EVENTS: {
+      newRouteCreated: "newRouteCreated",
+      submitModeButtonClicked: "submitModeButtonClicked",
+      submitModeCancelButtonClicked: "submitModeCancelButtonClicked"
+    },
+
     constructor: function(map){
       this.transientElements = [];
       this.map = map;
@@ -83,7 +89,12 @@
       var route = this.routeCreator.currentRoute();
       route.set(routeAttrs);
       route.save()
-        .success(this.resetAll.bind(this));
+        .success(this._finishSubmission.bind(this));
+    },
+
+    _finishSubmission: function(){
+      this.resetAll();
+      this.emit(this.EVENTS.newRouteCreated, this.routeCreator.currentRoute());
     },
 
     _setListeners: function(){
@@ -125,13 +136,13 @@
     _bindtoSubmitModeButton: function(){
       var $button = $(this.CSS.BUTTONS.submitModeButton);
       $button.click(function(){
-        this.emit("submitModeButtonClicked");
+        this.emit(this.EVENTS.submitModeButtonClicked);
       }.bind(this));
     },
 
     _bindtoCancelSubmitModeButton: function(){
       $(this.CSS.BUTTONS.submitModeCancelButton).click(function(){
-        this.emit("submitModeCancelButtonClicked");
+        this.emit(this.EVENTS.submitModeCancelButtonClicked);
       }.bind(this));
     },
 

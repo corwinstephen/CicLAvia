@@ -80,7 +80,7 @@
     },
 
     getDefaultEvent: function(){
-      _.filter(this.get("events"), function(event){
+      return _.find(this.get("events"), function(event){
         return event.default == true;
       });
     },
@@ -133,16 +133,21 @@
     },
 
     setEventHandlers: function(){
-      this._bindToSubmitButtonClicks();
+      this._bindToRouteSubmitEvents();
     },
 
-    _bindToSubmitButtonClicks: function(){
+    _bindToRouteSubmitEvents: function(){
       this.routeSubmitGuide.on("submitModeButtonClicked", function(){
         this.set("mode", "submit");
       }.bind(this));
 
       this.routeSubmitGuide.on("submitModeCancelButtonClicked", function(){
         this.set("mode", "view");
+      }.bind(this));
+
+      this.routeSubmitGuide.on("newRouteCreated", function(route){
+        var defaultEvent = this.getDefaultEvent();
+        defaultEvent.addRoute(route);
       }.bind(this));
     },
 

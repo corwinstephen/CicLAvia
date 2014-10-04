@@ -15,10 +15,14 @@
       this._parseOptions();
     },
 
+    addRoute: function(route){
+      console.log("Received route" + route);
+    },
+
     _parseOptions: function(){
       this.id = this.options.id;
       this.name = this.options.name;
-      this.default = options.default;
+      this.default = this.options.default;
       this.active = this.options.active;
 
       this.set({

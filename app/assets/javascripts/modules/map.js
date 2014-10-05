@@ -80,9 +80,15 @@
     },
 
     getDefaultEvent: function(){
-      return _.find(this.get("events"), function(event){
+      if(_.isEmpty(this.get("events"))){ return null; }
+
+      var defaultEvent = _.find(this.get("events"), function(event){
         return event.default == true;
       });
+
+      if(defaultEvent){ return defaultEvent; }
+
+      return _.first(this.get("events"));
     },
 
     fitMapToWindow: function(){
@@ -126,6 +132,7 @@
     newEventWithBindings: function(eventOptions){
       var event = new Ciclavia.Models.Event(eventOptions);
       event.on("change:active", this.render.bind(this));
+      event.on("change:routes", this.render.bind(this));
 
       // Bind to route clicks
       _.each(event.routes, this._listenForRouteClicks.bind(this));
@@ -156,7 +163,6 @@
         console.log("No events to render");
         return;
       }
-
       _.each(this.get("events"), function(event){
         _.each(event.routes, function(route){
           _.each(route.lineElementsForMap(), function(element){

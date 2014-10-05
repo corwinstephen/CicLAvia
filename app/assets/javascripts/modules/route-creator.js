@@ -49,7 +49,11 @@
     // The route currently being created
     // 
     currentRoute: function(){
-      return this._currentRoute || this._createRoute();
+      if(this._currentRoute){ return this._currentRoute; }
+
+      var createdRoute = this._createRoute();
+      this._currentRoute = createdRoute;
+      return createdRoute;
     },
 
     // Generate a new Route using the inputted data

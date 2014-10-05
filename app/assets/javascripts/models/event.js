@@ -16,7 +16,9 @@
     },
 
     addRoute: function(route){
-      console.log("Received route" + route);
+      this.routes.push(route);
+      window.addedRoute = route;
+      this.emit("change:routes");
     },
 
     _parseOptions: function(){

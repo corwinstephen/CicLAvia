@@ -104,7 +104,7 @@
         infoControl: false,
         zoomControl: false
       })
-      .setView(Ciclavia.PageData.midpoint, 13);
+      .setView(Ciclavia.PageData.midpoint, 14);
 
       new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
 

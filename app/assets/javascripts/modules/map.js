@@ -100,7 +100,7 @@
     },
 
     createMap: function(){
-      var newMap = L.mapbox.map('map', 'corwinstephen.i6aocpam', {
+      var newMap = L.mapbox.map('map', 'corwinstephen.71cdd4a8', {
         infoControl: false,
         zoomControl: false
       })

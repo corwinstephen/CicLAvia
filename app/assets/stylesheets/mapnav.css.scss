@@ -12,7 +12,7 @@
 
 .mapnav-title {
   padding:$base-font-size;
-  font-size:1.414em;
+  font-size:1.2em;
   font-family:$font-title;
   color:$blue;
   font-weight:bold;
@@ -30,7 +30,7 @@
     background-color:#FFF;
     border-top:1px solid $light-grey;
     margin-bottom:0;
-    padding:1.414em 1em;
+    padding:1.2em 1em;
 
     &:first-child {
       margin-top:0;
@@ -58,7 +58,7 @@
       
       dt {
         color:#fff;
-        font-size:1.414em;
+        font-size:1.44em;
       }
 
       dd {
@@ -66,7 +66,7 @@
         color:rgba(#000, 0.4);
         font-weight:bold;
         font-size:1em;
-        margin-top:.5em;
+        margin-top:.83em;
       }
     }
   }
@@ -84,7 +84,7 @@
   font-weight:bold;
   margin-top:100px;
   margin-bottom:1em;
-  font-size:1em;
+  font-size:.83em;
   color:rgba(#000, .54);
   margin-left:$base-font-size;
 }
@@ -112,10 +112,10 @@
   li {
     list-style:none;
     position:relative;
-    padding:1.414em 1em 0 1em;
+    padding:1.2em 1em 0 1em;
 
     &:last-child {
-      padding-bottom:1.414em;
+      padding-bottom:1.2em;
     }
 
     &:hover {
@@ -172,7 +172,7 @@
       }
 
       dd {
-        font-size:.707em;
+        font-size:.83em;
         color:rgba(#000, .54);
       }
     }

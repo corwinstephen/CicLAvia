@@ -13,18 +13,30 @@
 
 .map-ciclavialogo
 .mapnav-container
-  .mapnav-searchbar
-    %input{ type: :text, placeholder: "Find a route" }
+  .mapnav-title Guide to CicLAvia
 
-  - SuperEvent.order("created_at ASC").all.each_with_index do |event, index|
-    .mapnav-event
-      .mapnav-pindropicon
+  - SuperEvent.limit(1).each do |event|
+    .mapnav-event.nextup
       %dl{:data => { :id => event.id }}
         %dt= event.name
-        %dd= event.date.strftime("%B %d, %Y")
+        %dd
+          = event.date.strftime("%B %d, %Y")
+          .mapnav-eventdesc The most walkable CicLAvia to date!
 
-      %ul.mapnav-routes
+      %ul.mapnav-expandedcontent
         - event.routes.each do |route|
           %li
-            .mapnav-routeicon
-            = route.name
+            Event details
+            %input{type: 'checkbox'}
+          %li
+            Neighborhood guide
+            %input{type: 'checkbox'}
+
+  .mapnav-previousevents
+    .mapnav-sectionlabel Previous events
+
+    - SuperEvent.order("created_at ASC").all.each_with_index do |event, index|
+      .mapnav-event
+        %dl{:data => { :id => event.id }}
+          %dt= event.name
+          %dd= event.date.strftime("%B %d, %Y")

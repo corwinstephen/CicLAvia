@@ -7,11 +7,11 @@ a {
 }
 
 body {
-  color:#565656;
+  color:rgba(#000, .87);
   font-family:$font-body;
-  font-size:14px;
   margin:0;
   padding:0;
+  font-size:$base-font-size;
 }
 
 dl {

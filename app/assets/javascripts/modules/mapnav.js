@@ -2,7 +2,7 @@
   Ciclavia.Modules.Mapnav = Stapes.subclass({
     CSS: {
       mapnavContainer: ".mapnav-container",
-      routesContainer: ".mapnav-routes"
+      expandedContent: ".mapnav-expandedcontent"
     },
 
     $container: null,
@@ -37,11 +37,9 @@
         
         clickedEvent.set("active", !clickedEvent.get("active"));
         if(clickedEvent.get("active")){
-          $(e.currentTarget).addClass("selected");
-          $(e.currentTarget).next(this.CSS.routesContainer).slideDown(150);
+          $(e.currentTarget).closest('.mapnav-event').addClass("selected");
         } else {
-          $(e.currentTarget).removeClass("selected");
-          $(e.currentTarget).next(this.CSS.routesContainer).slideUp(150);
+          $(e.currentTarget).closest('.mapnav-event').removeClass("selected");
         }
       }.bind(this));
     }

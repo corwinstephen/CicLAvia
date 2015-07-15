@@ -35,3 +35,12 @@
         %dl{:data => { :id => event.id }}
           %dt= event.name
           %dd= event.date.strftime("%B %d, %Y")
+
+        %ul.mapnav-expandedcontent
+          - event.routes.each do |route|
+            %li
+              Event details
+              %input{type: 'checkbox'}
+            %li
+              Neighborhood guide
+              %input{type: 'checkbox'}

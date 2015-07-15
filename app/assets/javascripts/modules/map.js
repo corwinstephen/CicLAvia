@@ -6,7 +6,6 @@
   "use strict";
 
   var map = null;
-  var colors = ["#00a5e4", "#4db541", "#ffd500"];
 
   // var openPointDialog = function(latlng){
   //   var uniqueId = _.uniqueId();
@@ -74,7 +73,7 @@
 
       map = this.createMap();
 
-      this.initEvents();
+      this.buildEventsFromData();
       this.setEventHandlers();
       this.render();
     },
@@ -113,14 +112,13 @@
       return newMap;
     },
 
-    initEvents: function(){
+    buildEventsFromData: function(){
       if(!_.isArray(Ciclavia.PageData.events)){
         throw "Event data not defined";
       }
 
       _.each(Ciclavia.PageData.events, function(eventData, index){
         var options = {
-          color: colors[index % 3],
           active: (index === 0 ? true : false)
         };
         
@@ -140,23 +138,23 @@
     },
 
     setEventHandlers: function(){
-      this._bindToRouteSubmitEvents();
+      // this._bindToRouteSubmitEvents();
     },
 
-    _bindToRouteSubmitEvents: function(){
-      this.routeSubmitGuide.on("submitModeButtonClicked", function(){
-        this.set("mode", "submit");
-      }.bind(this));
+    // _bindToRouteSubmitEvents: function(){
+    //   this.routeSubmitGuide.on("submitModeButtonClicked", function(){
+    //     this.set("mode", "submit");
+    //   }.bind(this));
 
-      this.routeSubmitGuide.on("submitModeCancelButtonClicked", function(){
-        this.set("mode", "view");
-      }.bind(this));
+    //   this.routeSubmitGuide.on("submitModeCancelButtonClicked", function(){
+    //     this.set("mode", "view");
+    //   }.bind(this));
 
-      this.routeSubmitGuide.on("newRouteCreated", function(route){
-        var defaultEvent = this.getDefaultEvent();
-        defaultEvent.addRoute(route);
-      }.bind(this));
-    },
+    //   this.routeSubmitGuide.on("newRouteCreated", function(route){
+    //     var defaultEvent = this.getDefaultEvent();
+    //     defaultEvent.addRoute(route);
+    //   }.bind(this));
+    // },
 
     render: function(){
       if(this.get("events").length === 0){

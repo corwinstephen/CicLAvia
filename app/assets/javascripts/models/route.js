@@ -80,7 +80,7 @@
     lineElementsForMap: function(){
       return this.get("routeSegments").map(function(segment){
         return segment.lineElementForMap({
-          color: this.get("color")
+          color: '#00a5e4'
         });
       }, this);
     },

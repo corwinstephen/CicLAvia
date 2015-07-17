@@ -1,0 +1,11 @@
+%dl{:data => { :id => event.id }}
+  %dt= event.name
+  %dd
+    = event.date.strftime("%B %d, %Y")
+    .mapnav-eventdesc The most walkable CicLAvia to date!
+
+%ul.mapnav-expandedcontent
+  - event.layers.each do |layer|
+    %li
+      = layer.name
+      %input{ type: 'checkbox', class: 'layertoggle', data: { layerid: layer.id } }

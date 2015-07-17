@@ -7,87 +7,36 @@
 
   var map = null;
 
-  // var openPointDialog = function(latlng){
-  //   var uniqueId = _.uniqueId();
-
-  //   var popup = L.popup()
-  //   .setLatLng(latlng)
-  //   .setContent('<div class="map-popup-wrap" data-id="' + uniqueId + '"><input type="text" class="form-control" placeholder="Name this spot" /><p>Or select an existing location</p><div class="row"><ul class="map-popup-existinglocations"></ul></div>')
-  //   .openOn(map);
-
-  //   // Store the popup's uniqueId so we can find 
-  //   popup.uniqueId = uniqueId;
-
-  //   return popup;
-  // };
-
-  var mapClicked = function(mapClickEvent){
-
-    // console.log(mapClickEvent.latlng);
-    // var popup = openPointDialog(mapClickEvent.latlng);
-
-    // var lat = mapClickEvent.latlng.lat;
-    // var lng = mapClickEvent.latlng.lng;
-    // Ciclavia.Modules.Foursquare.getPlacesForPoint(lat, lng, function(foursquareJSON, status){
-    //   if(status !== "success"){ /* Handle this error better */ }
-
-    //   plotPlacesInPopup(foursquareJSON, popup);
-    // });
-  };
-
-  var plotPlacesInPopup = function(foursquareJSON, popup){
-    var arrayOfPlaces = [];
-    _.each(foursquareJSON.response.venues, function(venueJSON){
-      var place = Ciclavia.Models.Place.fromFoursquare(venueJSON);
-      arrayOfPlaces.push(place);
-
-      var $popup = $(".map-popup-wrap[data-id="+ popup.uniqueId +"]");
-      var $locationsWrap = $popup.find(".map-popup-existinglocations");
-      $locationsWrap.append("<li>" + place.name + "</li>");
-    });
-
-  };
-
   Ciclavia.Modules.Map = Stapes.subclass({
     CSS: {
       map: "#map"
     },
 
     constructor: function(){
-      // Make this instance available to the core
       Ciclavia.Core.map = this;
 
-      // Attributes
+      // Initialize map attributes
       this.set({
         mode: "view",
         events: []
       });
 
-      // Nav
-      this.routeSubmitGuide = new Ciclavia.Modules.RouteSubmitGuide(this);
+      // Init the nav
       this.mapnav = new Ciclavia.Modules.Mapnav();
+      this.mapnav.on('layertoggle', this.onLayerToggle);
 
-      // Map width
-      this.fitMapToWindow();
-      $(window).resize(this.fitMapToWindow.bind(this));
-
+      // The map itself
       map = this.createMap();
+      this.setMapWidth();
 
+      // Add data to map
       this.buildEventsFromData();
-      this.setEventHandlers();
       this.render();
     },
 
-    getDefaultEvent: function(){
-      if(_.isEmpty(this.get("events"))){ return null; }
-
-      var defaultEvent = _.find(this.get("events"), function(event){
-        return event.default == true;
-      });
-
-      if(defaultEvent){ return defaultEvent; }
-
-      return _.first(this.get("events"));
+    setMapWidth: function(){
+      this.fitMapToWindow();
+      $(window).resize(this.fitMapToWindow.bind(this));
     },
 
     fitMapToWindow: function(){
@@ -96,6 +45,30 @@
         width: $(window).width(),
         height: $(window).height()
       });
+    },
+
+    onLayerToggle: function(data){
+      // 
+      // TODO
+      // 
+      console.log("Layer " + data.layerId + " turned ");
+      if(data.isOn === true){
+        console.log("on");
+      } else {
+        console.log("off");
+      }
+    },
+
+    getDefaultEvent: function(){
+      if(_.isEmpty(this.get("events"))){ return null; }
+
+      var defaultEvent = _.find(this.get("events"), function(event){
+        return event.default === true;
+      });
+
+      if(defaultEvent){ return defaultEvent; }
+
+      return _.first(this.get("events"));
     },
 
     createMap: function(){
@@ -136,25 +109,6 @@
       _.each(event.routes, this._listenForRouteClicks.bind(this));
       return event;
     },
-
-    setEventHandlers: function(){
-      // this._bindToRouteSubmitEvents();
-    },
-
-    // _bindToRouteSubmitEvents: function(){
-    //   this.routeSubmitGuide.on("submitModeButtonClicked", function(){
-    //     this.set("mode", "submit");
-    //   }.bind(this));
-
-    //   this.routeSubmitGuide.on("submitModeCancelButtonClicked", function(){
-    //     this.set("mode", "view");
-    //   }.bind(this));
-
-    //   this.routeSubmitGuide.on("newRouteCreated", function(route){
-    //     var defaultEvent = this.getDefaultEvent();
-    //     defaultEvent.addRoute(route);
-    //   }.bind(this));
-    // },
 
     render: function(){
       if(this.get("events").length === 0){

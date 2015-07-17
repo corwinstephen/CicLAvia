@@ -18,17 +18,7 @@
 
   - SuperEvent.limit(1).each do |event|
     .mapnav-event.nextup
-      %dl{:data => { :id => event.id }}
-        %dt= event.name
-        %dd
-          = event.date.strftime("%B %d, %Y")
-          .mapnav-eventdesc The most walkable CicLAvia to date!
-
-      %ul.mapnav-expandedcontent
-        - event.layers.each do |layer|
-          %li
-            = layer.name
-            %input{type: 'checkbox'}
+      = render partial: 'navevent', locals: { event: event }
 
 
   .mapnav-previousevents
@@ -36,12 +26,4 @@
 
     - SuperEvent.order("created_at ASC").all.each_with_index do |event, index|
       .mapnav-event
-        %dl{:data => { :id => event.id }}
-          %dt= event.name
-          %dd= event.date.strftime("%B %d, %Y")
-
-        %ul.mapnav-expandedcontent
-          - event.layers.each do |layer|
-            %li
-              = layer.name
-              %input{type: 'checkbox'}
+        = render partial: 'navevent', locals: { event: event }

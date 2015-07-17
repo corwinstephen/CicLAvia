@@ -2,7 +2,8 @@
   :javascript
     Ciclavia.PageData = {
       events: #{SuperEvent.order("created_at ASC").all.map { |event| event.to_json } },
-      midpoint: #{[Place.last.lat, Place.last.lng]}
+      midpoint: #{[Place.last.lat, Place.last.lng]},
+      layers: #{Layer.all.to_json}
     }
 
 #placemodal

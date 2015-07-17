@@ -6,6 +6,21 @@
   "use strict";
 
   var map = null;
+  var layers = [];
+
+  function storeMapboxLayer(mapboxLayer, layerId){
+    layers.push({
+      layerId: layerId,
+      layer: mapboxLayer
+    });
+    console.log(layers);
+  }
+
+  function removeMapboxLayer(layerId){
+    var layerToRemove = _.findWhere(layers, { layerId: layerId });
+    map.removeLayer(layerToRemove.layer);
+    layers = _.without(layers, layerToRemove);
+  }
 
   Ciclavia.Modules.Map = Stapes.subclass({
     CSS: {
@@ -26,8 +41,8 @@
       this.mapnav.on('layertoggle', this.onLayerToggle);
 
       // The map itself
-      map = this.createMap();
       this.setMapWidth();
+      map = this.createMap();
 
       // Add data to map
       this.buildEventsFromData();
@@ -48,14 +63,13 @@
     },
 
     onLayerToggle: function(data){
-      // 
-      // TODO
-      // 
-      console.log("Layer " + data.layerId + " turned ");
+      var layerId = data.layerId;
       if(data.isOn === true){
-        console.log("on");
+        var newLayer = Ciclavia.Modules.Layer.generate(layerId);
+        storeMapboxLayer(newLayer, layerId);
+        map.addLayer(newLayer);
       } else {
-        console.log("off");
+        removeMapboxLayer(layerId);
       }
     },
 

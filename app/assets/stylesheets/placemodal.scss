@@ -1,0 +1,36 @@
+$modalpadding: 2*$base-font-size;
+
+#placemodal {
+  display:none;
+  position:fixed;
+  width:500px;
+  height:500px;
+  background-color:#fff;
+  z-index:10;
+  left:50%;
+  margin-left:-250px;
+  top:50%;
+  margin-top:-250px;
+  padding:{
+    top:$modalpadding;
+    bottom:$modalpadding;
+  }
+
+  h1 {
+    color:$blue;
+    font-weight:bold;
+  }
+
+  h1, p {
+    padding:{
+      left:$modalpadding;
+      right:$modalpadding;
+    }
+  }
+
+  p {
+    font-size:1.2em;
+    color:rgba(#000, .54);
+    line-height:1.5em;
+  }
+}

@@ -2,8 +2,14 @@
   :javascript
     Ciclavia.PageData = {
       events: #{SuperEvent.order("created_at ASC").all.map { |event| event.to_json } },
-      midpoint: #{Route.last.try(:midpoint)}
+      midpoint: #{[Place.last.lat, Place.last.lng]}
     }
+
+#placemodal
+  %h1 NoHo Gateway
+  %img{src: '/poop.png'}
+  %p NoHo Gateway is the entrance to one of the last remaining hipster colonies in Los Angeles.
+  
 
 #map
 .map-ciclavialogo
@@ -19,13 +25,11 @@
           .mapnav-eventdesc The most walkable CicLAvia to date!
 
       %ul.mapnav-expandedcontent
-        - event.routes.each do |route|
+        - event.layers.each do |layer|
           %li
-            Event details
+            = layer.name
             %input{type: 'checkbox'}
-          %li
-            Neighborhood guide
-            %input{type: 'checkbox'}
+
 
   .mapnav-previousevents
     .mapnav-sectionlabel Previous events
@@ -37,10 +41,7 @@
           %dd= event.date.strftime("%B %d, %Y")
 
         %ul.mapnav-expandedcontent
-          - event.routes.each do |route|
+          - event.layers.each do |layer|
             %li
-              Event details
-              %input{type: 'checkbox'}
-            %li
-              Neighborhood guide
+              = layer.name
               %input{type: 'checkbox'}

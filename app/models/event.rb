@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   has_many :routes
 
   def as_json(opts = {})
-    super.merge({
+    super(opts).merge({
       routes: routes.as_json
     })
   end

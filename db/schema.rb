@@ -11,25 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930025042) do
+ActiveRecord::Schema.define(version: 20150717000255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "active_admin_comments", force: true do |t|
-    t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
-    t.integer  "author_id"
-    t.string   "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  enable_extension "hstore"
 
   create_table "events", force: true do |t|
     t.string   "name",                                 null: false
@@ -43,6 +29,11 @@ ActiveRecord::Schema.define(version: 20140930025042) do
 
   add_index "events", ["parent_event_id"], name: "index_events_on_parent_event_id", using: :btree
 
+  create_table "layers", force: true do |t|
+    t.string  "name",     null: false
+    t.integer "event_id"
+  end
+
   create_table "places", force: true do |t|
     t.string   "name",        null: false
     t.text     "description"
@@ -53,8 +44,12 @@ ActiveRecord::Schema.define(version: 20140930025042) do
     t.integer  "route_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+    t.hstore   "data"
+    t.integer  "layer_id"
   end
 
+  add_index "places", ["layer_id"], name: "index_places_on_layer_id", using: :btree
   add_index "places", ["route_id"], name: "index_places_on_route_id", using: :btree
   add_index "places", ["user_id"], name: "index_places_on_user_id", using: :btree
 

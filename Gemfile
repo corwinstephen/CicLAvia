@@ -10,9 +10,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'rails_admin'
 gem 'nokogiri'
 gem 'pry'
 gem 'handlebars_assets'
+gem 'geocoder'
 
 gem 'rails_12factor', group: :production
 
@@ -20,4 +22,4 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-ruby "2.2.0"
+ruby "2.1.2"

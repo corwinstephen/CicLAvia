@@ -24,7 +24,8 @@
       
       if(!this._lineElement){
         this._lineElement = Ciclavia.Helpers.MapBoxHelper.polyLineFromCoordSet(this.coordinates, {
-          color: options.color
+          color: options.color,
+          weight: 10
         });
 
         this._bindEventsToLineElement(this._lineElement);

@@ -31,7 +31,7 @@
 
     close: function(){
       $rendered.remove();
-      // $(document).unbind('click', this.closeIfOutside);
+      $(document).unbind('click', this.closeIfOutside);
     }
   });
 })();

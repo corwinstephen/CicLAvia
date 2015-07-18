@@ -12,13 +12,13 @@
   .mapnav-title Guide to CicLAvia
 
   - SuperEvent.limit(1).each do |event|
-    .mapnav-event.nextup
+    .mapnav-event.nextup{:data => { :id => event.id }}
       = render partial: 'navevent', locals: { event: event }
 
 
   .mapnav-previousevents
     .mapnav-sectionlabel Previous events
 
-    - SuperEvent.order("created_at ASC").all.each_with_index do |event, index|
-      .mapnav-event
+    - SuperEvent.order("created_at DESC").limit(1).each_with_index do |event, index|
+      .mapnav-event{:data => { :id => event.id }}
         = render partial: 'navevent', locals: { event: event }

@@ -106,11 +106,7 @@
       }
 
       _.each(Ciclavia.PageData.events, function(eventData, index){
-        var options = {
-          active: (index === 0 ? true : false)
-        };
-        
-        var event = this.newEventWithBindings(_.extend($.parseJSON(eventData), options));
+        var event = this.newEventWithBindings($.parseJSON(eventData));
         this.get("events").push(event);
       }.bind(this));
     },

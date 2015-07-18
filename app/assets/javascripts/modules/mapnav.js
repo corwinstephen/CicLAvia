@@ -9,7 +9,8 @@
     },
 
     EVENTS: {
-      layerToggle: 'layertoggle'
+      layerToggle: 'layertoggle',
+      eventOpened: 'eventopened'
     },
 
     $container: null,
@@ -39,19 +40,20 @@
     },
 
     bindToEventClick: function(){
-      $(".mapnav-event dl").click(function(e){
+      $(".mapnav-event").click(function(e){
         var id = $(e.currentTarget).data("id");
-        var clickedEvent = _.find(Ciclavia.Core.map.get("events"), function(item){
-          return (item.id === id);
-        });
-        
-        clickedEvent.set('active', !clickedEvent.get("active"));
-        if(clickedEvent.get('active')){
-          $(e.currentTarget).closest('.mapnav-event').addClass("selected");
-        } else {
-          $(e.currentTarget).closest('.mapnav-event').removeClass("selected");
-        }
+        this.openEvent(id);
       }.bind(this));
+    },
+
+    openEvent: function(eventId){
+      var $this = $('.mapnav-event[data-id=' + eventId + ']');
+      if(($this).hasClass('selected')){
+        return;
+      }
+      $('.mapnav-event').removeClass('selected');
+      $this.addClass('selected');
+      this.emit(this.EVENTS.eventOpened);
     },
 
     bindToLayerToggle: function(){

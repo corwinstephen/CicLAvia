@@ -23,6 +23,10 @@
     layers = _.without(layers, layerToRemove);
   }
 
+  function enableAllLayersForEvent(eventId){
+    _.each(Ciclavia.Modules.Event.layerIdsForEvent(eventId), enableLayer);
+  }
+
   function disableAllLayers(){
     _.each(layers, function(layer){
       disableLayer(layer.layerId);
@@ -76,8 +80,9 @@
       });
     },
 
-    onEventOpened: function(eventId){
+    onEventOpened: function(data){
       disableAllLayers();
+      enableAllLayersForEvent(data.eventId);
     },
 
     onLayerToggle: function(data){
@@ -119,9 +124,8 @@
       if(!_.isArray(Ciclavia.PageData.events)){
         throw "Event data not defined";
       }
-
       _.each(Ciclavia.PageData.events, function(eventData, index){
-        var event = this.newEventWithBindings($.parseJSON(eventData));
+        var event = this.newEventWithBindings(eventData);
         this.get("events").push(event);
       }.bind(this));
     },

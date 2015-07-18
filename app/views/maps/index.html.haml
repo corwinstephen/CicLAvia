@@ -1,7 +1,7 @@
 = content_for :js_for_head do
   :javascript
     Ciclavia.PageData = {
-      events: #{SuperEvent.order("created_at ASC").all.map { |event| event.to_json } },
+      events: #{SuperEvent.order("created_at ASC").all.to_json },
       midpoint: #{[Place.last.lat, Place.last.lng]},
       layers: #{Layer.all.to_json}
     }

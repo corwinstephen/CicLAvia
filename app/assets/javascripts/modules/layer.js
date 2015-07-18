@@ -21,9 +21,11 @@
           "coordinates": [place.lng, place.lat]
         },
         properties: {
-            'marker-color': '#4db541',
-            'marker-symbol': 'star',
-            title: [place.lng, place.lat].join(',')
+          'marker-color': '#4db541',
+          'marker-symbol': 'star',
+          name: place.name,
+          description: place.description,
+          imageSource: place.imageSource
         }
       };
     });
@@ -36,11 +38,21 @@
     return geoJSON;
   };
 
+  function placeClicked(e){
+    var properties = e.target.feature.properties;
+    new Ciclavia.Modules.PlaceModal(properties);
+  };
+
   Ciclavia.Modules.Layer = {
     generate: function(layerId){
       var layerData = findLayerDataById(layerId);
       var geoJSON = buildGeoJSONFromLayerData(layerData);
       var newFeatureLayer = L.mapbox.featureLayer(geoJSON);
+
+      // Add click handlers to markers
+      newFeatureLayer.eachLayer(function(place){
+        place.on('click', placeClicked);
+      });
       return newFeatureLayer;
     }
   }

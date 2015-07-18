@@ -8,12 +8,13 @@
   var map = null;
   var layers = [];
 
+  // For toggling different map layers
+  // 
   function storeMapboxLayer(mapboxLayer, layerId){
     layers.push({
       layerId: layerId,
       layer: mapboxLayer
     });
-    console.log(layers);
   }
 
   function removeMapboxLayer(layerId){

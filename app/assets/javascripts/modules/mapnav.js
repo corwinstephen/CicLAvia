@@ -53,7 +53,9 @@
       }
       $('.mapnav-event').removeClass('selected');
       $this.addClass('selected');
-      this.emit(this.EVENTS.eventOpened);
+      this.emit(this.EVENTS.eventOpened, {
+        eventId: eventId
+      });
     },
 
     bindToLayerToggle: function(){

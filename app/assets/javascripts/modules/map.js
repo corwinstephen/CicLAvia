@@ -17,10 +17,22 @@
     });
   }
 
-  function removeMapboxLayer(layerId){
+  function disableLayer(layerId){
     var layerToRemove = _.findWhere(layers, { layerId: layerId });
     map.removeLayer(layerToRemove.layer);
     layers = _.without(layers, layerToRemove);
+  }
+
+  function disableAllLayers(){
+    _.each(layers, function(layer){
+      disableLayer(layer.layerId);
+    });
+  }
+
+  function enableLayer(layerId){
+    var newLayer = Ciclavia.Modules.Layer.generate(layerId);
+    storeMapboxLayer(newLayer, layerId);
+    map.addLayer(newLayer);
   }
 
   Ciclavia.Modules.Map = Stapes.subclass({
@@ -39,6 +51,7 @@
 
       // Init the nav
       this.mapnav = new Ciclavia.Modules.Mapnav();
+      this.mapnav.on('eventopened', this.onEventOpened);
       this.mapnav.on('layertoggle', this.onLayerToggle);
 
       // The map itself
@@ -63,14 +76,16 @@
       });
     },
 
+    onEventOpened: function(eventId){
+      disableAllLayers();
+    },
+
     onLayerToggle: function(data){
       var layerId = data.layerId;
       if(data.isOn === true){
-        var newLayer = Ciclavia.Modules.Layer.generate(layerId);
-        storeMapboxLayer(newLayer, layerId);
-        map.addLayer(newLayer);
+        enableLayer(layerId);
       } else {
-        removeMapboxLayer(layerId);
+        disableLayer(layerId);
       }
     },
 

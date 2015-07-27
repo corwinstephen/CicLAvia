@@ -22,6 +22,7 @@ class Place < ActiveRecord::Base
 
   def as_json(opts = {})
     super(opts).merge({
+      type: type,
       photo_url: {
         large: photo.url(:large)
       }  

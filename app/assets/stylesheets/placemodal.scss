@@ -1,28 +1,37 @@
 $modalpadding:1em;
-
-.placemodal {
+.modal {
   position:fixed;
-  width:500px;
   background-color:#fff;
   z-index:10;
-  left:50%;
-  margin-left:-250px;
+  box-shadow:0 0 4px 0 rgba(#000, .2);
+  border-radius:3px;
   top:50%;
-  margin-top:-250px;
+  left:50%;
+  @include transform(translateX(-50%) translateY(-50%));
+
+  .icon-x {
+    position:absolute;
+    top:1em;
+    right:1em;
+
+    &:hover {
+      cursor:pointer;
+    }
+  }
+}
+
+
+
+.placemodal {
+  @extend .modal;
   padding:{
     top:$modalpadding;
     bottom:$modalpadding;
   }
-  box-shadow:0 0 1.5px 0 rgba(#000, .5);
-  border-radius:3px;
+  width:50vw;
 
   img {
     width:100%;
-  }
-
-  h1 {
-    color:$blue;
-    font-weight:bold;
   }
 
   h1, p {
@@ -37,4 +46,14 @@ $modalpadding:1em;
     color:rgba(#000, .87);
     line-height:1.5em;
   }
+}
+
+.hubmodal {
+  @extend .modal;
+  width:80vw;
+}
+
+.hubmodal-lower {
+  background-color:#FFDE17;
+  padding:1em;
 }

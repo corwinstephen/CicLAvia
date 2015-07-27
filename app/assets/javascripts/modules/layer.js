@@ -25,7 +25,9 @@
           'marker-symbol': 'star',
           name: place.name,
           description: place.description,
-          imageSource: place.photo_url.large
+          address: place.address,
+          imageSource: place.photo_url.large,
+          type: place.type
         }
       };
     });

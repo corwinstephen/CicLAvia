@@ -3,22 +3,29 @@
 
   Ciclavia.Modules.Mapnav = Stapes.subclass({
     CSS: {
-      mapnavContainer: ".mapnav-container",
-      expandedContent: ".mapnav-expandedcontent",
-      layerToggle: ".layertoggle"
+      MAPNAV_CONTAINER: ".mapnav-container",
+      EXPANDED_CONTENT: ".mapnav-expandedcontent",
+      LAYER_TOGGLE: ".layertoggle"
     },
 
     EVENTS: {
-      layerToggle: 'layertoggle',
-      eventOpened: 'eventopened'
+      EVENT_OPENED: 'eventopened',
+      MODAL_OPEN: 'modalopen',
+      MODAL_CLOSE: 'modalclose'
     },
 
     $container: null,
 
     constructor: function(){
-      this.$container = $(this.CSS.mapnavContainer);
+      this.$container = $(this.CSS.MAPNAV_CONTAINER);
       this.setUpClickHandlers();
+      this.bindToMap();
       return this;
+    },
+
+    bindToMap: function(){
+      Ciclavia.Core.map.on(this.EVENTS.MODAL_OPEN, this.hide.bind(this));
+      Ciclavia.Core.map.on(this.EVENTS.MODAL_CLOSE, this.show.bind(this));
     },
 
     setUpClickHandlers: function(){
@@ -56,19 +63,19 @@
 
       // All layers are automatically displayed,
       // so check all the boxes
-      $this.find('.layertoggle').prop('checked', true);
+      $this.find(this.CSS.LAYER_TOGGLE).prop('checked', true);
 
-      this.emit(this.EVENTS.eventOpened, {
+      this.emit(this.EVENTS.EVENT_OPENED, {
         eventId: eventId
       });
     },
 
     bindToLayerToggle: function(){
-      $(this.CSS.layerToggle).on('change', function(e){
+      $(this.CSS.LAYER_TOGGLE).on('change', function(e){
         var layerId = $(e.currentTarget).data('layerid');
         var isOn = e.currentTarget.checked;
         
-        this.emit(this.EVENTS.layerToggle, {
+        this.emit(this.EVENTS.LAYER_TOGGLE, {
           layerId: layerId,
           isOn: isOn
         });

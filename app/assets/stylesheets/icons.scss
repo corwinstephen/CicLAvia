@@ -1,0 +1,11 @@
+i, .icon {
+  display:inline-block;
+  background-repeat:no-repeat;
+  width:1em;
+  height:1em;
+  background-size:contain;
+}
+
+.icon-x {
+  background-image:url(image-path('icons/icon-x.svg'));
+}

@@ -1,5 +1,7 @@
 <div class='placemodal'>
   <h1>{{name}}</h1>
-  <img src='{{imageSource}}'>
+  {{#if imageSource}}
+    <img src='{{imageSource}}'>
+  {{/if}}
   <p>{{description}}</p>
 </div>

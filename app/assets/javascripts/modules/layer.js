@@ -43,6 +43,13 @@
   function placeClicked(e){
     var properties = e.target.feature.properties;
     new Ciclavia.Modules.PlaceModal(properties);
+
+    // 
+    // Hack to stop the default popup from
+    // showing up so that we can use our own
+    // custom one.
+    // 
+    e.target.closePopup();
   };
 
   Ciclavia.Modules.Layer = {

@@ -53,6 +53,11 @@
       }
       $('.mapnav-event').removeClass('selected');
       $this.addClass('selected');
+
+      // All layers are automatically displayed,
+      // so check all the boxes
+      $this.find('.layertoggle').prop('checked', true);
+
       this.emit(this.EVENTS.eventOpened, {
         eventId: eventId
       });

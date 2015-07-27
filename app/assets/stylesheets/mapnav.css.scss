@@ -21,10 +21,6 @@
 .mapnav-event {
   position:relative;
 
-  &:last-child {
-    border-bottom:1px solid $light-grey;
-  }
-
   dl {
     background-color:#FFF;
     border-top:1px solid $light-grey;
@@ -53,7 +49,6 @@
   &.nextup {
     dl {
       background-color:$blue;
-      border-bottom:none;
       
       dt {
         color:#fff;
@@ -177,7 +172,7 @@
   .mapnav-event.nextup {
     dl {
       background-color:#fff;
-      border-bottom:1px solid $grey;
+      border-bottom:1px solid $dark-grey;
       
       dt {
         color:$blue;

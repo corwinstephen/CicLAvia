@@ -18,9 +18,13 @@
   }
 
   function disableLayer(layerId){
-    var layerToRemove = _.findWhere(layers, { layerId: layerId });
+    var layerToRemove = findLayerOnMap(layerId);
     map.removeLayer(layerToRemove.layer);
     layers = _.without(layers, layerToRemove);
+  }
+
+  function findLayerOnMap(layerId){
+    return _.findWhere(layers, { layerId: layerId });
   }
 
   function enableAllLayersForEvent(eventId){
@@ -34,6 +38,15 @@
   }
 
   function enableLayer(layerId){
+    
+    // 
+    // Return if layer already exists
+    // 
+
+    if(!!findLayerOnMap(layerId)){
+      return;
+    }
+
     var newLayer = Ciclavia.Modules.Layer.generate(layerId);
     storeMapboxLayer(newLayer, layerId);
     map.addLayer(newLayer);

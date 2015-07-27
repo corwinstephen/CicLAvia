@@ -1,0 +1,3 @@
+class Hub < Place
+  
+end

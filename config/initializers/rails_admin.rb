@@ -36,13 +36,17 @@ RailsAdmin.config do |config|
     field :name
     field :description
     field :address
+    field :photo
   }
 
   config.model "Place" do
     edit(&place_fields)
   end
 
-  config.model "Crossing" do
-    edit(&place_fields)
+  ['Crossing', 'Hub'].each do |model|
+    config.model model do
+      edit(&place_fields)
+    end
   end
+
 end

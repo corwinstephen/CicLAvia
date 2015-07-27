@@ -7,6 +7,7 @@
 
   var map = null;
   var layers = [];
+  var colors = ['#008CBE', '#F9CB3A', '#7A4E2B', '#55AE4C'];
 
   // For toggling different map layers
   // 
@@ -47,7 +48,9 @@
       return;
     }
 
-    var newLayer = Ciclavia.Modules.Layer.generate(layerId);
+    var newLayer = Ciclavia.Modules.Layer.generate(layerId, {
+      color: colors[(layers.length) % colors.length]
+    });
     storeMapboxLayer(newLayer, layerId);
     map.addLayer(newLayer);
   }

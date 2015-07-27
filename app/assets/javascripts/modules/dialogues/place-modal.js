@@ -8,8 +8,8 @@
 
     template: 'place-modal',
 
-    constructor: function(place){
-      var rendered = HandlebarsTemplates[this.template](place);
+    constructor: function(placeAttrs){
+      var rendered = HandlebarsTemplates[this.template](placeAttrs);
       $rendered = $(rendered);
       $('body').append($rendered);
 

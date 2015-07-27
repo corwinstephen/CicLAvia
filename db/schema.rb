@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717000255) do
+ActiveRecord::Schema.define(version: 20150727181243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(version: 20150717000255) do
   end
 
   create_table "places", force: true do |t|
-    t.string   "name",        null: false
+    t.string   "name",               null: false
     t.text     "description"
     t.string   "address"
-    t.float    "lat",         null: false
-    t.float    "lng",         null: false
+    t.float    "lat",                null: false
+    t.float    "lng",                null: false
     t.integer  "user_id"
     t.integer  "route_id"
     t.datetime "created_at"
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(version: 20150717000255) do
     t.string   "type"
     t.hstore   "data"
     t.integer  "layer_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "places", ["layer_id"], name: "index_places_on_layer_id", using: :btree

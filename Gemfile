@@ -14,6 +14,9 @@ gem 'nokogiri'
 gem 'pry'
 gem 'handlebars_assets'
 gem 'geocoder'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+gem 'puma'
 
 gem 'rails_12factor', group: :production
 

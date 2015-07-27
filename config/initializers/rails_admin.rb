@@ -39,7 +39,7 @@ RailsAdmin.config do |config|
     field :photo
   }
 
-  config.model "Place" do
+  config.model 'Place' do
     edit(&place_fields)
   end
 
@@ -48,5 +48,4 @@ RailsAdmin.config do |config|
       edit(&place_fields)
     end
   end
-
 end

@@ -1,7 +1,4 @@
 class Route < ActiveRecord::Base
-  has_many :route_segments, dependent: :destroy
-  has_many :places, dependent: :destroy
-
   belongs_to :user
   belongs_to :event
 
@@ -27,8 +24,16 @@ class Route < ActiveRecord::Base
       name: name,
       description: description,
       meetingPoint: meeting_point,
-      departsAt: departs_at,
-      routeSegments: route_segments.as_json
+      departsAt: departs_at
     }
   end
+
+  private
+
+  def parse_geojson
+    return unless geojson.present?
+
+
+  end
+
 end

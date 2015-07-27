@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727181243) do
+ActiveRecord::Schema.define(version: 20150727223700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150727181243) do
     t.datetime "departs_at"
     t.string   "meeting_point"
     t.text     "description"
+    t.json     "geojson",                       null: false
   end
 
   add_index "routes", ["event_id"], name: "index_routes_on_event_id", using: :btree

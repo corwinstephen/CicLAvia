@@ -28,6 +28,17 @@
     return _.findWhere(layers, { layerId: layerId });
   }
 
+  function renderRoutesForEvent(eventId){
+    var event = _.findWhere(Ciclavia.PageData.events, { id: eventId });
+    var routeIds = event.routes.map(function(route){
+      return route.id;
+    });
+    _.each(routeIds, function(routeId){
+      var newRoute = Ciclavia.Modules.Route.generate(routeId);
+      map.addLayer(newRoute);
+    });
+  }
+
   function enableAllLayersForEvent(eventId){
     _.each(Ciclavia.Modules.Event.layerIdsForEvent(eventId), enableLayer);
   }
@@ -97,6 +108,7 @@
     },
 
     onEventOpened: function(data){
+      renderRoutesForEvent(data.eventId);
       disableAllLayers();
       enableAllLayersForEvent(data.eventId);
     },

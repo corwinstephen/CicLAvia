@@ -3,7 +3,8 @@
     Ciclavia.PageData = {
       events: #{SuperEvent.order("created_at ASC").all.to_json },
       midpoint: #{[Place.last.lat, Place.last.lng]},
-      layers: #{Layer.all.to_json}
+      layers: #{Layer.all.to_json},
+      routes: #{Route.all.to_json}
     }
 
 #map

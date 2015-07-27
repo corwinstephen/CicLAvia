@@ -8,7 +8,8 @@ class SuperEvent < Event
 
   def as_json(opts = {})
     super.merge({
-      layers: layers.as_json  
+      layers: layers.as_json,
+      routes: routes.as_json
     })
   end
 end

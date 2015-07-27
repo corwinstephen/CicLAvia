@@ -19,12 +19,6 @@ class Route < ActiveRecord::Base
   end
 
   def as_json(opts = {})
-    {
-      id: id,
-      name: name,
-      description: description,
-      meetingPoint: meeting_point,
-      departsAt: departs_at
-    }
+    super(opts)
   end
 end

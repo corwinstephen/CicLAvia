@@ -27,13 +27,4 @@ class Route < ActiveRecord::Base
       departsAt: departs_at
     }
   end
-
-  private
-
-  def parse_geojson
-    return unless geojson.present?
-
-
-  end
-
 end

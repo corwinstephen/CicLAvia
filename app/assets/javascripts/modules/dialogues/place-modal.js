@@ -1,5 +1,5 @@
 (function(){
-  var $rendered;
+  var open = [];
 
   Ciclavia.Modules.PlaceModal = Stapes.subclass({
     CSS: {
@@ -11,11 +11,15 @@
     hubTemplate: 'hub-modal',
 
     constructor: function(placeAttrs){
+      this.closeAll();
+
+      open.push(this);
+
       this.type = placeAttrs.type;
 
       var rendered = HandlebarsTemplates[this.getTemplate()](placeAttrs);
-      $rendered = $(rendered);
-      $('body').append($rendered);
+      this.$rendered = $(rendered);
+      $('body').append(this.$rendered);
 
       this.bindClickEvents();
 
@@ -39,11 +43,11 @@
       $(document).click(this.closeIfOutside.bind(this));
 
       // Close on click X
-      $rendered.click(this.CSS.ICON_X, this.close.bind(this));
+      this.$rendered.click(this.CSS.ICON_X, this.close.bind(this));
     },
 
     closeIfOutside: function(e){
-      if($rendered.get(0).contains(e.target)){
+      if(this.$rendered.get(0).contains(e.target)){
         e.preventDefault();
       } else {
         this.close();
@@ -51,9 +55,19 @@
     },
 
     close: function(){
-      $rendered.remove();
-      $(document).unbind('click', this.closeIfOutside);
+      this.closeWithoutEvent();
       Ciclavia.Core.map.emit('modalclose');
+    },
+
+    closeWithoutEvent: function(){
+      this.$rendered.remove();
+      $(document).unbind('click');
+    },
+
+    closeAll: function(){
+      _.each(open, function(modal){
+        modal.closeWithoutEvent();
+      });
     }
   });
 })();

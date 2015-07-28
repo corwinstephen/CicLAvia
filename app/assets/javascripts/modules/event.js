@@ -7,6 +7,10 @@
       });
 
       return layerIds;
+    },
+
+    getDefault: function(){
+      return _.findWhere(Ciclavia.PageData.events, { default: true });
     }
   }
 })(_);

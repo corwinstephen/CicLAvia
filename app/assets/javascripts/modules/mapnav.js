@@ -9,6 +9,7 @@
     },
 
     EVENTS: {
+      LAYER_TOGGLE: 'layertoggle',
       EVENT_OPENED: 'eventopened',
       MODAL_OPEN: 'modalopen',
       MODAL_CLOSE: 'modalclose'
@@ -74,7 +75,7 @@
       $(this.CSS.LAYER_TOGGLE).on('change', function(e){
         var layerId = $(e.currentTarget).data('layerid');
         var isOn = e.currentTarget.checked;
-        
+
         this.emit(this.EVENTS.LAYER_TOGGLE, {
           layerId: layerId,
           isOn: isOn

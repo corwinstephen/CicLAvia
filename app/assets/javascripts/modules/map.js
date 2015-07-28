@@ -8,7 +8,6 @@
   var map = null;
   var layers = [];
   var routes = [];
-  var colors = ['#008CBE', '#F9CB3A', '#7A4E2B', '#55AE4C'];
 
   // For toggling different map layers
   // 
@@ -74,9 +73,7 @@
       return;
     }
 
-    var newLayer = Ciclavia.Modules.Layer.generate(layerId, {
-      color: colors[(layers.length) % colors.length]
-    });
+    var newLayer = Ciclavia.Modules.Layer.generate(layerId);
     storeMapboxLayer(newLayer, layerId);
     map.addLayer(newLayer);
   }

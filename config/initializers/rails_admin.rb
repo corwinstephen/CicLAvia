@@ -48,4 +48,13 @@ RailsAdmin.config do |config|
       edit(&place_fields)
     end
   end
+
+  config.model 'Layer' do
+    field :name
+    field :color, :enum do
+      enum_method do
+        :colors
+      end
+    end
+  end
 end

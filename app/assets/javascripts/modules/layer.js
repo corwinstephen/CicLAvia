@@ -1,5 +1,12 @@
 (function(_){
 
+  var colors = {
+    blue: '#008CBE', 
+    yellow: '#F9CB3A',
+    something: '#7A4E2B',
+    somethingelse: '#55AE4C'
+  };
+
   function layers(){
     var layerData = Ciclavia.PageData.layers;
     if(!layerData){
@@ -12,7 +19,7 @@
     return _.findWhere(layers(), { id: layerId });
   }
 
-  function buildGeoJSONFromLayerData(layerData, color){
+  function buildGeoJSONFromLayerData(layerData){
     var features = layerData.places.map(function(place){
       return {
         "type": "Feature",
@@ -21,7 +28,7 @@
           "coordinates": [place.lng, place.lat]
         },
         properties: {
-          'marker-color': color,
+          'marker-color': colors[layerData.color || 'blue'],
           'marker-symbol': 'star',
           name: place.name,
           description: place.description,
@@ -53,13 +60,9 @@
   };
 
   Ciclavia.Modules.Layer = {
-    generate: function(layerId, opts){
-      opts = _.extend({
-        color: '#4db541'
-      }, opts);
-
+    generate: function(layerId){
       var layerData = findLayerDataById(layerId);
-      var geoJSON = buildGeoJSONFromLayerData(layerData, opts.color);
+      var geoJSON = buildGeoJSONFromLayerData(layerData);
       var newFeatureLayer = L.mapbox.featureLayer(geoJSON);
 
       // Add click handlers to markers

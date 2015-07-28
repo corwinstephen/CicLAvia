@@ -7,6 +7,7 @@
 
   var map = null;
   var layers = [];
+  var routes = [];
   var colors = ['#008CBE', '#F9CB3A', '#7A4E2B', '#55AE4C'];
 
   // For toggling different map layers
@@ -36,7 +37,21 @@
     _.each(routeIds, function(routeId){
       var newRoute = Ciclavia.Modules.Route.generate(routeId);
       map.addLayer(newRoute);
+      routes.push(newRoute);
     });
+  }
+
+  function removeAllRoutes(){
+    _.each(routes, function(route){
+      map.removeLayer(route);
+      routes = _.without(routes, route);
+    });
+  }
+
+  function centerMap(){
+    if(routes.length > 0){
+      map.fitBounds(routes[0].getBounds());
+    }
   }
 
   function enableAllLayersForEvent(eventId){
@@ -86,7 +101,6 @@
       this.mapnav.on('layertoggle', this.onLayerToggle);
 
       // The map itself
-      this.setMapWidth();
       map = this.createMap();
 
       // Add data to map
@@ -94,23 +108,12 @@
       this.render();
     },
 
-    setMapWidth: function(){
-      this.fitMapToWindow();
-      $(window).resize(this.fitMapToWindow.bind(this));
-    },
-
-    fitMapToWindow: function(){
-      var $map = $(this.CSS.map);
-      $map.css({
-        width: $(window).width(),
-        height: $(window).height()
-      });
-    },
-
     onEventOpened: function(data){
+      removeAllRoutes();
       renderRoutesForEvent(data.eventId);
       disableAllLayers();
       enableAllLayersForEvent(data.eventId);
+      centerMap();
     },
 
     onLayerToggle: function(data){
@@ -139,11 +142,9 @@
         infoControl: false,
         zoomControl: false
       })
-      .setView(Ciclavia.PageData.midpoint, 14);
+      .setView(Ciclavia.PageData.midpoint, 13);
 
       new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
-
-      newMap.on('click', this._mapClicked.bind(this));
 
       return newMap;
     },
@@ -163,8 +164,6 @@
       event.on("change:active", this.render.bind(this));
       event.on("change:routes", this.render.bind(this));
 
-      // Bind to route clicks
-      _.each(event.routes, this._listenForRouteClicks.bind(this));
       return event;
     },
 
@@ -194,20 +193,6 @@
     removeElement: function(element){
       map.removeLayer(element);
       return this;
-    },
-
-    _listenForRouteClicks: function(route){
-      route.on("click", this._showRouteDialogForRoute);
-    },
-
-    _showRouteDialogForRoute: function(route){
-      var dialog = new Ciclavia.Modules.RouteDialogue(route);
-      dialog.show();
-    },
-
-    _mapClicked: function(clickEvent){
-      this.emit("mapClick", clickEvent);
     }
-
   });
 })(Ciclavia, _);

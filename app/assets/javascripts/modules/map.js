@@ -106,11 +106,7 @@
       // Add data to map
       this.buildEventsFromData();
       this.render();
-      this.openDefaultEvent();
-    },
-
-    openDefaultEvent: function(){
-      this.emit('eventopened', { eventId: Ciclavia.Modules.Event.getDefault().id });
+      this.emit('ready');
     },
 
     onEventOpened: function(data){

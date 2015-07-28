@@ -56,4 +56,43 @@ $modalpadding:1em;
 .hubmodal-lower {
   background-color:#FFDE17;
   padding:1em;
+
+  ul {
+    width:48%;
+
+    li {
+      border-bottom:1px solid rgba(#fff, .33);
+      padding:1.2em 0;
+    }
+  }
+
+  img {
+    margin-left:3%;
+    width:48%;
+  }
+
+  dl {
+    display:inline-block;
+    width:66%;
+    vertical-align:middle;
+    margin-bottom:0;
+
+    dt {
+      font-size:1.2em;
+      color:#fff;
+    }
+
+    dd {
+      margin-top:1em;
+      font-size:.83em;
+    }
+  }
+}
+
+.hubmodal-eventtime {
+  vertical-align:middle;
+  width:30%;
+  display:inline-block;
+  position:relative;
+  font-size:.83em;
 }

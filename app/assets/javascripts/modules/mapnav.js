@@ -12,7 +12,8 @@
       LAYER_TOGGLE: 'layertoggle',
       EVENT_OPENED: 'eventopened',
       MODAL_OPEN: 'modalopen',
-      MODAL_CLOSE: 'modalclose'
+      MODAL_CLOSE: 'modalclose',
+      MAP_READY: 'ready'
     },
 
     $container: null,
@@ -25,6 +26,7 @@
     },
 
     bindToMap: function(){
+      Ciclavia.Core.map.on(this.EVENTS.MAP_READY, this.openEvent.bind(this, Ciclavia.Modules.Event.getDefault().id));
       Ciclavia.Core.map.on(this.EVENTS.MODAL_OPEN, this.hide.bind(this));
       Ciclavia.Core.map.on(this.EVENTS.MODAL_CLOSE, this.show.bind(this));
     },

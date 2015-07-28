@@ -20,8 +20,6 @@ $modalpadding:1em;
   }
 }
 
-
-
 .placemodal {
   @extend .modal;
   padding:{
@@ -51,6 +49,14 @@ $modalpadding:1em;
 .hubmodal {
   @extend .modal;
   width:80vw;
+
+  h1 {
+    margin-bottom:.5em;
+  }
+}
+
+.hubmodal-address {
+  color:rgba(#000, .54);
 }
 
 .hubmodal-lower {
@@ -59,6 +65,8 @@ $modalpadding:1em;
 
   ul {
     width:48%;
+    display:inline-block;
+    vertical-align:top;
 
     li {
       border-bottom:1px solid rgba(#fff, .33);
@@ -69,6 +77,7 @@ $modalpadding:1em;
   img {
     margin-left:3%;
     width:48%;
+    vertical-align:middle;
   }
 
   dl {
@@ -85,6 +94,44 @@ $modalpadding:1em;
     dd {
       margin-top:1em;
       font-size:.83em;
+    }
+  }
+}
+
+@media (max-width: 715px) {
+  .hubmodal-lower {
+    ul {
+      width:100%;
+      float:right;
+      display:block;
+      margin-bottom:1em;
+
+      li {
+        border-bottom:1px solid rgba(#fff, .33);
+        padding:1.2em 0;
+      }
+    }
+
+    dl {
+      display:inline-block;
+      vertical-align:middle;
+      margin-bottom:0;
+
+      dt {
+        font-size:1.2em;
+        color:#fff;
+      }
+
+      dd {
+        margin-top:1em;
+        font-size:.83em;
+      }
+    }
+
+    img {
+      float:left;
+      width:100%;
+      margin:0;
     }
   }
 }

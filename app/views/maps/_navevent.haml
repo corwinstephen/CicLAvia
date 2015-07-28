@@ -7,5 +7,8 @@
 %ul.mapnav-expandedcontent
   - event.layers.each do |layer|
     %li
-      = layer.name
-      %input{ type: 'checkbox', class: 'layertoggle', data: { layerid: layer.id } }
+      .mapnav-layername
+        = layer.name
+
+      .mapnav-layertoggle
+        %input{ type: 'checkbox', class: 'layertoggle', id: "layer-#{layer.id}", data: { layerid: layer.id } }

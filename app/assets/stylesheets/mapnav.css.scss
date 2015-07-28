@@ -70,8 +70,36 @@
     .mapnav-expandedcontent {
       max-height:1000px;
       transition:max-height .5s;
+      box-sizing:border-box;
+
+      input[type='checkbox'] {
+        background:none;
+      }
     }
   }
+}
+
+.mapnav-layername {
+  display:inline-block;
+  width:86%;
+  box-sizing:border-box;
+}
+
+.mapnav-layertoggle {
+  display:inline-block;
+  width:8%;
+  text-align:right;
+
+  // input[type="checkbox"] {
+  //   display:none;
+  // }
+
+  // input[type="checkbox"] + label span {
+  //   display:inline-block;
+  //   width:19px;
+  //   height:19px;
+  //   background-color:#000;
+  // }
 }
 
 .mapnav-eventdesc {

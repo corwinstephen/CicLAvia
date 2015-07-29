@@ -2,7 +2,7 @@ class Route < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
 
-  validates_presence_of :name, :event
+  validates_presence_of :name, :event, :geojson
 
   def coordinates
     route_segments.map do |segment|

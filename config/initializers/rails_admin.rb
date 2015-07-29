@@ -57,4 +57,8 @@ RailsAdmin.config do |config|
       end
     end
   end
+
+  [Event, SubEvent, Place, Crossing, RouteSegment, User].each do |model|
+    config.excluded_models << model
+  end
 end

@@ -3,6 +3,10 @@ class Place < ActiveRecord::Base
   belongs_to :route
   belongs_to :layer
 
+  has_many :events,
+            -> { where.not(type: 'SuperEvent') },
+            foreign_key: 'place_id'
+
   geocoded_by :address, :latitude  => :lat, :longitude => :lng
   before_validation :geocode
 
@@ -25,7 +29,8 @@ class Place < ActiveRecord::Base
       type: type,
       photo_url: {
         large: photo.url(:large)
-      }  
+      },
+      events: events.as_json
     })
   end
 

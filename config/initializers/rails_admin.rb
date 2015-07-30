@@ -49,6 +49,10 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Hub' do
+    field :hub_events
+  end
+
   config.model 'Layer' do
     field :name
     field :color, :enum do
@@ -58,7 +62,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  [Event, SubEvent, Place, Crossing, RouteSegment, User].each do |model|
+  [SubEvent, Place, Crossing, RouteSegment, User].each do |model|
     config.excluded_models << model
   end
 end

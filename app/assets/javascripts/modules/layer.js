@@ -34,7 +34,8 @@
           description: place.description,
           address: place.address,
           imageSource: place.photo_url.large,
-          type: place.type
+          type: place.type,
+          events: place.events
         }
       };
     });

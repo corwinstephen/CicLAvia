@@ -22,7 +22,7 @@ class SuperEvent < Event
   private
 
   def set_default_event
-    if self.default?
+    if self.default? || SuperEvent.find_by_default(true).blank?
       SuperEvent.where.not(id: id).update_all(default: false)
     end
   end

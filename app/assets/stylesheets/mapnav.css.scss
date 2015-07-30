@@ -49,17 +49,14 @@
 
   &.nextup {
     dl {
-      background-color:$blue;
       
       dt {
-        color:#fff;
         font-size:1.44em;
+        color:rgba(#000, .87);
       }
 
       dd {
         display:block;
-        color:rgba(#000, 0.4);
-        font-weight:bold;
         font-size:1em;
         margin-top:.83em;
         margin-left:0;
@@ -68,6 +65,19 @@
   }
 
   &.selected {
+    dl {
+      background-color:$blue;
+      
+      dt {
+        color:#fff;
+      }
+
+      dd {
+        color:rgba(#000, 0.4);
+        font-weight:bold;
+      }
+    }
+
     .mapnav-expandedcontent {
       max-height:1000px;
       transition:max-height .5s;
@@ -105,7 +115,7 @@
 
 .mapnav-eventdesc {
   margin-top:.5em;
-  color:rgba(#fff, .8);
+  color:rgba(#000, .54);
   font-weight:normal;
 }
 

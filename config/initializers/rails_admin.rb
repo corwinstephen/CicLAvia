@@ -44,29 +44,29 @@ RailsAdmin.config do |config|
     field :layers
   end
 
+  config.model 'Event' do
+    field :name
+    field :date
+    field :description
+  end
+
   place_fields = lambda { |thing|
     field :name
     field :description
     field :address
     field :photo
+    field :events
+    field :layer
   }
 
   config.model 'Place' do
     edit(&place_fields)
   end
 
-  ['Crossing'].each do |model|
+  ['Place', 'Crossing', 'Hub'].each do |model|
     config.model model do
       edit(&place_fields)
     end
-  end
-
-  config.model 'Hub' do
-    field :name
-    field :description
-    field :address
-    field :photo
-    field :events
   end
 
   config.model 'Layer' do
@@ -76,6 +76,7 @@ RailsAdmin.config do |config|
         :colors
       end
     end
+    field :places
   end
 
   config.model 'Route' do
@@ -83,7 +84,8 @@ RailsAdmin.config do |config|
     field :geojson
   end
 
-  [SubEvent, Place, Crossing, RouteSegment, User].each do |model|
+
+  [SubEvent, Crossing, RouteSegment, User].each do |model|
     config.excluded_models << model
   end
 

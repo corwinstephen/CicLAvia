@@ -30,7 +30,7 @@ class Place < ActiveRecord::Base
       photo_url: {
         large: photo.url(:large)
       },
-      events: events.as_json
+      events: events.order('created_at ASC').as_json
     })
   end
 

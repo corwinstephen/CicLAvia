@@ -28,7 +28,7 @@
     bindToMap: function(){
       var defaultEvent = Ciclavia.Modules.Event.getDefault();
       if(!!defaultEvent){
-        Ciclavia.Core.map.on(this.EVENTS.MAP_READY, this.openEvent.bind(this, defaultEventId.id));
+        Ciclavia.Core.map.on(this.EVENTS.MAP_READY, this.openEvent.bind(this, defaultEvent.id));
       }
 
       Ciclavia.Core.map.on(this.EVENTS.MODAL_OPEN, this.hide.bind(this));

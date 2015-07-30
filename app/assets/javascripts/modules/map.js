@@ -49,7 +49,9 @@
 
   function centerMap(){
     if(routes.length > 0){
-      map.fitBounds(routes[0].getBounds());
+      map.fitBounds(routes[0].getBounds(), {
+        paddingTopLeft: [350, 0]
+      });
     }
   }
 
@@ -139,8 +141,7 @@
       var newMap = L.mapbox.map('map', 'corwinstephen.71cdd4a8', {
         infoControl: false,
         zoomControl: false
-      })
-      .setView(Ciclavia.PageData.midpoint, 13);
+      });
 
       new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
 

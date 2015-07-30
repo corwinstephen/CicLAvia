@@ -3,8 +3,8 @@
   var colors = {
     blue: '#008CBE', 
     yellow: '#F9CB3A',
-    something: '#7A4E2B',
-    somethingelse: '#55AE4C'
+    red: '#7A4E2B',
+    green: '#55AE4C'
   };
 
   function layers(){

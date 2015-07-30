@@ -32,6 +32,18 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  config.model 'SuperEvent' do
+    label "Ciclavia" 
+    label_plural "Ciclavias"
+
+    field :name
+    field :date
+    field :default
+    field :description
+    field :routes
+    field :layers
+  end
+
   place_fields = lambda { |thing|
     field :name
     field :description
@@ -66,7 +78,16 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Route' do
+    field :name
+    field :geojson
+  end
+
   [SubEvent, Place, Crossing, RouteSegment, User].each do |model|
     config.excluded_models << model
   end
+
+  config.navigation_static_links = {
+    'Go to map' => '/'
+  }
 end

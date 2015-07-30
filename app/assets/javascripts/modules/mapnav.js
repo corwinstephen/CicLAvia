@@ -26,7 +26,11 @@
     },
 
     bindToMap: function(){
-      Ciclavia.Core.map.on(this.EVENTS.MAP_READY, this.openEvent.bind(this, Ciclavia.Modules.Event.getDefault().id));
+      var defaultEvent = Ciclavia.Modules.Event.getDefault();
+      if(!!defaultEvent){
+        Ciclavia.Core.map.on(this.EVENTS.MAP_READY, this.openEvent.bind(this, defaultEventId.id));
+      }
+
       Ciclavia.Core.map.on(this.EVENTS.MODAL_OPEN, this.hide.bind(this));
       Ciclavia.Core.map.on(this.EVENTS.MODAL_CLOSE, this.show.bind(this));
     },

@@ -144,6 +144,10 @@
       });
 
       new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
+      L.control.locate({
+        position: 'topright',
+        keepCurrentZoomLevel: true
+      }).addTo(newMap);
 
       return newMap;
     },

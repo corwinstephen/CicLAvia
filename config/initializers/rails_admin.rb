@@ -43,14 +43,18 @@ RailsAdmin.config do |config|
     edit(&place_fields)
   end
 
-  ['Crossing', 'Hub'].each do |model|
+  ['Crossing'].each do |model|
     config.model model do
       edit(&place_fields)
     end
   end
 
   config.model 'Hub' do
-    field :hub_events
+    field :name
+    field :description
+    field :address
+    field :photo
+    field :events
   end
 
   config.model 'Layer' do

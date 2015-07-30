@@ -6,7 +6,8 @@ class Event < ActiveRecord::Base
 
   def as_json(opts = {})
     super(opts).merge({
-      routes: routes.as_json
+      routes: routes.as_json,
+      time: date.strftime('%l%P')
     })
   end
 

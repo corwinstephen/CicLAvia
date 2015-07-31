@@ -29,11 +29,11 @@
 
     getTemplate: function(){
       switch(this.type){
-        case(null):
-          return this.defaultTemplate;
-          break;
         case('Hub'):
           return this.hubTemplate;
+          break;
+        default:
+          return this.defaultTemplate;
           break;
       }
     },

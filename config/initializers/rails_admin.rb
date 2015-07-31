@@ -33,8 +33,8 @@ RailsAdmin.config do |config|
   end
 
   config.model 'SuperEvent' do
-    label "Ciclavia" 
-    label_plural "Ciclavias"
+    label "CicLAvia" 
+    label_plural "CicLAvias"
 
     field :name
     field :date
@@ -50,23 +50,38 @@ RailsAdmin.config do |config|
     field :description
   end
 
-  place_fields = lambda { |thing|
+  config.model 'Place' do
     field :name
     field :description
     field :address
     field :photo
-    field :events
     field :layer
-  }
-
-  config.model 'Place' do
-    edit(&place_fields)
   end
 
-  ['Place', 'Crossing', 'Hub'].each do |model|
-    config.model model do
-      edit(&place_fields)
+  config.model 'Crossing' do
+    field :name
+    field :description
+    field :address
+    field :photo
+    field :layer
+  end
+
+  config.model 'Hub' do
+    field :name
+    field :description
+    field :address
+    field :photo
+    field :events do
+      associated_collection_cache_all false
+      associated_collection_scope do
+        Proc.new { |scope|
+          # scoping all Players currently, let's limit them to the team's league
+          # Be sure to limit if there are a lot of Players and order them by position
+          scope = scope
+        }
+      end
     end
+    field :layer
   end
 
   config.model 'Layer' do
@@ -85,7 +100,7 @@ RailsAdmin.config do |config|
   end
 
 
-  [SubEvent, Crossing, RouteSegment, User].each do |model|
+  [SubEvent, RouteSegment, User].each do |model|
     config.excluded_models << model
   end
 

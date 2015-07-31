@@ -29,7 +29,7 @@
         },
         properties: {
           'marker-color': colors[layerData.color || 'blue'],
-          'marker-symbol': 'star',
+          'marker-symbol': iconForType(place.type),
           name: place.name,
           description: place.description,
           address: place.address,
@@ -47,6 +47,19 @@
 
     return geoJSON;
   };
+
+  function iconForType(type){
+    switch(type){
+      case('Hub'):
+        return 'star-stroked';
+        break;
+      case('Crossing'):
+        return 'car';
+        break;
+      default:
+        return 'marker-stroked';
+    }
+  }
 
   function placeClicked(e){
     var properties = e.target.feature.properties;

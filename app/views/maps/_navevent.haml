@@ -2,7 +2,7 @@
   %dt= event.name
   %dd
     = event.date.strftime("%B %d, %Y")
-    .mapnav-eventdesc The most walkable CicLAvia to date!
+    .mapnav-eventdesc= event.description
 
 %ul.mapnav-expandedcontent
   - event.layers.each do |layer|

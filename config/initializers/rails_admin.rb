@@ -40,8 +40,22 @@ RailsAdmin.config do |config|
     field :date
     field :default
     field :description
-    field :routes
-    field :layers
+    field :routes do
+      associated_collection_scope do
+        super_event = bindings[:object]
+        Proc.new { |scope|
+          scope = scope.where('event_id IS NULL OR event_id = ?', super_event.id)
+        }
+      end
+    end
+    field :layers do
+      associated_collection_scope do
+        super_event = bindings[:object]
+        Proc.new { |scope|
+          scope = scope.where('event_id IS NULL OR event_id = ?', super_event.id)
+        }
+      end
+    end
   end
 
   config.model 'Event' do
@@ -71,16 +85,7 @@ RailsAdmin.config do |config|
     field :description
     field :address
     field :photo
-    field :events do
-      associated_collection_cache_all false
-      associated_collection_scope do
-        Proc.new { |scope|
-          # scoping all Players currently, let's limit them to the team's league
-          # Be sure to limit if there are a lot of Players and order them by position
-          scope = scope
-        }
-      end
-    end
+    field :events
     field :layer
   end
 

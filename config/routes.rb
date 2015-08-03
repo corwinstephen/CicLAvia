@@ -1,6 +1,8 @@
 CicLAvia::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
+  devise_for :user
+  
   
   # devise_for :users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self)

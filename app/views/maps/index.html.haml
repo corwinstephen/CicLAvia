@@ -21,7 +21,7 @@
       .mapnav-previousevents
         .mapnav-sectionlabel Previous events
 
-        - SuperEvent.where.not(id: SuperEvent.default.id).order("date DESC").limit(1).each_with_index do |event, index|
+        - SuperEvent.where.not(id: SuperEvent.default.id).order("date DESC").each_with_index do |event, index|
           .mapnav-event{:data => { :id => event.id }}
             = render partial: 'navevent', locals: { event: event }
 

@@ -260,6 +260,10 @@
   a {
     color:$blue;
   }
+
+  @media (max-width: 700px) {
+    display:none;
+  }
 }
 
 .mapnav-disclaimer {
@@ -267,4 +271,10 @@
   padding:0 20px;
   margin-top:1em;
   color:rgba(#000, .26);
+
+  @media (max-width: 700px) {
+    padding:10px 20px;
+    margin-top:0;
+    background: #FAFAFA;
+  }
 }

@@ -86,6 +86,7 @@
 
       dd {
         color:rgba(#000, 0.4);
+        font-size:.83em;
         font-weight:bold;
       }
     }
@@ -126,9 +127,10 @@
 }
 
 .mapnav-eventdesc {
-  margin-top:.5em;
+  margin-top:10px;
   color:rgba(#000, .54);
   font-weight:normal;
+  font-size:1.2em;
 }
 
 .mapnav-sectionlabel {

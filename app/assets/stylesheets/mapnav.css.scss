@@ -17,6 +17,17 @@
   font-family:$font-title;
   color:$blue;
   font-weight:bold;
+
+  span {
+    position:relative;
+    font-family:$font-body;
+    font-weight:normal;
+    color:$green;
+    text-style:italic;
+    font-size:.69em;
+    margin-left:10px;
+    bottom:2px;
+  }
 }
 
 .mapnav-event {

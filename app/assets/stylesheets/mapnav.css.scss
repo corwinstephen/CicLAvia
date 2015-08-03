@@ -38,7 +38,7 @@
     background-color:#FFF;
     border-top:1px solid $light-grey;
     margin-bottom:0;
-    padding:1.2em 1em;
+    padding:20px 20px;
 
     &:first-child {
       margin-top:0;
@@ -170,10 +170,10 @@
   li {
     list-style:none;
     position:relative;
-    padding:1.2em 1em 0 1em;
+    padding:20px 1em 0 1em;
 
     &:last-child {
-      padding-bottom:1.2em;
+      padding-bottom:20px;
     }
 
     &:hover {
@@ -249,4 +249,20 @@
     box-shadow:none;
     margin-bottom:0;
   }
+}
+
+.mapnav-sitelink {
+  margin-top:50px;
+  padding:0 20px;
+
+  a {
+    color:$blue;
+  }
+}
+
+.mapnav-disclaimer {
+  font-size:.69em;
+  padding:0 20px;
+  margin-top:1em;
+  color:rgba(#000, .26);
 }

@@ -104,8 +104,14 @@ RailsAdmin.config do |config|
     field :geojson
   end
 
+  config.model 'User' do
+    field :email
+    field :password
+    field :password_confirmation
+  end
 
-  [SubEvent, RouteSegment, User].each do |model|
+
+  [SubEvent, RouteSegment].each do |model|
     config.excluded_models << model
   end
 

@@ -254,6 +254,10 @@
     li {
       padding:10px 20px 0 20px;
       font-size:.83em;
+
+      &:last-child {
+        padding-bottom:0;
+      }
     }
   }
 }
@@ -278,7 +282,7 @@
   color:rgba(#000, .26);
 
   @media (max-width: 700px) {
-    padding:0 20px 10px 20px;
+    padding:10px 20px 10px 20px;
     margin-top:0;
     background: #FAFAFA;
   }

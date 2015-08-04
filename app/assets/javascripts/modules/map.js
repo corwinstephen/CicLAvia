@@ -48,12 +48,16 @@
   }
 
   function centerMap(){
-    var offset = ($(window).width() > Ciclavia.Config.Constants.mobileBreakpoint ? 350 : 0)
+    var offset = (isMobile() ? 0 : 350)
     if(routes.length > 0){
       map.fitBounds(routes[0].getBounds(), {
         paddingTopLeft: [offset, 0]
       });
     }
+  }
+
+  function isMobile(){
+    return $(window).width() < Ciclavia.Config.Constants.mobileBreakpoint;
   }
 
   function enableAllLayersForEvent(eventId){
@@ -144,9 +148,11 @@
         zoomControl: false
       });
 
-      new L.Control.Zoom({ position: 'topright' }).addTo(newMap);
+      var controlPosition = (isMobile() ? 'bottomleft' : 'topright');
+
+      new L.Control.Zoom({ position: controlPosition }).addTo(newMap);
       L.control.locate({
-        position: 'topright',
+        position: controlPosition,
         keepCurrentZoomLevel: true
       }).addTo(newMap);
 

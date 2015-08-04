@@ -172,7 +172,7 @@
   li {
     list-style:none;
     position:relative;
-    padding:20px 1em 0 1em;
+    padding:20px 20px 0 20px;
 
     &:last-child {
       padding-bottom:20px;
@@ -250,6 +250,11 @@
   .mapnav-expandedcontent {
     box-shadow:none;
     margin-bottom:0;
+
+    li {
+      padding:10px 20px 0 20px;
+      font-size:.83em;
+    }
   }
 }
 
@@ -273,7 +278,7 @@
   color:rgba(#000, .26);
 
   @media (max-width: 700px) {
-    padding:10px 20px;
+    padding:0 20px 10px 20px;
     margin-top:0;
     background: #FAFAFA;
   }

@@ -48,9 +48,10 @@
   }
 
   function centerMap(){
+    var offset = ($(window).width() > Ciclavia.Config.Constants.mobileBreakpoint ? 350 : 0)
     if(routes.length > 0){
       map.fitBounds(routes[0].getBounds(), {
-        paddingTopLeft: [350, 0]
+        paddingTopLeft: [offset, 0]
       });
     }
   }

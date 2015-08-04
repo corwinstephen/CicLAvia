@@ -62,7 +62,8 @@
 
     openEvent: function(eventId){
       var $this = $('.mapnav-event[data-id=' + eventId + ']');
-      if(($this).hasClass('selected')){
+      if($this.hasClass('selected')){
+        $this.removeClass('selected');
         return;
       }
       $('.mapnav-event').removeClass('selected');

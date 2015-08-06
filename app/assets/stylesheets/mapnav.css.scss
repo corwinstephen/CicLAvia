@@ -226,7 +226,7 @@
   .mapnav-event.nextup {
     dl {
       background-color:#fff;
-      border-bottom:1px solid $dark-grey;
+      border-bottom:1px solid $grey;
       
       dt {
         color:$blue;
@@ -248,6 +248,7 @@
   }
 
   .mapnav-expandedcontent {
+    display:none;
     box-shadow:none;
     margin-bottom:0;
 

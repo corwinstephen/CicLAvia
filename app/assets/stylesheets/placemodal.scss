@@ -5,7 +5,7 @@ $modalpadding:40px;
   z-index:10;
   box-shadow:0 0 5px 0 rgba(#000, .3);
   border-radius:3px;
-  top:15%;
+  top:8%;
   left:50%;
   @include transform(translateX(-50%));
 
@@ -22,7 +22,7 @@ $modalpadding:40px;
 
 .placemodal {
   @extend .modal;
-  width:66vw;
+  width:55vw;
 
   img {
     width:100%;

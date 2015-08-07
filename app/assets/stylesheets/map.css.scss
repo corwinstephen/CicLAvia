@@ -3,17 +3,18 @@
   background-size:125px 125px;
   bottom:0px;
   height:125px;
-  position:absolute;
+  position:fixed;
   right:0px;
   width:125px;
   z-index:2;
 }
 
 #map {
-  position:absolute;
+  position:fixed;
   top:0;
   bottom:0;
   right:0;
   left:0;
   width:100%;
+  overflow:hidden;
 }

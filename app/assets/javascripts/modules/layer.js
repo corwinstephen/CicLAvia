@@ -4,7 +4,9 @@
     blue: '#008CBE', 
     yellow: '#F9CB3A',
     red: '#7A4E2B',
-    green: '#55AE4C'
+    green: '#55AE4C',
+    orange: '#EB8B2D',
+    purple: '#A869AA'
   };
 
   function layers(){

@@ -1,5 +1,5 @@
 class Layer < ActiveRecord::Base
-  COLORS = ['blue', 'yellow', 'red', 'green', 'orange', 'purple']
+  COLORS = ['blue', 'yellow', 'red', 'green', 'orange', 'purple', 'turquoise', 'pink']
 
   validates_presence_of :name
   validates :color, inclusion: { in: COLORS }

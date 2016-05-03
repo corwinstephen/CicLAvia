@@ -3,10 +3,12 @@
   var colors = {
     blue: '#008CBE', 
     yellow: '#F9CB3A',
-    red: '#7A4E2B',
+    red: '#CA4121',
     green: '#55AE4C',
     orange: '#EB8B2D',
-    purple: '#A869AA'
+    purple: '#A869AA',
+    turquoise: '#1EB0A9',
+    pink: '#D757B1'
   };
 
   function layers(){

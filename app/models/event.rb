@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :date
+  default_scope order('date ASC')
 
   has_many :routes
 

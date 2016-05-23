@@ -27,5 +27,7 @@ module CicLAvia
     config.action_dispatch.default_headers = {
       'X-Frame-Options' => 'ALLOWALL'
     }
+
+    config.assets.precompile += %w( ckeditor/* )
   end
 end

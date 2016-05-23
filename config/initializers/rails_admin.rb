@@ -82,7 +82,7 @@ RailsAdmin.config do |config|
 
   config.model 'Hub' do
     field :name
-    field :description
+    field :description, :ck_editor
     field :address
     field :photo
     field :events

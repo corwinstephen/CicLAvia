@@ -18,6 +18,7 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'puma'
 gem 'bourbon'
+gem 'ckeditor'
 
 gem 'rails_12factor', group: :production
 

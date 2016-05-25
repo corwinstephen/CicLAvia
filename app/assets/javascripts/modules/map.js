@@ -144,6 +144,7 @@
 
     createMap: function(){
       var newMap = L.mapbox.map('map', 'corwinstephen.71cdd4a8', {
+        accessToken: 'pk.eyJ1IjoiY2ljbGF2aWEiLCJhIjoiY2lvZW92dmpjMDBucnk1bTI1aTN5MnB4YyJ9.jBMd7jomp_1fmfM7_fpRwg',
         infoControl: false,
         zoomControl: false
       });

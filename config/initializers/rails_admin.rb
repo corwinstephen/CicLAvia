@@ -87,6 +87,14 @@ RailsAdmin.config do |config|
     field :photo
     field :events
     field :layer
+    show do
+      include_all_fields
+      field :description do
+        pretty_value do 
+          value.html_safe
+        end
+      end
+    end
   end
 
   config.model 'Layer' do
@@ -109,7 +117,6 @@ RailsAdmin.config do |config|
     field :password
     field :password_confirmation
   end
-
 
   [SubEvent, RouteSegment].each do |model|
     config.excluded_models << model

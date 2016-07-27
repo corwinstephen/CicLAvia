@@ -1,0 +1,1 @@
+class HistoricalSite < Place; end

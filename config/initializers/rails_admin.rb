@@ -80,6 +80,14 @@ RailsAdmin.config do |config|
     field :layer
   end
 
+  config.model 'HistoricalSite' do
+    field :name
+    field :description
+    field :address
+    field :photo
+    field :layer
+  end
+
   config.model 'Hub' do
     field :name
     field :description
@@ -88,6 +96,7 @@ RailsAdmin.config do |config|
     field :events
     field :layer
   end
+
 
   config.model 'Layer' do
     field :name

@@ -1,3 +1,1 @@
-class Crossing < Place
-  
-end
+class Crossing < Place; end

@@ -60,6 +60,9 @@
       case('Crossing'):
         return 'car';
         break;
+      case('HistoricalSite'):
+        return 'place-of-worship';
+        break;
       default:
         return 'marker-stroked';
     }

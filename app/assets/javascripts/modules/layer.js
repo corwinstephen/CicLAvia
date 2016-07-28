@@ -63,6 +63,9 @@
       case('HistoricalSite'):
         return 'place-of-worship';
         break;
+      case('Activity'):
+        return 'pitch';
+        break;
       default:
         return 'marker-stroked';
     }

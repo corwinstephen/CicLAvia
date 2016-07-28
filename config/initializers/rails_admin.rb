@@ -64,28 +64,16 @@ RailsAdmin.config do |config|
     field :description
   end
 
-  config.model 'Place' do
-    field :name
-    field :description
-    field :address
-    field :photo
-    field :layer
-  end
+  # Basic fields
 
-  config.model 'Crossing' do
-    field :name
-    field :description
-    field :address
-    field :photo
-    field :layer
-  end
-
-  config.model 'HistoricalSite' do
-    field :name
-    field :description
-    field :address
-    field :photo
-    field :layer
+  ['Place', 'Crossing', 'HistoricalSite', 'Activity'].each do |place_type|
+    config.model place_type do
+      field :name
+      field :description
+      field :address
+      field :photo
+      field :layer
+    end
   end
 
   config.model 'Hub' do

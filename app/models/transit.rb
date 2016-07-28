@@ -1,0 +1,1 @@
+class Transit < Place; end

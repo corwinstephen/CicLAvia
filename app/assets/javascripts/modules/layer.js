@@ -66,6 +66,12 @@
       case('Activity'):
         return 'pitch';
         break;
+      case('Transit'):
+        return 'rail-metro';
+        break;
+      case('Food'):
+        return 'restaurant';
+        break;
       default:
         return 'marker-stroked';
     }

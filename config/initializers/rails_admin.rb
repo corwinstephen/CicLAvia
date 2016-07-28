@@ -66,7 +66,7 @@ RailsAdmin.config do |config|
 
   # Basic fields
 
-  ['Place', 'Crossing', 'HistoricalSite', 'Activity'].each do |place_type|
+  ['Place', 'Crossing', 'HistoricalSite', 'Activity', 'Food', 'Transit'].each do |place_type|
     config.model place_type do
       field :name
       field :description

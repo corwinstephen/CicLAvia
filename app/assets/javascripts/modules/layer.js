@@ -98,6 +98,10 @@
       // Add click handlers to markers
       newFeatureLayer.eachLayer(function(place){
         place.on('click', placeClicked);
+
+        if(place.feature.properties.id === History.getState()['data']['placeId']){
+          place.fire('click');
+        }
       });
       return newFeatureLayer;
     }

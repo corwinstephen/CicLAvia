@@ -23,14 +23,10 @@
 
       this.bindClickEvents();
 
-      this.persistStateToURL(placeAttrs);
+      History.pushState({ placeId: placeAttrs.id }, placeAttrs.name, "?placeId=" + placeAttrs.id);
 
       // Emit open event
       Ciclavia.Core.map.emit('modalopen');
-    },
-
-    persistStateToURL(placeAttrs){
-      History.pushState({ placeId: placeAttrs.id }, placeAttrs.name, "?placeId=" + placeAttrs.id);
     },
 
     getTemplate: function(){
@@ -62,6 +58,7 @@
 
     close: function(){
       this.closeWithoutEvent();
+      History.pushState({ placeId: null }, 'CicLAvia', "/");
       Ciclavia.Core.map.emit('modalclose');
     },
 

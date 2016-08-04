@@ -23,8 +23,14 @@
 
       this.bindClickEvents();
 
+      this.persistStateToURL(placeAttrs);
+
       // Emit open event
       Ciclavia.Core.map.emit('modalopen');
+    },
+
+    persistStateToURL(placeAttrs){
+      History.pushState({ placeId: placeAttrs.id }, placeAttrs.name, "?placeId=" + placeAttrs.id);
     },
 
     getTemplate: function(){

@@ -18,6 +18,7 @@
 //= require underscore_string
 //= require stapes
 //= require handlebars.runtime
+//= require wiselinks
 // 
 // -- Application Files -- //
 // 

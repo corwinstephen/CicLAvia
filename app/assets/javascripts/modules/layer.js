@@ -89,6 +89,21 @@
     e.target.closePopup();
   };
 
+  var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+  };
+
   Ciclavia.Modules.Layer = {
     generate: function(layerId){
       var layerData = findLayerDataById(layerId);
@@ -99,11 +114,9 @@
       newFeatureLayer.eachLayer(function(place){
         place.on('click', placeClicked);
 
-        if(place.feature.properties.id === History.getState()['data']['placeId']){
-          console.log("Worked: " + place.feature.properties.id + " " + History.getState()['data']['placeId'])
+        var placeId = parseInt(getUrlParameter('placeId'));
+        if(place.feature.properties.id === placeId){
           place.fire('click');
-        } else {
-          console.log("Didn't work: " + place.feature.properties.id + " " + History.getState()['data']['placeId'])
         }
       });
       return newFeatureLayer;

@@ -100,9 +100,10 @@
         place.on('click', placeClicked);
 
         if(place.feature.properties.id === History.getState()['data']['placeId']){
-          setTimeout(function(){
-            place.fire('click');
-          }, 200)
+          console.log("Worked: " + place.feature.properties.id + " " + History.getState()['data']['placeId'])
+          place.fire('click');
+        } else {
+          console.log("Didn't work: " + place.feature.properties.id + " " + History.getState()['data']['placeId'])
         }
       });
       return newFeatureLayer;

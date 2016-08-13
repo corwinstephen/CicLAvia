@@ -1,0 +1,18 @@
+<% if Place.exists?(params[:placeId]) %>
+  <% place = Place.find(params[:placeId]) %>
+  <title><%= place.name %> - CicLAvia Route Guide</title>
+  <meta name="description" content="<%= place.description %>">
+  <meta property="og:title" content="<%= place.name %> - CicLAvia Interactive Route Guide"/>
+  <meta property="og:image" content="http://d3n8a8pro7vhmx.cloudfront.net/ciclavia/sites/3/meta_images/original/ciclaviafavicon.png?1432939390"/>
+  <meta property="og:site_name" content="CicLAvia"/>
+  <meta property="og:url" content="<%= request.base_url + request.original_fullpath %>"/>
+  <meta property="og:type" content="place"/>
+<% else %>
+  <title>CicLAvia Route Guide</title>
+  <meta name="description" content="An interactive route guide for CicLAvia. Hubs, crossing, sites and events, all in one place!">
+  <meta property="og:title" content="CicLAvia Interactive Route Guide"/>
+  <meta property="og:image" content="http://d3n8a8pro7vhmx.cloudfront.net/ciclavia/sites/3/meta_images/original/ciclaviafavicon.png?1432939390"/>
+  <meta property="og:site_name" content="CicLAvia"/>
+  <meta property="og:url" content="http://map.ciclavia.org/"/>
+  <meta property="og:type" content="place"/>
+<% end %>

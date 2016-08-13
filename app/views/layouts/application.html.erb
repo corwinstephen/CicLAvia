@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CicLAvia Route Guide</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= render partial: "remote_styles" %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -9,14 +8,9 @@
   <%= render partial: "remote_scripts" %>
   <%= render partial: "js_init" %>
   <%= yield :js_for_head %>
-  <meta name="description" content="An interactive route guide for CicLAvia. Hubs, crossing, sites and events, all in one place!">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="http://d3n8a8pro7vhmx.cloudfront.net/ciclavia/sites/3/favicon_images/original/ciclaviafavicon.png?1432749528"/>
-  <meta property="og:title" content="CicLAvia Interactive Route Guide"/>
-  <meta property="og:image" content="http://d3n8a8pro7vhmx.cloudfront.net/ciclavia/sites/3/meta_images/original/ciclaviafavicon.png?1432939390"/>
-  <meta property="og:site_name" content="CicLAvia"/>
-  <meta property="og:url" content="http://map.ciclavia.org/"/>
-  <meta property="og:type" content="place"/>
+  <%= render 'layouts/opengraphtags' %>
   <%= csrf_meta_tags %>
 </head>
 <body>

@@ -19,6 +19,7 @@
 //= require stapes
 //= require handlebars.runtime
 //= require wiselinks
+//= require ckeditor/init
 // 
 // -- Application Files -- //
 // 

@@ -73,6 +73,12 @@
       case('Food'):
         return 'restaurant';
         break;
+      case('Bikeshare'):
+        return 'bicycle';
+        break;
+      case('Pokemon'):
+        return 'circle';
+        break;
       default:
         return 'marker-stroked';
     }

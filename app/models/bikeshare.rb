@@ -1,0 +1,1 @@
+class Bikeshare < Place; end
